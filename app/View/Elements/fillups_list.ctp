@@ -27,11 +27,11 @@
 
       <small>
 
-        <span class="datetime span3">
-          <i class="icon-time"></i>
-          <?php echo $this->Time->niceShort($item['created']); ?>
+        <span class="odometer span3">        
+          <i class="icon-road"></i>
+          <?php echo $item['odometer']; ?>
         </span>
-
+        
         <span class="units span3">        
           <i class="icon-tint"></i>
           <?php echo $item['litres']; ?> litres
@@ -39,15 +39,16 @@
           <?php echo '&pound;'.number_format($item['price_per_litre'],3); ?>
         </span>
 
-        <span class="odometer span3">        
-          <i class="icon-road"></i>
-          <?php echo $item['odometer']; ?>
-        </span>
-        
         <span class="location span3">
           <i class="icon-map-marker"></i>
           <?php echo $item['location']; ?>
         </span>  
+
+        <span class="datetime span3">
+          <i class="icon-time"></i>
+          <?php echo $this->Time->niceShort($item['created']); ?>
+        </span>
+
 
       </small>
 
