@@ -59,7 +59,7 @@
  */
 class DATABASE_CONFIG {
 
-	public $default = array(
+	public $dreamhost = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'mysql.unstyled.com',
@@ -70,13 +70,13 @@ class DATABASE_CONFIG {
 		//'encoding' => 'utf8',
 	);
 
-	public $test = array(
+	public $default  = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
+		'login' => 'petrol_man',
+		'password' => 'Unl34d3d',
+		'database' => 'petrol_dev',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
