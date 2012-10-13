@@ -8,11 +8,6 @@ class User extends AppModel {
     public $name = 'User';
     public $displayField = 'username';
     
-    public $hasMany = array(
-      'Fillup',
-      'Vehicle',
-    );
-    
     public $validate = array(
         'username' => array(
             'required' => array(
@@ -34,7 +29,7 @@ class User extends AppModel {
 */
         'role' => array(
             'valid' => array(
-                'rule' => array('inList', array('admin', 'author')),
+                'rule' => array('inList', array('Admin', 'Member')),
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )

@@ -32,6 +32,7 @@
             <li class="active"><a href="/">Home</a></li>
             <?php if($this->Session->read('Auth.User.id')=='') : ?>
             <li><?php echo $this->Html->link('Sign In', array('controller'=>'users','action'=>'login')); ?></li>
+            <li><?php echo $this->Html->link('Register', array('controller'=>'users','action'=>'add')); ?></li>
             <?php else: ?>
             <li><?php echo $this->Html->link('Fill Ups', array('controller'=>'fillups','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index')); ?></li>

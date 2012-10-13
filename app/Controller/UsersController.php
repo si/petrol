@@ -38,12 +38,12 @@ class UsersController extends AppController {
 */
     public function add() {
         if ($this->request->is('post')) {
-            $this->User->create();
+          $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('You are now registered.'));
+                $this->redirect(array('controller'=>'vehicles','action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('There were problems registering. Please check your details and try again.'));
             }
         }
     }
