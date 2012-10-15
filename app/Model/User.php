@@ -13,20 +13,31 @@ class User extends AppModel {
             'required' => array(
                 'rule' => array('notEmpty'),
                 'message' => 'Username is required'
-            )
+            ),
+            'alphaNumeric' => array(
+              'rule' => 'alphaNumeric',
+              'required' => true,
+              'message' => 'Letters and numbers only'
+            ),
+            'unique' => array(
+              'rule' => 'isUnique',
+              'message' => 'Username has already been taken.'
+            ),
         ),
-/*
         'password' => array(
-					'rule' => 'alphanumeric',
-          'required' => true,
+          'rule' => array('notEmpty'),
+          'message' => 'Password is required'
         ),
         'email' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'Your email is required'
-            )
+                'message' => 'Email is required'
+            ),
+            'unique' => array(
+              'rule' => 'isUnique',
+              'message' => 'Email has already been registered'
+            ),
         ),
-*/
         'role' => array(
             'valid' => array(
                 'rule' => array('inList', array('Admin', 'Member')),

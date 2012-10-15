@@ -15,9 +15,6 @@
 
         echo $this->Form->input('email');
 
-        echo $this->Form->input('home_postcode');
-        echo $this->Form->input('work_postcode');
-
         echo $this->Form->input('role', array(
           'type' => 'hidden',
           'value' => 'Member',
