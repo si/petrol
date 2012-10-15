@@ -94,7 +94,7 @@ class FillupsController extends AppController {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $google_places_api);
     // Set a referer
-    curl_setopt($ch, CURLOPT_REFERER, "http://petrol.unstyled.com");
+    curl_setopt($ch, CURLOPT_REFERER, "http://dev.petrolapp.me");
     // User agent
     curl_setopt($ch, CURLOPT_USERAGENT, "MozillaXYZ/1.0");
     // Include header in result? (0 = yes, 1 = no)

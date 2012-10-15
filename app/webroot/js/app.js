@@ -83,13 +83,13 @@ $(document).ready(function() {
     function updateDisplay() {
         var gmapdata = '<img src="http://maps.google.com/maps/api/staticmap?center=' + latitude + ',' + longitude + '&zoom=16&size=400x300&sensor=true" />';
                 
-        document.getElementById("placeholder").innerHTML = gmapdata;
-        document.getElementById("latitude").innerHTML = latitude;
-        document.getElementById("longitude").innerHTML = longitude;
-        document.getElementById("accuracy").innerHTML = accuracy;
+        $("#placeholder").innerHTML = gmapdata;
+        $("#latitude").innerHTML = latitude;
+        $("#longitude").innerHTML = longitude;
+        $("#accuracy").innerHTML = accuracy;
 
         // Let's get some local businesses.
-        local_search = 'http://petrol.unstyled.com/fillups/local_search/' + latitude + '/' + longitude;
+        local_search = 'http://dev.petrolapp.me/fillups/local_search/' + latitude + '/' + longitude;
         
         console.log(local_search);
         
@@ -98,8 +98,9 @@ $(document).ready(function() {
 				  dataTypeString: 'json',
 				  success: function(data) {
 				  	$('#placeholder').append('<label for="places_jason">Local Petrol Stations</label><textarea id="places_json" class="span6" rows="20">' + data + '</textarea>');
+				  	var locs = $.parseJSON(data);
 						var items = [];
-						$.each(data.results, function(key, val) {
+						$.each(locs.results, function(key, val) {
 					    items.push('<li id="' + key + '">' + val.name + '</li>');
 					  });
 					  $('<ul/>', {
