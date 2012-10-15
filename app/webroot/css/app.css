@@ -10,7 +10,11 @@ body {
 Modules 
 =======
 */
-
+footer {
+  color: #999;
+  padding: 3em 1em;
+  font-size: 0.85em;
+}
 /*
 
 Fillups List
