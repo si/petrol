@@ -29,6 +29,7 @@ class FillupsController extends AppController {
 	  $totals = $this->Fillup->query(
 	  	'SELECT 
 	  		SUM(cost) AS spent
+	  		
 	  	FROM fillups
 	  	WHERE user_id = ' . $this->Session->read('Auth.User.id'))
 	  	;
@@ -114,6 +115,41 @@ class FillupsController extends AppController {
 		
 		$this->layout = 'empty';
 
+	}
+	
+	function stats($view='ppl-monthly') {
+  	
+  	if($view=='total-monthly') {
+    	$sql = 'SELECT
+  	           MONTHNAME(created) month,
+  	           YEAR(created) year,
+    	         SUM(cost) spent
+    	       FROM `fillups`
+    	       GROUP BY
+    	         MONTH(created), YEAR(created)';
+    	
+  	} elseif($view=='ppl-weekly') {
+    	$sql = 'SELECT
+  	           WEEK(created) week,
+  	           YEAR(created) year,
+  	           (cost/litres) ppl
+  	         FROM `fillups`
+  	         GROUP BY
+  	           WEEK(created), YEAR(created)';
+
+  	} elseif($view=='ppl-monthly') {
+    	$sql = 'SELECT
+  	           MONTHNAME(created) month,
+  	           YEAR(created) year,
+  	           (cost/litres) ppl
+  	         FROM `fillups`
+  	         GROUP BY
+  	           MONTH(created), YEAR(created)';
+  	}
+  	
+  	$this->set('view',$view);
+  	$this->set('data',$this->Fillup->query($sql));
+  	
 	}
     
 
