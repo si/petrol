@@ -97,16 +97,25 @@ $(document).ready(function() {
 				  url: local_search,
 				  dataTypeString: 'json',
 				  success: function(data) {
-				  	$('#placeholder').append('<label for="places_jason">Local Petrol Stations</label><textarea id="places_json" class="span6" rows="20">' + data + '</textarea>');
+				    // Output raw data for debugging
+				  	$('#FillupLocation').after('<textarea id="LocationLocalRaw" style="display:none;">' + data + '</textarea>');
+				  	
+				  	// Parse data as JSON
 				  	var locs = $.parseJSON(data);
+				  	
+				  	// Create array of OPTIONS from Places ID and Name
 						var items = [];
 						$.each(locs.results, function(key, val) {
-					    items.push('<li id="' + key + '">' + val.name + '</li>');
+					    items.push('<option value="' + val.id + '">' + val.name + '</option>');
 					  });
-					  $('<ul/>', {
+					  console.log(items.length + ' options');
+					  
+					  // Output SELECT with OPTIONs
+					  select = $('<select id="FillupLocationLocal"/>', {
 				    	'class': 'local-places',
 				    	html: items.join('')
-				    }).appendTo('#placeholder');				  	
+				    });
+				    $('#FillupLocation').after(select);
 				  },
 				  error: function(jqXHR, textStatus, errorThrown) {
 					  $('#placeholder').append('Error: ' + textStatus);
