@@ -11,6 +11,7 @@
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+    <script src="/js/chartify/javascripts/chartify.js"></script>
     <?php if(isset($jquery_mobile)) : ?>
     <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.js"></script>
     <?php endif; ?>

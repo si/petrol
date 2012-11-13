@@ -10,7 +10,7 @@ if(isset($data) && count($data)>0) :
 
   if($view=='ppl-monthly') :
 ?>
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover chart">
     <caption>Price Per Litre</caption>
     <thead>
       <tr>
@@ -21,7 +21,7 @@ if(isset($data) && count($data)>0) :
     <tbody>
     <?php foreach($data as $row) : ?>
       <tr>
-        <td><?php echo $row[0]['month'] . ' ' . $row[0]['year']; ?></td>
+        <th><?php echo $row[0]['month'] . ' ' . $row[0]['year']; ?></th>
         <td><?php echo $this->Number->precision($row[0]['ppl']*100,1); ?></td>
       </tr>
     <?php endforeach; ?>
@@ -30,7 +30,7 @@ if(isset($data) && count($data)>0) :
 <?php
   elseif($view=='ppl-weekly') :
 ?>
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover chart">
     <caption>Price Per Litre</caption>
     <thead>
       <tr>
@@ -41,7 +41,7 @@ if(isset($data) && count($data)>0) :
     <tbody>
     <?php foreach($data as $row) : ?>
       <tr>
-        <td><?php echo $row[0]['week'] . ' ' . $row[0]['year']; ?></td>
+        <th><?php echo $row[0]['week'] . ' ' . $row[0]['year']; ?></th>
         <td><?php echo $this->Number->precision($row[0]['ppl']*100,1); ?></td>
       </tr>
     <?php endforeach; ?>
@@ -50,7 +50,7 @@ if(isset($data) && count($data)>0) :
 <?php
   elseif($view=='total-monthly') :
 ?>
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover chart">
     <caption>Total Monthly</caption>
     <thead>
       <tr>
@@ -65,7 +65,7 @@ if(isset($data) && count($data)>0) :
         $total_spent += $row[0]['spent'];  
     ?>
       <tr>
-        <td><?php echo $row[0]['month'] . ' ' . $row[0]['year']; ?></td>
+        <th><?php echo $row[0]['month'] . ' ' . $row[0]['year']; ?></th>
         <td><?php echo $this->Number->currency($row[0]['spent'],'GBP'); ?></td>
       </tr>
     <?php endforeach; ?>

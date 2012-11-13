@@ -21,6 +21,11 @@ $(document).ready(function() {
 
 	 $('#FillupCost, #FillupLitres, #FillupPricePerLitre').live('keydown', updatePPL);
 	 
+
+    /* Chartify plugin */
+    $('table.chart').chartify('bar', {chartType: 'bhg'});
+
+
 	 /***
 	 Polyfill DATALIST on non-supported browsers
 	 @date: 2012-08-13 13:29
@@ -150,7 +155,7 @@ $(document).ready(function() {
     
 
     loadLocation();
-
+    
 });
 
 // For clearing geo-location cookies
