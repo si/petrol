@@ -29,6 +29,17 @@ echo $this->Session->flash();
 			 )
 			));
 		?>	
+
+		<?php
+			echo $this->Form->input('status', array(
+			 'options'=> array(
+			   ''=>'On the road',
+			   'R'=>'Rental',
+			   'S'=>'SORN',
+			 )
+			));
+		?>	
+
 </fieldset>
 
 
