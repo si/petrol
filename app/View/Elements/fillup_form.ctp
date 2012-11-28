@@ -20,6 +20,15 @@ echo $this->Form->create('Fillup');
         'label' => '£ per Litre',
 			));
 		?>	
+
+
+		<?php
+			echo $this->Form->input('discount', array(
+        'label' => 'Discount (coupons)',
+        'placeholder'=> '£',
+			));
+		?>	
+
 		<?php
 			echo $this->Form->input('location', array(
 				'label' => 'Petrol Station',
