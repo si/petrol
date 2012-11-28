@@ -95,9 +95,7 @@ $(document).ready(function() {
 
         // Let's get some local businesses.
         local_search = 'http://dev.petrolapp.me/fillups/local_search/' + latitude + '/' + longitude;
-        
-        console.log(local_search);
-        
+                
 				$.ajax({
 				  url: local_search,
 				  dataTypeString: 'json',
@@ -113,13 +111,11 @@ $(document).ready(function() {
 						$.each(locs.results, function(key, val) {
 					    items.push('<option value="' + val.id + '">' + val.name + '</option>');
 					  });
-					  console.log(items.length + ' options');
 					  
 					  // Output SELECT with OPTIONs
-					  select = $('<select id="FillupLocationLocal"/>', {
+					  select = $('<select id="FillupLocationLocal">', {
 				    	'class': 'local-places',
-				    	html: items.join('')
-				    });
+				    }).prepend(items.join(''));
 				    $('#FillupLocation').after(select);
 				  },
 				  error: function(jqXHR, textStatus, errorThrown) {
