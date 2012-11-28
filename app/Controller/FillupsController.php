@@ -87,6 +87,53 @@ class FillupsController extends AppController {
 
 	}
 
+	function edit($id='') {
+	  // Save data
+    if(!empty($this->data)) {
+      if($this->Vehicle->save($this->data)) {
+          $this->Session->setFlash("Vehicle saved!");
+          $this->redirect('/vehicles');
+      }
+    }
+    // Lookup data
+    if($id!='') {
+      $this->data = $this->Fillup->findById($id);
+    }
+    
+    // Get Vehicles
+		$vehicles = $this->Fillup->Vehicle->find('list', array(
+    	'conditions' => array(
+    		"Vehicle.user_id" => $this->Session->read('Auth.User.id')
+    	)
+    ));
+    $this->set('vehicles', $vehicles);	    
+
+    // Get locations
+		$locations = $this->Fillup->find('all', array(
+		  'fields' => array('DISTINCT location'),
+    	'conditions' => array(
+        'location <>' => '', 
+    		"Vehicle.user_id" => $this->Session->read('Auth.User.id'),
+    	),
+    	'order' => array('Fillup.created DESC'),
+    ));
+    $this->set('locations', $locations);	    
+
+    // Get latest
+    $this->set('latest', $this->Fillup->find(
+      'first', 
+      array(
+        'conditions' => array(
+        'Fillup.user_id' => $this->Session->read('Auth.User.id')
+       ),
+       'order' => array(
+         'Fillup.created DESC'
+       )
+      )
+    ));
+
+	}
+
 	function local_search($lat='', $long='', $radius=5000) {
 	
 		$google_api_key = 'AIzaSyBMISecHzJR_Mie1nlsQWpQkv-E6B7ZFno';
