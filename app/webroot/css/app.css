@@ -15,6 +15,9 @@ footer {
   padding: 3em 1em;
   font-size: 0.85em;
 }
+footer a {
+  color: #666;
+}
 /*
 
 Fillups List
