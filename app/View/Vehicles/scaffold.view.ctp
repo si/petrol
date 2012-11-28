@@ -7,3 +7,6 @@
 <?php
   echo $this->element('fillups_list', array('data'=>$vehicle['Fillup']));
 ?>
+
+    <?php echo $this->Html->link('Edit Vehicle',array('action'=>'edit',$vehicle['Vehicle']['id']),array('class'=>'btn btn-mini')); ?>
+    <?php echo $this->Html->link('Delete Vehicle',array('action'=>'delete',$vehicle['Vehicle']['id']),array('class'=>'btn btn-mini'),'Are you sure you want to delete this vehicle?'); ?>

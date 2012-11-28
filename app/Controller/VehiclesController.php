@@ -29,6 +29,21 @@ class VehiclesController extends AppController {
       }
     }
 	}
+
+	function edit($id='') {
+	  // Save data
+    if(!empty($this->data)) {
+      if($this->Vehicle->save($this->data)) {
+          $this->Session->setFlash("Vehicle saved!");
+          $this->redirect('/vehicles');
+      }
+    }
+    // Lookup data
+    if($id!='') {
+      $this->data = $this->Vehicle->findById($id);
+      $this->set('max_litres',$this->Vehicle->Fillup->find('first',array('fields'=>array('litres'),'conditions'=>array('Fillup.vehicle_id'=>$id),'order'=>array('litres DESC'))));
+    }
+	}
 	
 
 }
