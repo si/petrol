@@ -23,8 +23,8 @@
 		<td><?php echo $this->Html->link($fillup['Vehicle']['name'], array('controller'=>'vehicles','action'=>'view',$fillup['Fillup']['vehicle_id'])); ?> </td> 
 		<td><?php echo $fillup['Fillup']['odometer']; ?> </td> 
 		<td>
-		  <?php echo $this->Html->link('Edit', array('controller'=>'fillups','action'=>'edit',$fillup['Fillup']['id'])); ?>
-		  <?php echo $this->Html->link('Delete', array('controller'=>'fillups','action'=>'delete',$fillup['Fillup']['id']),array(),'You definitely want to delete this?'); ?>
+		  <?php echo $this->Html->link('Edit', array('controller'=>'fillups','action'=>'edit',$fillup['Fillup']['id']),array('class'=>'btn btn-mini')); ?>
+		  <?php echo $this->Html->link('Delete', array('controller'=>'fillups','action'=>'delete',$fillup['Fillup']['id']),array('class'=>'btn btn-mini'),'You definitely want to delete this?'); ?>
 		</td>
 	</tr> 
 	<?php endforeach; ?> 
