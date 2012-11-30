@@ -1,6 +1,8 @@
 <div class="row">
 <?php
 echo $this->Form->create('Fillup');
+
+  if(isset($this->data['Fillup']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
 <fieldset class="span4">
   <legend>Garage</legend>

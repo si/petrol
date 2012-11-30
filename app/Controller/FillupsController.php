@@ -90,9 +90,9 @@ class FillupsController extends AppController {
 	function edit($id='') {
 	  // Save data
     if(!empty($this->data)) {
-      if($this->Vehicle->save($this->data)) {
-          $this->Session->setFlash("Vehicle saved!");
-          $this->redirect('/vehicles');
+      if($this->Fillup->save($this->data)) {
+          $this->Session->setFlash("Fillup saved!");
+          $this->redirect('/fillups');
       }
     }
     // Lookup data
@@ -134,6 +134,15 @@ class FillupsController extends AppController {
 
 	}
 
+	function delete($id='') {
+  	if($id!='') {
+    	$this->Fillup->delete($id);
+      $this->Session->setFlash("Fillup deleted!");
+      $this->redirect('/fillups');
+    	
+  	}
+	}
+	
 	function local_search($lat='', $long='', $radius=5000) {
 	
 		$google_api_key = 'AIzaSyBMISecHzJR_Mie1nlsQWpQkv-E6B7ZFno';
