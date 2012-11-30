@@ -12,7 +12,6 @@ class AppController extends Controller {
   );
 
   function beforeFilter() {
-		$this->Auth->allow('index', 'view','pages');
   }
 
 	public function beforeRender() {
