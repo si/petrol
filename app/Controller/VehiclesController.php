@@ -44,6 +44,14 @@ class VehiclesController extends AppController {
       $this->set('max_litres',$this->Vehicle->Fillup->find('first',array('fields'=>array('litres'),'conditions'=>array('Fillup.vehicle_id'=>$id),'order'=>array('litres DESC'))));
     }
 	}
-	
+
+	function delete($id='') {
+    if($id!='') {
+      if($this->Vehicle->delete($id)) {
+        $this->Session->setFlash("Vehicle deleted!");
+        $this->redirect('/vehicles');
+      }
+    }
+  }	
 
 }
