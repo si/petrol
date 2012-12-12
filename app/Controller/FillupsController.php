@@ -22,8 +22,15 @@ class FillupsController extends AppController {
   function index() {
   
   	$user_id = $this->Session->read('Auth.User.id');
+  	
+  	$conditions = array(
+  	 "Fillup.user_id" => $this->Session->read('Auth.User.id')
+    );
+  	if(isset($this->params['named']['vehicle'])) {
+  	  $conditions['vehicle_id'] =  $this->params['named']['vehicle'];
+    }
   
-	  $data = $this->paginate('Fillup',array("Fillup.user_id" => $this->Session->read('Auth.User.id')));
+	  $data = $this->paginate('Fillup',$conditions);
 	  $this->set('data', $data);
 	  
 	  $totals = $this->Fillup->query(
@@ -34,6 +41,9 @@ class FillupsController extends AppController {
 	  	WHERE user_id = ' . $this->Session->read('Auth.User.id'))
 	  	;
 	  $this->set('totals',$totals);
+	  
+	  $vehicles = $this->Fillup->Vehicle->find('list', array('conditions'=>array('user_id'=>$this->Session->read('Auth.User.id'))));
+	  $this->set('vehicles',$vehicles);
 	  
   }
   

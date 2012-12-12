@@ -6,6 +6,15 @@
 </div>
 <?php // var_dump($data); 
 
+if(count($vehicles)>1) :
+  echo 'Filter by Vehicle <ul>';
+  echo '<li><a href="'. $this->Html->url(array("controller" => "fillups","action" => "index")) . '">All</a></li>';
+  foreach($vehicles as $id=>$name) :
+    echo '<li><a href="'. $this->Html->url(array("controller" => "fillups","action" => "index","vehicle" => $id)) . '">'.$name.'</a></li>';
+  endforeach;
+  echo '</ul>';
+endif;
+
 // Table view  
 if(isset($view) && $view=='list ') : 
 
