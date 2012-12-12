@@ -58,7 +58,7 @@ echo $this->Session->flash();
 				'value' => $this->Session->read('Auth.User.id'),
 			));
 
-		if(isset($this->Vehicle->data['Vehicle']['id'])) :
+		if(isset($this->data['Vehicle']['id'])) :
   		echo $this->Form->input('id', array('type' => 'hidden'));
 		endif;
 
