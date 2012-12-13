@@ -109,14 +109,17 @@ $(document).ready(function() {
 				  	// Create array of OPTIONS from Places ID and Name
 						var items = [];
 						$.each(locs.results, function(key, val) {
-					    items.push('<option value="' + val.id + '">' + val.name + '</option>');
+					    items.push('<option value="' + val.name + '">' + val.name + '</option>');
 					  });
+
+					  items.push('<option value="-">Not listed...</option>');
 					  
 					  // Output SELECT with OPTIONs
-					  select = $('<select id="FillupLocationLocal">', {
+					  select = $('<select name="data[Fillup][location]" id="FillupLocationLocal">', {
 				    	'class': 'local-places',
 				    }).prepend(items.join(''));
-				    $('#FillupLocation').after(select);
+				    // Hide free text Location, change name attribute and place SELECT in place
+				    $('#FillupLocation').attr('name','data[Fillup][location_disabled]').hide().after(select);
 				  },
 				  error: function(jqXHR, textStatus, errorThrown) {
 					  $('#placeholder').append('Error: ' + textStatus);
@@ -126,6 +129,15 @@ $(document).ready(function() {
 
     }
     
+    $('#FillupLocationLocal').live('change',function(e){
+      if($(this).val()=='-') {
+				// Hide Local Location select, change name attribute and display free text again
+        $(this).attr('name','data[Fillup][location_disabled]').hide();
+        $('#FillupLocation').attr('name','data[Fillup][location]').show();
+      }
+    });
+    
+    $('#status').hide();
     
     function error_handler(error) {
         var locationError = '';
