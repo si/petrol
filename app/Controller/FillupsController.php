@@ -166,6 +166,9 @@ class FillupsController extends AppController {
 	
 	function local_search($lat='', $long='', $radius=5000) {
 	
+	  /* 
+	  Google Places Search
+	  */
 		$google_api_key = 'AIzaSyBMISecHzJR_Mie1nlsQWpQkv-E6B7ZFno';
 		$google_places_api = 'https://maps.googleapis.com/maps/api/place/search/json?key=' . $google_api_key . '&location=' . $lat . ',' . $long . '&radius=' . $radius . '&sensor=true&types=gas_station';
 
@@ -189,6 +192,29 @@ class FillupsController extends AppController {
 		// wrap the data as with the callback
 		$callback = isset($_GET["callback"]) ? $_GET["callback"] : "alert";
 		$this->set('callback', $output);
+		
+		/*
+		Foursquare Search
+		https://developer.foursquare.com/docs/venues/search
+		*/
+		$foursquare_api = 'https://api.foursquare.com/v2/venues/search?ll=' . $lat . ',' . $long . '&query=petrol&oauth_token=IAHNDBYKKRTR1M5XJZC15CD1AM52I2SKGWSTGQCWEWDS1VVQ&v=20121213';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $foursquare_api);
+    // Set a referer
+    curl_setopt($ch, CURLOPT_REFERER, "http://dev.petrolapp.me");
+    // User agent
+    curl_setopt($ch, CURLOPT_USERAGENT, "MozillaXYZ/1.0");
+    // Include header in result? (0 = yes, 1 = no)
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    // Should cURL return or print out the data? (true = return, false = print)
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    // Timeout in seconds
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    // Download the given URL, and return output
+    $foursquare_data = curl_exec($ch);
+    // Close the cURL resource, and free system resources
+    curl_close($ch);
+		$this->set('foursquare', $foursquare_data);
 		
 		$this->layout = 'empty';
 
