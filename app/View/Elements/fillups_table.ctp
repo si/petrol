@@ -19,7 +19,15 @@
 		<td><?php echo $this->Number->currency($fillup['Fillup']['cost'],'GBP'); ?> </td> 
 		<td><?php echo $this->Number->precision($fillup['Fillup']['litres'],2); ?> </td> 
 		<td><?php echo $this->Number->currency($fillup['Fillup']['price_per_litre'],'GBP',array('places'=>3)); ?> </td> 
-		<td><?php echo $fillup['Fillup']['location']; ?> </td> 
+		<td>
+		<?php 
+		  echo '<a href="' 
+		  . $this->Html->url(
+		    array('controller'=>'fillups','action'=>'index','location'=>$fillup['Fillup']['location'])
+		  ) 
+		  . '">'.$fillup['Fillup']['location'] . '</a>'; 
+		?>
+		</td> 
 		<td><?php echo $this->Html->link($fillup['Vehicle']['name'], array('controller'=>'vehicles','action'=>'view',$fillup['Fillup']['vehicle_id'])); ?> </td> 
 		<td><?php echo $fillup['Fillup']['odometer']; ?> </td> 
 		<td>

@@ -26,9 +26,17 @@ class FillupsController extends AppController {
   	$conditions = array(
   	 "Fillup.user_id" => $this->Session->read('Auth.User.id')
     );
+
+    // Conditional Vehicle filter
   	if(isset($this->params['named']['vehicle'])) {
   	  $conditions['vehicle_id'] =  $this->params['named']['vehicle'];
   	  $this->set('vehicle', $this->Fillup->Vehicle->findById($this->params['named']['vehicle']));
+    }
+
+    // Conditional Location filter
+  	if(isset($this->params['named']['location'])) {
+  	  $conditions['location'] =  $this->params['named']['location'];
+  	  $this->set('location', $this->params['named']['location']);
     }
   
 	  $data = $this->paginate('Fillup',$conditions);
