@@ -28,18 +28,21 @@ class FillupsController extends AppController {
     );
   	if(isset($this->params['named']['vehicle'])) {
   	  $conditions['vehicle_id'] =  $this->params['named']['vehicle'];
+  	  $this->set('vehicle', $this->Fillup->Vehicle->findById($this->params['named']['vehicle']));
     }
   
 	  $data = $this->paginate('Fillup',$conditions);
 	  $this->set('data', $data);
 	  
-	  $totals = $this->Fillup->query(
-	  	'SELECT 
-	  		SUM(cost) AS spent
-	  		
+	  $totals = $this->Fillup->find('all', array(
+	      'fields'=> array('SUM(cost) AS spent'),
+	      'conditions' => $conditions,
+	    ));
+/*
 	  	FROM fillups
 	  	WHERE user_id = ' . $this->Session->read('Auth.User.id'))
 	  	;
+*/
 	  $this->set('totals',$totals);
 	  
 	  $vehicles = $this->Fillup->Vehicle->find('list', array('conditions'=>array('user_id'=>$this->Session->read('Auth.User.id'))));
