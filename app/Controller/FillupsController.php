@@ -43,14 +43,14 @@ class FillupsController extends AppController {
 	  $this->set('data', $data);
 	  
 	  $totals = $this->Fillup->find('all', array(
-	      'fields'=> array('SUM(cost) AS spent'),
-	      'conditions' => $conditions,
-	    ));
-/*
-	  	FROM fillups
-	  	WHERE user_id = ' . $this->Session->read('Auth.User.id'))
-	  	;
-*/
+      'fields'=> array(
+        'SUM(cost) AS spent',
+        'MAX(odometer) - MIN(odometer) AS miles',
+        'COUNT(*) AS entries',
+        'COUNT(DISTINCT location) AS stations',
+      ),
+      'conditions' => $conditions,
+    ));
 	  $this->set('totals',$totals);
 	  
 	  $vehicles = $this->Fillup->Vehicle->find('list', array('conditions'=>array('user_id'=>$this->Session->read('Auth.User.id'))));

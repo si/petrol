@@ -1,15 +1,19 @@
+<h1>Your Fill Ups</h1>
 
-<div class="hero-unit">
-  <h1>Your Fill Ups</h1>
-  <h2>
-    You've spent <?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?>
-    <?php if(isset($vehicle)) : ?>
-      on your <?php echo $vehicle['Vehicle']['manufacturer'] . ' ' . $vehicle['Vehicle']['model']; ?>
-    <?php endif; ?>
-    so far
-  </h2>
-  <?php echo $this->Html->link('Add Fillup', array('controller'=>'fillups','action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
-</div>
+<dl class="statistics">
+  <dt><?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?></dt>
+  <dd>total spent</dd>
+  <dt><?php echo $this->Number->format($totals[0][0]['entries']); ?></dt>
+  <dd>fillups</dd>
+  <dt><?php echo $this->Number->format($totals[0][0]['stations']); ?></dt>
+  <dd>stations</dd>
+  <dt><?php echo $this->Number->format($totals[0][0]['miles']); ?></dt>
+  <dd>total miles</dd>
+  <dt><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></dt>
+  <dd>per mile</dd>
+</dl>
+    
+<?php echo $this->Html->link('Add Fillup', array('controller'=>'fillups','action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
 <?php // var_dump($data); 
 
 if(count($vehicles)>1) : 
