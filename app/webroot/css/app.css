@@ -39,7 +39,10 @@ label {
   color: #CCC;
   text-shadow: 0 1px 0 #000;
 }
-
+.navbar .nav > .active > a {
+  background: #111;
+  color: #FFF;
+}
 .table th, .table td {
   border-top: 0;
 }
