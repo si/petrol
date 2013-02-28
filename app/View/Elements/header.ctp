@@ -38,15 +38,6 @@
             <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Reports', array('controller'=>'reports','action'=>'index')); ?></li>
             <?php endif; ?>
-            <li>
-              <?php echo $this->Html->link('About', array('controller'=>'pages','action'=>'display','about')); ?>
-            </li>
-            <li>
-              <?php echo $this->Html->link('Roadmap', array('controller'=>'pages','action'=>'display','roadmap')); ?>
-            </li>
-            <li>
-              <?php echo $this->Html->link('Conditions', array('controller'=>'pages','action'=>'display','conditions')); ?>
-            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
