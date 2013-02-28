@@ -6,23 +6,30 @@ echo $this->Form->create('Fillup');
 ?>
 <fieldset class="span4">
   <legend>Garage</legend>
+  <div>
 		<?php
 			echo $this->Form->input('cost', array(
         'label' => 'Amount Spent',
         'placeholder' => '£',
+        'div' => 'span4',
+        'class' => 'input-mini',
 			));
 		?>	
 		<?php
 			echo $this->Form->input('litres', array(
         'label' => 'Litres',
+        'div' => 'span4',
+        'class' => 'input-mini',
 			));
 		?>	
 		<?php
 			echo $this->Form->input('price_per_litre', array(
         'label' => '£ per Litre',
+        'div' => 'span4',
+        'class' => 'input-mini',
 			));
 		?>	
-
+    </div>
 
 		<?php
 			echo $this->Form->input('discount', array(

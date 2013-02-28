@@ -1,17 +1,23 @@
 <h1>Your Fill Ups</h1>
 
-<dl class="statistics">
-  <dt><?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?></dt>
-  <dd>total spent</dd>
-  <dt><?php echo $this->Number->format($totals[0][0]['entries']); ?></dt>
-  <dd>fillups</dd>
-  <dt><?php echo $this->Number->format($totals[0][0]['stations']); ?></dt>
-  <dd>stations</dd>
-  <dt><?php echo $this->Number->format($totals[0][0]['miles']); ?></dt>
-  <dd>total miles</dd>
-  <dt><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></dt>
-  <dd>per mile</dd>
-</dl>
+<table class="statistics">
+  <tbody>
+  <tr>
+    <td><?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?></td>
+    <td><?php echo $this->Number->format($totals[0][0]['entries']); ?></td>
+    <td><?php echo $this->Number->format($totals[0][0]['stations']); ?></td>
+    <td><?php echo $this->Number->format($totals[0][0]['miles']); ?></td>
+    <td><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></td>
+  </tr>
+  <tr>
+    <th>total spent</th>
+    <th>fillups</th>
+    <th>stations</th>
+    <th>total miles</th>
+    <th>per mile</th>
+  </tr>
+  </tbody>
+</table>
     
 <?php echo $this->Html->link('Add Fillup', array('controller'=>'fillups','action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
 <?php // var_dump($data); 
