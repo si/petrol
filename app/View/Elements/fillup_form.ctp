@@ -31,10 +31,13 @@ echo $this->Form->create('Fillup');
 		?>	
     </div>
 
+    <div class="station">
 		<?php
 			echo $this->Form->input('discount', array(
         'label' => 'Discount (coupons)',
         'placeholder'=> '£',
+        'div' => 'span4',
+        'class' => 'input-mini',
 			));
 		?>	
 
@@ -43,7 +46,9 @@ echo $this->Form->create('Fillup');
 				'label' => 'Petrol Station',
 				'type' => 'text',
 				'placeholder' => 'eg. BP Corporation Street, Rugby',
-				'list'=>'location_history'
+				'list'=>'location_history',
+        'div' => 'span8',
+        'class' => 'input-large',
 			));
 			
 			if(isset($locations) && count($locations)>0) : 
@@ -62,14 +67,12 @@ echo $this->Form->create('Fillup');
 		?>	
 			<p id="status"></p>
 			<p><span id="latitude"></span> <span id="longitude"></span> <span id="accuracy"></span></p>
-
-		<div id="placeholder" style="margin: 20px 0px 10px; width: 100%; height: 100%; position: relative;">
-			<i>Note: May take a few seconds to get the location.</i>
-		</div>		
+  		<div id="placeholder" style="margin: 20px 0px 10px; width: 100%; height: 100%; position: relative;"><i>Note: May take a few seconds to get the location.</i></div>
+		</div>
+				
 </fieldset>
 <fieldset class="span4">
   <legend>Vehicle</legend>
-
 		<?php
 		if(count($vehicles)>1) :
 			echo $this->Form->input('vehicle_id', array(
@@ -83,11 +86,15 @@ echo $this->Form->create('Fillup');
 			));		  
 		endif;
 		?>	
+    <div class="vehicle">
 		<?php
 			echo $this->Form->input('odometer', array(
-				'label' => 'Current Mileage' . (($latest!=null) ? ' (previously <strong class="odometer">' . $latest['Fillup']['odometer'] . '</strong> <- Needs to be dynamic based on selected vehicle)' : ''),
+				'label' => 'Current Mileage',
 				'size' => 6,
 				'maxlength' => 7,
+				'div'=>'span6',
+				'class'=>'input-medium',
+				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Fillup']['odometer'] : ''),
 			));
 		?>	
  		<?php
@@ -122,6 +129,8 @@ echo $this->Form->create('Fillup');
 				'max' => '1',
 				'step' => '0.125',
 				'data-highlight' => 'true',
+				'div'=>'span6',
+				'class'=>'input-medium',
 			));
 
 /*
@@ -151,6 +160,7 @@ echo $this->Form->create('Fillup');
 		<?php
 			echo $this->Form->input('created', array(
 				'label' => 'When',
+				'class' => 'input-mini',
 			));
 		?>	
 </fieldset>
