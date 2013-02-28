@@ -1,5 +1,7 @@
 body {
   padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  background: #333;
+  color: #EEE;
 }
 
 
@@ -17,4 +19,47 @@ footer {
 }
 footer a {
   color: #666;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  font-family: 'HelveticaNeue-Light', "Helvetica Neue Light", "Helvetica Neue",Arial, sans-serif;
+}
+
+label {
+  font-size: 0.8em;
+  color: #666;
+}
+.navbar-inner {
+  background: #222;
+  border-bottom: 0;
+}
+
+.navbar .nav > li > a {
+  color: #CCC;
+  text-shadow: 0 1px 0 #000;
+}
+
+.table th, .table td {
+  border-top: 0;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td {
+  background: rgba(0,0,0,0.2);
+}
+.statistics {
+  width: 100%;
+}
+.statistics td, .statistics th {
+  text-align: center;
+}
+.statistics th {
+  font-size: 0.85em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #777;
+}
+.statistics td {
+  font-size: 2em;
+  font-weight: normal;
 }
