@@ -4,6 +4,7 @@ class AppController extends Controller {
 	var $helpers = array('Html','Form','Time','Session','Number');
 
   var $components = array(
+    'Email',
     'Session',
     'Auth' => array(
       'loginRedirect' => array('controller' => 'fillups', 'action' => 'index'),
@@ -20,6 +21,7 @@ class AppController extends Controller {
       'password'=>'B34tr1c3',
       'client' => 'dev.petrolapp.me'
     );
+    $this->Email->from    = 'Petrol <bot@petrolapp.me>';
 
   }
 

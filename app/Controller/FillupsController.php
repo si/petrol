@@ -86,8 +86,18 @@ class FillupsController extends AppController {
         if($this->Fillup->validates()) {
 
 	        if($this->Fillup->save($this->data)) {
-	            $this->Session->setFlash("Fill up saved!");
-	            $this->redirect('/fillups');
+            
+            $this->set('data',$this->data);
+            
+            // Send email
+            $this->Email->to      = 'Simon Jobling <simon.jobling@gmail.com>';
+            $this->Email->subject = '[Petrol] Entry saved';
+            $this->Email->template = 'fillup';
+            $this->Email->format = 'html';
+            $this->Email->send();
+	        
+            $this->Session->setFlash("Fill up saved!");
+            $this->redirect('/fillups');
 	        }
 
 	      }
