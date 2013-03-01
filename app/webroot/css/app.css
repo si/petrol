@@ -29,6 +29,7 @@ h1, h2, h3 {
 label {
   font-size: 0.8em;
   color: #666;
+  text-transform: uppercase;
 }
 .navbar-inner {
   background: #222;

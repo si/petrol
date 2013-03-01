@@ -6,10 +6,10 @@ echo $this->Form->create('Fillup');
 ?>
 <fieldset class="span4">
   <legend>Garage</legend>
-  <div>
+  <div class="row-fluid">
 		<?php
 			echo $this->Form->input('cost', array(
-        'label' => 'Amount Spent',
+        'label' => 'Cost',
         'placeholder' => '£',
         'div' => 'span4',
         'class' => 'input-mini',
@@ -17,24 +17,26 @@ echo $this->Form->create('Fillup');
 		?>	
 		<?php
 			echo $this->Form->input('litres', array(
-        'label' => 'Litres',
+        'label' => 'Capacity',
+        'placeholder' => 'litres',
         'div' => 'span4',
         'class' => 'input-mini',
 			));
 		?>	
 		<?php
 			echo $this->Form->input('price_per_litre', array(
-        'label' => '£ per Litre',
+        'label' => 'Price',
         'div' => 'span4',
+        'placeholder' => '£/litre',
         'class' => 'input-mini',
 			));
 		?>	
     </div>
 
-    <div class="station">
+    <div class="row-fluid station">
 		<?php
 			echo $this->Form->input('discount', array(
-        'label' => 'Discount (coupons)',
+        'label' => 'Discount',
         'placeholder'=> '£',
         'div' => 'span4',
         'class' => 'input-mini',
@@ -86,7 +88,7 @@ echo $this->Form->create('Fillup');
 			));		  
 		endif;
 		?>	
-    <div class="vehicle">
+    <div class="vehicle row-fluid">
 		<?php
 			echo $this->Form->input('odometer', array(
 				'label' => 'Current Mileage',
@@ -95,6 +97,7 @@ echo $this->Form->create('Fillup');
 				'div'=>'span6',
 				'class'=>'input-medium',
 				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Fillup']['odometer'] : ''),
+				'min' => (($latest!=null) ? $latest['Fillup']['odometer'] : ''),
 			));
 		?>	
  		<?php
@@ -128,6 +131,7 @@ echo $this->Form->create('Fillup');
 				'min' => '0',
 				'max' => '1',
 				'step' => '0.125',
+				'default' => 0,
 				'data-highlight' => 'true',
 				'div'=>'span6',
 				'class'=>'input-medium',
@@ -161,8 +165,10 @@ echo $this->Form->create('Fillup');
 			echo $this->Form->input('created', array(
 				'label' => 'When',
 				'class' => 'input-mini',
+				'div' => 'hidden',
 			));
 		?>	
+		<a href="#FillupCreatedMonth" class="toggle-fields">Set date/time</a>
 </fieldset>
 
 <?php
