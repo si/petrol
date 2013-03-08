@@ -1,20 +1,20 @@
 <h1>Your Fill Ups</h1>
-
+<h2>So far this year&hellip;</h2>
 <table class="statistics">
   <tbody>
   <tr>
     <td><?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?></td>
     <td><?php echo $this->Number->format($totals[0][0]['entries']); ?></td>
     <td><?php echo $this->Number->format($totals[0][0]['stations']); ?></td>
-    <td><?php echo $this->Number->format($totals[0][0]['miles']); ?></td>
-    <td><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></td>
+    <td class="extra"><?php echo $this->Number->format($totals[0][0]['miles']); ?></td>
+    <td class="extra"><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></td>
   </tr>
   <tr>
     <th>total spent</th>
     <th>fillups</th>
     <th>stations</th>
-    <th>total miles</th>
-    <th>per mile</th>
+    <th class="extra">total miles</th>
+    <th class="extra">per mile</th>
   </tr>
   </tbody>
 </table>
