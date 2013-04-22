@@ -41,6 +41,9 @@ class FillupsController extends AppController {
   
 	  $data = $this->paginate('Fillup',$conditions);
 	  $this->set('data', $data);
+
+  	// Only show totals for this year
+  	$conditions[] = 'YEAR(Fillup.created) = YEAR(CURDATE())';
 	  
 	  $totals = $this->Fillup->find('all', array(
       'fields'=> array(

@@ -67,3 +67,10 @@ label {
   font-size: 2em;
   font-weight: normal;
 }
+
+/* Mobile device */
+@media (max-width: 767px) {
+  .extra {
+    display: none;
+  }
+}
