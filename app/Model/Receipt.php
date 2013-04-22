@@ -20,8 +20,14 @@ class Receipt extends AppModel {
       ),
     ),
     'cost' => array(
-      'rule' => array('money', 'left'),
-      'message' => 'In pounds please'
+      'value' => array(
+        'rule' => 'empty',
+        'message' => 'Required',
+      ),
+      'currency' => array(
+        'rule' => array('money', 'left'),
+        'message' => 'In pounds please',
+      ),
     ),
     'litres' => array(
       'numeric' => array(

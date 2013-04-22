@@ -2,7 +2,7 @@
 class ReceiptsController extends AppController {
 
 	var $scaffold;
-	var $helpers = array('Html','Time','Number');
+	var $helpers = array('Html','Time','Number','Paginator');
 
 	var $paginate = array(
 		'limit' => 10,

@@ -1,12 +1,7 @@
 
-<div class="hero-unit">
   <h1>Your Vehicles</h1>
 
   <?php echo $this->Html->link('Add Vehicle', array('controller'=>'vehicles','action'=>'add'), array('class'=>'btn')); ?>
-</div>
-
-
-
 
 <?php if(isset($view)) : ?>
 <table>
