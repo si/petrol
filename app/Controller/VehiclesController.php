@@ -41,7 +41,7 @@ class VehiclesController extends AppController {
     // Lookup data
     if($id!='') {
       $this->data = $this->Vehicle->findById($id);
-      $this->set('max_litres',$this->Vehicle->Fillup->find('first',array('fields'=>array('litres'),'conditions'=>array('Fillup.vehicle_id'=>$id),'order'=>array('litres DESC'))));
+      $this->set('max_litres',$this->Vehicle->Fillup->find('first',array('fields'=>array('litres'),'conditions'=>array('Receipt.vehicle_id'=>$id),'order'=>array('litres DESC'))));
     }
 	}
 

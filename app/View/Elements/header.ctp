@@ -16,7 +16,7 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><?php echo $this->Html->link('New Fill Up', array('controller'=>'fillups','action'=>'add')); ?></li>
+            <li><?php echo $this->Html->link('New Receipt', array('controller'=>'receipts','action'=>'add')); ?></li>
             <li><?php echo $this->Html->link('New Report', array('controller'=>'reports','action'=>'add')); ?></li>
             <li class="divider"></li>
             <li><?php echo $this->Html->link('Profile', array('controller'=>'users','action'=>'view',$this->Session->read('Auth.User.id'))); ?></li>
@@ -34,7 +34,7 @@
             <li><?php echo $this->Html->link('Sign In', array('controller'=>'users','action'=>'login')); ?></li>
             <li><?php echo $this->Html->link('Register', array('controller'=>'users','action'=>'add')); ?></li>
             <?php else: ?>
-            <li><?php echo $this->Html->link('Fill Ups', array('controller'=>'fillups','action'=>'index')); ?></li>
+            <li><?php echo $this->Html->link('Receipts', array('controller'=>'receipts','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Reports', array('controller'=>'reports','action'=>'index')); ?></li>
             <?php endif; ?>

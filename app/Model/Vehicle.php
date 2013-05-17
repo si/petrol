@@ -8,8 +8,8 @@ class Vehicle extends AppModel {
 	);
 
 	var $hasMany = array(
-	  'Fillup' => array(
-      'order' => 'Fillup.created DESC',
+	  'Receipt' => array(
+      'order' => 'Receipt.created DESC',
       'limit' => '10',
     )
   );  

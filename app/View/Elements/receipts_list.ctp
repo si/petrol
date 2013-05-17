@@ -7,7 +7,7 @@
     
     foreach($data as $item) : 
     
-      if(isset($item['Fillup'])) $item = $item['Fillup'];  
+      if(isset($item['Receipt'])) $item = $item['Receipt'];  
       
     ?>
     <li>
@@ -15,7 +15,7 @@
         <?php echo $this->Html->link(
           '&pound;' . $this->Number->precision($item['cost'], 2), 
           array(
-            'controller'=>'fillups',
+            'controller'=>'Receipts',
             'action'=>'edit',
             $item['id']
           ),
@@ -66,7 +66,7 @@
             <?php echo $this->Html->link(
               'View', 
               array(
-                'controller'=>'fillups',
+                'controller'=>'Receipts',
                 'action'=>'view',
                 $item['id']
               )
@@ -76,7 +76,7 @@
             <?php echo $this->Html->link(
               'Edit', 
               array(
-                'controller'=>'fillups',
+                'controller'=>'Receipts',
                 'action'=>'edit',
                 $item['id']
               )
@@ -86,7 +86,7 @@
             <?php echo $this->Html->link(
               'Delete', 
               array(
-                'controller'=>'fillups',
+                'controller'=>'Receipts',
                 'action'=>'delete',
                 $item['id']
               )

@@ -1,8 +1,8 @@
 <div class="row">
 <?php
-echo $this->Form->create('Fillup');
+echo $this->Form->create('Receipt');
 
-  if(isset($this->data['Fillup']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
+  if(isset($this->data['Receipt']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
 <fieldset class="span4">
   <legend>Garage</legend>
@@ -57,7 +57,7 @@ echo $this->Form->create('Fillup');
 			?>
 			<datalist id="location_history">
 			<?php foreach($locations as $location) : ?>
-			 <option value="<?php echo $location['Fillup']['location']; ?>">
+			 <option value="<?php echo $location['Receipt']['location']; ?>">
   		<?php endforeach; ?>
 			 </datalist>
   		<?php
@@ -96,8 +96,8 @@ echo $this->Form->create('Fillup');
 				'maxlength' => 7,
 				'div'=>'span6',
 				'class'=>'input-medium',
-				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Fillup']['odometer'] : ''),
-				'min' => (($latest!=null) ? $latest['Fillup']['odometer'] : ''),
+				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
+				'min' => (($latest!=null) ? $latest['Receipt']['odometer'] : ''),
 			));
 		?>	
  		<?php
@@ -140,7 +140,7 @@ echo $this->Form->create('Fillup');
 /*
     <script>
     $(function() {
-    	var select = $( "#FillupIndicator" );
+    	var select = $( "#ReceiptIndicator" );
     	var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
     		min: 0,
     		max: 8,
@@ -150,7 +150,7 @@ echo $this->Form->create('Fillup');
     			select[ 0 ].selectedIndex = ui.value - 1;
     		}
     	});
-    	$( "#FillupIndicator" ).change(function() {
+    	$( "#ReceiptIndicator" ).change(function() {
     		slider.slider( "value", this.selectedIndex + 1 );
     	});
     });
@@ -168,7 +168,7 @@ echo $this->Form->create('Fillup');
 				'div' => 'hidden',
 			));
 		?>	
-		<a href="#FillupCreatedMonth" class="toggle-fields">Set date/time</a>
+		<a href="#ReceiptCreatedMonth" class="toggle-fields">Set date/time</a>
 </fieldset>
 
 <?php

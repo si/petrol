@@ -1,9 +1,9 @@
 <?php
-class Fillup extends AppModel {    
-	var $name = 'Fillup';
-	var $order = array('Fillup.created DESC');
+class Receipt extends AppModel {    
+	var $name = 'Receipt';
+	var $order = array('Receipt.created DESC');
 	var $virtualFields = array(
-		'price_per_litre' => "(Fillup.cost / Fillup.litres)"
+		'price_per_litre' => "(Receipt.cost / Receipt.litres)"
 	);
 	
 	var $belongsTo = array(
@@ -20,8 +20,14 @@ class Fillup extends AppModel {
       ),
     ),
     'cost' => array(
-      'rule' => array('money', 'left'),
-      'message' => 'In pounds please'
+      'value' => array(
+        'rule' => 'empty',
+        'message' => 'Required',
+      ),
+      'currency' => array(
+        'rule' => array('money', 'left'),
+        'message' => 'In pounds please',
+      ),
     ),
     'litres' => array(
       'numeric' => array(
