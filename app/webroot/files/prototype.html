@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Monitor your fuel consumption with Petrol</title>
+	<link href="/img/petrol-touch-icon.png" type="image/x-icon" rel="icon" />
+	<link href="/img/petrol-touch-icon.png" type="image/x-icon" rel="shortcut icon" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/petrol-touch-icon.png" />
+	
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Fugaz+One" />	
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700|Text+Me+One|Strait" />
+
+  <style>
+  body {
+    font-family: 'Helvetica-Light',Arial, sans-serif;
+    font-size: 12px;
+    background: #000 url(../img/backgrounds/civic_dashboard_hq.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    color: #FFF;
+  }
+  h1 {
+    font-weight: normal;
+    font-size: 32px;
+    margin: 0;
+  }
+  h1, h2, h3 {
+    font-family: 'Oleo Script Swash Caps', cursive;
+  }
+  nav {
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:-webkit-linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  nav li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav li a {
+    display: block;
+    color: #CCC;
+    font-size: 0.9em;
+    padding: 2em;
+  }
+  nav li a:hover {
+    background: rgba(255,255,255,0.1);
+    position: relative;
+    top:-1px;
+  }
+  .shortcut {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    display: block;
+    background: rgba(255,128,0,0.8);
+    border-radius: 50px;
+    text-align: center;
+    line-height: 36px;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    color:#FFF;
+  }
+  .shortcut:hover {
+    background: rgba(255,128,0,0.8);
+    -webkit-transform: scale(1.1);
+  }
+
+  .chart {
+    background: rgba(255,255,255,0.15);
+    color: #FFF;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    padding: 5em 0;
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .statistics {
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+  }
+  .statistics .figures {
+    font-size: 2em;
+  }
+  .statistics th {
+    font-size: 1em;
+    color: #666;
+    font-family: 'Oleo Script Swash Caps', cursive;
+  }
+  
+  </style>
+</head>
+<body>
+
+  <h1>Petrol</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Receipts</a></li>
+      <li><a href="#">Petrol Finder</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+  </nav>
+
+  <a href="#" class="shortcut" title="Quickly add a receipt">+</a>
+
+  <table class="statistics">
+    <tbody>
+    <tr class="figures">
+      <td>&pound;4,877.61</td>
+      <td>126</td>
+      <td>31</td>
+      <td>6p</td>
+    </tr>
+    <tr>
+      <th>total spent</th>
+      <th>receipts</th>
+      <th>stations</th>
+      <th>per mile</th>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="chart">
+    <q>Can we get a chart around here?</q>
+  </div>
+
+
+
+  
+
+
+</body>
+</html>
