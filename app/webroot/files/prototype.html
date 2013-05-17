@@ -21,8 +21,11 @@
   }
   h1 {
     font-weight: normal;
-    font-size: 32px;
+    font-size: 2em;
     margin: 0;
+  }
+  h2 {
+    font-size: 3em;
   }
   h1, h2, h3 {
     font-family: 'Oleo Script Swash Caps', cursive;
@@ -51,6 +54,8 @@
     display: block;
     color: #CCC;
     font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
     padding: 2em;
   }
   nav li a:hover {
@@ -78,12 +83,35 @@
     background: rgba(255,128,0,0.8);
     -webkit-transform: scale(1.1);
   }
+  
+  form {
+    margin: 1em 0;
+  }
+  input {
+    border: none;
+    background: rgba(255,255,255,0.9);
+    padding: 1em 0.5em;
+  }
+  button {
+    border: none;
+    background: rgba(0,0,0,0.9);
+    color: #FFF;
+    padding: 1em 1em;
+  }
+
+
+  .login input {
+    width: 30%;
+  }
+  .login button {
+    width: 30%;
+  }
 
   .chart {
     background: rgba(255,255,255,0.15);
     color: #FFF;
     font-family: 'Oleo Script Swash Caps', cursive;
-    padding: 5em 0;
+    padding: 8em 0;
     font-size: 1.4em;
     text-align: center;
   }
@@ -112,12 +140,20 @@
     <ul>
       <li><a href="#">Dashboard</a></li>
       <li><a href="#">Receipts</a></li>
-      <li><a href="#">Petrol Finder</a></li>
+      <li><a href="#">Stations</a></li>
       <li><a href="#">Profile</a></li>
     </ul>
   </nav>
 
   <a href="#" class="shortcut" title="Quickly add a receipt">+</a>
+
+  <form class="login">
+    <input type="email" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button type="submit">Login</button>
+  </form>
+
+  <h2>Welcome back, Si</h2>
 
   <table class="statistics">
     <tbody>
