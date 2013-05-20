@@ -94,7 +94,7 @@ $(document).ready(function() {
         $("#accuracy").innerHTML = accuracy;
 
         // Let's get some local businesses.
-        local_search = 'http://dev.petrolapp.me/Receipts/local_search/' + latitude + '/' + longitude;
+        local_search = 'http://dev.petrolapp.me/receipts/local_search/' + latitude + '/' + longitude;
                 
 				$.ajax({
 				  url: local_search,
@@ -129,7 +129,6 @@ $(document).ready(function() {
 
     }
     
-/*
     $('#ReceiptLocationLocal').on('change',function(e){
       if($(this).val()=='-') {
 				// Hide Local Location select, change name attribute and display free text again
@@ -137,7 +136,6 @@ $(document).ready(function() {
         $('#ReceiptLocation').attr('name','data[Receipt][location]').show();
       }
     });
-*/
     
     $('#status').hide();
     
