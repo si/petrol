@@ -13,6 +13,10 @@ class Receipt extends AppModel {
 
   var $validation = array(
     'odometer' => array(
+      'required' => array(
+        'rule' => 'required',
+        'message' => 'Required'
+      ),
       'numeric' => array(
         'rule' => 'numeric',
         'required' => true,
