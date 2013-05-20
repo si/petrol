@@ -165,10 +165,8 @@ echo $this->Form->create('Receipt');
 			echo $this->Form->input('created', array(
 				'label' => 'When',
 				'class' => 'input-mini',
-				'div' => 'hidden',
 			));
 		?>	
-		<a href="#ReceiptCreatedMonth" class="toggle-fields">Set date/time</a>
 </fieldset>
 
 <?php
