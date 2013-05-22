@@ -38,7 +38,9 @@
 	 </tr>
 	</table>
 
-	<textarea><?php var_dump($receipt); ?></textarea>
 
-<?php echo $this->Paginator->prev(__('Previous')); ?>
+	<?php echo $this->Html->link('Edit',array('action'=>'edit',$receipt['Receipt']['id']),array('class'=>'btn')); ?>
+	<?php echo $this->Html->link('Delete',array('action'=>'delete',$receipt['Receipt']['id']),array('class'=>'btn')); ?>
+	<?php echo $this->Html->link('Back to Wallet',array('action'=>'index'),array('class'=>'btn')); ?>
+	
 </div>
