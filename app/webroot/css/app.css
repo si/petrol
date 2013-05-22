@@ -68,6 +68,29 @@ label {
   font-weight: normal;
 }
 
+ol.dates {
+	list-style: none;
+	border-left: 1px solid #AAA;
+	margin: 1em 0 2em 3em;
+}
+ol.dates li.date {
+	overflow: hidden;
+	padding: 0 0 1em;
+}
+ol.dates .date a {
+	display: block;
+	background: rgba(255,255,255,0.8);
+	color: #000;
+	text-align: center;
+	width: 5em;
+	height: 5em;
+	padding: 1.5em;
+	border-radius: 7em;
+}
+ol.dates .date a:hover {
+	background: #FFF;
+}
+
 /* Mobile device */
 @media (max-width: 767px) {
   .extra {

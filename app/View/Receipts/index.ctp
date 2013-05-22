@@ -47,16 +47,8 @@ if(count($vehicles)>1) :
 <?php
 endif;
 
-// Table view  
-if(isset($view) && $view=='list ') : 
+echo $this->element('receipts_list', array('data'=>$data));
 
-  echo $this->element('receipts_list', array('data'=>$data));
-
-// Simple (list) view
-else: 
-  echo $this->element('receipts_table', array('data'=>$data));
-
-endif; 
 ?>
 
 <p><?php echo 'Page ' . $this->Paginator->counter(); ?></p>
