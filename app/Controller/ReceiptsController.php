@@ -3,7 +3,7 @@ class ReceiptsController extends AppController {
 
 	var $scaffold;
 	var $helpers = array('Html','Time','Number','Paginator');
-
+	
 	var $paginate = array(
 		'limit' => 10,
 		'order' => array(
@@ -86,18 +86,24 @@ class ReceiptsController extends AppController {
         if($this->Receipt->validates()) {
 
 	        if($this->Receipt->save($this->data)) {
-            
-            $this->set('data',$this->data);
+	        
+	        
+            $data = $this->Receipt->findById($this->Receipt->id);
             
             // Send email
-            $this->Email->to      = 'Simon Jobling <simon.jobling@gmail.com>';
-            $this->Email->subject = '[Petrol] Entry saved';
-            $this->Email->template = 'Receipt';
-            $this->Email->format = 'html';
-            $this->Email->send();
+						$Email = new CakeEmail();
+						$Email->template('receipt');
+						$Email->from(array('receipts@petrolapp.me' => 'Petrol app'));
+						$Email->to($this->Session->read('Auth.User.email'));
+						$Email->subject('[Petrol] Your Receipt');
+						$Email->emailFormat('html');
+						$Email->helpers(array('Html', 'Number', 'Time'));
+						$Email->viewVars(array('data'=>$data));
+						$Email->send();
+
 	        
-            $this->Session->setFlash("Fill up saved!");
-            $this->redirect('/Receipts');
+            $this->Session->setFlash("Receipt saved!");
+            $this->redirect('/receipts');
 	        }
 
 	      }
@@ -123,7 +129,7 @@ class ReceiptsController extends AppController {
     if(!empty($this->data)) {
       if($this->Receipt->save($this->data)) {
           $this->Session->setFlash("Receipt saved!");
-          $this->redirect('/Receipts');
+          $this->redirect('/receipts');
       }
     }
     // Lookup data
