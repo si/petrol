@@ -87,9 +87,9 @@
             <br>
 
             <!-- ### BEGIN CONTENT ### -->
+            <h1 style="font-family:Georgia,Times,serif;font-style:italic;text-align:center;">Petrol</h1>
 
-
-						<h2 style="text-align:center;font-family:Georgia,Times,serif;">~ Your Petrol Receipt ~</h2>
+						<h2 style="text-align:center;font-family:Georgia,Times,serif;">~ Receipt #<?php echo $data['Receipt']['id']; ?> ~</h2>
 						<table width="100%">
 						  <tr>
 						    <th  align="center" width="25%">Date</th>
@@ -120,18 +120,28 @@
 						<table width="100%">
 						  <tr>
 						    <th align="center" width="50%">Vehicle</th>
-						    <th  align="center" width="50%">Odometer</th>
+						    <th  align="center" width="25%">Odometer</th>
+						    <th  align="center" width="25%">Indicator</th>
 						  </tr>
 						  <tr>
 						    <td align="center"><?php echo $data['Vehicle']['name']; ?></td>
 						    <td align="center"><?php echo ($data['Receipt']['odometer']); ?></td>
+						    <td align="left" style="background:#EEE;">
+						    <?php if(($data['Receipt']['indicator'])>0) : ?>
+						    <table width="<?php echo ($data['Receipt']['indicator'])*100; ?>%" style="background:#FC0;">
+						    	<tr><td align="center"><?php echo ($data['Receipt']['indicator'])*100; ?>%</td></tr>
+						    </table>
+						    <?php else : ?>
+						    <?php echo '<strong style="color:#FC0;">Empty</strong>'; ?>
+						    <?php endif; ?>
+						    </td>
 						  </tr>
 						  
 						</table>
 
 						<!-- Callout Panel -->
 						<p class="callout">
-							See full details of <a href="http://dev.petrolapp.me/receipts/<?php echo $data['Receipt']['id']; ?>">this transaction online &raquo;</a>
+							See full details of <a href="http://dev.petrolapp.me/receipts/view/<?php echo $data['Receipt']['id']; ?>">this transaction online &raquo;</a>
 						</p><!-- /Callout Panel -->					
 												
         </td>
