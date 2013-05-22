@@ -31,8 +31,8 @@
 		<td><?php echo $this->Html->link($Receipt['Vehicle']['name'], array('controller'=>'vehicles','action'=>'view',$Receipt['Receipt']['vehicle_id'])); ?> </td> 
 		<td><?php echo $Receipt['Receipt']['odometer']; ?> </td> 
 		<td>
-		  <?php echo $this->Html->link('Edit', array('controller'=>'Receipts','action'=>'edit',$Receipt['Receipt']['id']),array('class'=>'btn btn-mini')); ?>
-		  <?php echo $this->Html->link('Delete', array('controller'=>'Receipts','action'=>'delete',$Receipt['Receipt']['id']),array('class'=>'btn btn-mini'),'You definitely want to delete this?'); ?>
+		  <?php echo $this->Html->link('Edit', array('controller'=>'receipts','action'=>'edit',$Receipt['Receipt']['id']),array('class'=>'btn btn-mini')); ?>
+		  <?php echo $this->Html->link('Delete', array('controller'=>'receipts','action'=>'delete',$Receipt['Receipt']['id']),array('class'=>'btn btn-mini')); ?>
 		</td>
 	</tr> 
 	<?php endforeach; ?> 
