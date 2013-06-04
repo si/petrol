@@ -95,7 +95,7 @@ class ReceiptsController extends AppController {
 						$Email->template('receipt');
 						$Email->from(array('receipts@petrolapp.me' => 'Petrol app'));
 						$Email->to($this->Session->read('Auth.User.email'));
-						$Email->subject('[Petrol] Your Receipt');
+						$Email->subject('[Petrol] Your Receipt #<?php echo $data['Receipt']['id']; ?>');
 						$Email->emailFormat('html');
 						$Email->helpers(array('Html', 'Number', 'Time'));
 						$Email->viewVars(array('data'=>$data));
