@@ -3,8 +3,7 @@ echo $this->Form->create('Receipt');
 
   if(isset($this->data['Receipt']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
-<div class="row row-fluid">
-<fieldset class="span6">
+<fieldset>
   <legend>Garage</legend>
   <div class="row-fluid">
 		<?php
@@ -73,7 +72,7 @@ echo $this->Form->create('Receipt');
 		</div>
 				
 </fieldset>
-<fieldset class="span6">
+<fieldset>
   <legend>Vehicle</legend>
 		<?php
 		if(count($vehicles)>1) :
@@ -157,11 +156,7 @@ echo $this->Form->create('Receipt');
     </script>
 */
 		?>	
-</fieldset>
-</div>
 
-<fieldset class="span6">
-  <legend>Optional</legend>
 		<?php
 			echo $this->Form->input('created', array(
 				'label' => 'When',
@@ -177,12 +172,11 @@ echo $this->Form->create('Receipt');
 				'value' => $this->Session->read('Auth.User.id'),
 			));
 ?>
-<div class="span6">
-	<?php echo $this->Form->button('Save',array('class'=>'btn')); ?>
-	<?php echo $this->Html->link('Cancel',array('action'=>'index'),array('class'=>'btn')); ?>
 </div>
 
-</div>
+
+	<?php echo $this->Form->button('Save',array('class'=>'btn btn-large')); ?>
+	<?php echo $this->Html->link('Cancel',array('action'=>'index'),array('class'=>'btn')); ?>
 
 <?
 	echo $this->Form->end();
