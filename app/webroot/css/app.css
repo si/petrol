@@ -91,6 +91,14 @@ ol.dates .date a:hover {
 	background: #FFF;
 }
 
+
+form {
+  background: #FFF;
+  background: rgba(255,255,255,0.9);
+  padding: 1em;
+}
+
+
 /* Mobile device */
 @media (max-width: 767px) {
   .extra {
