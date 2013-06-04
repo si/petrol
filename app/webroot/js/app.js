@@ -86,12 +86,15 @@ $(document).ready(function() {
     }
     
     function updateDisplay() {
+    
+/*
         var gmapdata = '<img src="http://maps.google.com/maps/api/staticmap?center=' + latitude + ',' + longitude + '&zoom=16&size=400x300&sensor=true" />';
                 
         $("#placeholder").innerHTML = gmapdata;
         $("#latitude").innerHTML = latitude;
         $("#longitude").innerHTML = longitude;
         $("#accuracy").innerHTML = accuracy;
+*/
 
         // Let's get some local businesses.
         local_search = 'http://dev.petrolapp.me/receipts/local_search/' + latitude + '/' + longitude;
@@ -118,6 +121,16 @@ $(document).ready(function() {
 					  select = $('<select name="data[Receipt][location]" id="ReceiptLocationLocal">', {
 				    	'class': 'local-places',
 				    }).prepend(items.join(''));
+				    				    
+				    $(document).on("change", "#ReceiptLocationLocal", function(){
+              console.log($('#ReceiptLocationLocal').val());
+              if($(this).val()=='-') {
+        				// Hide Local Location select, change name attribute and display free text again
+                $(this).attr('name','data[Receipt][location_disabled]').hide();
+                $('#ReceiptLocation').attr('name','data[Receipt][location]').show();
+              }
+            });
+
 				    // Hide free text Location, change name attribute and place SELECT in place
 				    $('#ReceiptLocation').attr('name','data[Receipt][location_disabled]').hide().after(select);
 				  },
@@ -129,15 +142,8 @@ $(document).ready(function() {
 
     }
     
-    $('#ReceiptLocationLocal').on('change',function(e){
-      if($(this).val()=='-') {
-				// Hide Local Location select, change name attribute and display free text again
-        $(this).attr('name','data[Receipt][location_disabled]').hide();
-        $('#ReceiptLocation').attr('name','data[Receipt][location]').show();
-      }
-    });
     
-    $('#status').hide();
+//    $('#status').hide();
     
     function error_handler(error) {
         var locationError = '';

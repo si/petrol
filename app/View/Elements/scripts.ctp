@@ -1,4 +1,4 @@
-    <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
