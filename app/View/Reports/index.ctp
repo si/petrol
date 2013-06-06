@@ -1,14 +1,12 @@
 <!-- File: reports/index.ctp -->
-<div class="hero-unit">
   <h1>Bad Driving</h1>
   <h2><?php echo count($reports); ?> reports of bad-driving so far</h2>
   <?php 
   echo $this->Html->link('Report Another',array('controller' => 'reports', 'action' => 'add'), array('class'=>'btn btn-primary btn-large'));
   ?>
-</div>
 
 
-<table>
+<table class="table">
 	<tr>
 		<th>Reg Plate</th>
 		<th>Location</th>
