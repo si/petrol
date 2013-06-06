@@ -1,4 +1,5 @@
-<!-- File: reports/index.ctp -->
+<?php echo $this->Html->script('http://maps.google.com/maps/api/js?sensor=true'); ?>
+
   <h1>Bad Driving</h1>
   <h2><?php echo count($reports); ?> reports of bad-driving so far</h2>
   <?php 
@@ -48,19 +49,29 @@
 
 </table>
 
-<?php
+<?php 
+$map_options = array(
+  'id' => 'map_canvas',
+  'width' => '800px',
+  'height' => '300px',
+//  'zoom' => 7,
+//  'type' => 'HYBRID',
+  'localize' => true,
 /*
-  Disabled Google Maps as using v2 API (now deprecated)
-  
-  // initialization of $my_locations array to show in map - you can do this in your controller.
-  echo $this->Map->displaymap($my_locations,500,500); 
-?>
-<script type="text/javascript">onLoad();</script> 
-<?php
-
+  'latitude' => 40.69847032728747,
+  'longitude' => -1.9514422416687,
 */
+  'address' => 'NN4 7TS',
+  'marker' => true,
+  'markerTitle' => 'This is my position',
+//  'markerIcon' => 'http://google-maps-icons.googlecode.com/files/home.png',
+//  'markerShadow' => 'http://google-maps-icons.googlecode.com/files/shadow.png',
+//  'infoWindow' => true,
+//  'windowText' => 'My Position'
+);
+echo $this->GoogleMap->map($map_options); ?>
 
-?>
+<?php // echo $this->GoogleMap->addMarker("map_canvas", 1, "1 Infinite Loop, Cupertino, California"); ?>
 
 <?php 
 echo $this->Html->link('Add Report',array('controller' => 'reports', 'action' => 'add'), array('class'=>'btn btn-primary btn-large'));

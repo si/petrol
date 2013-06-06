@@ -3,7 +3,8 @@ class ReportsController extends AppController {
 
   var $name = 'Reports';
   
-  var $helpers = array('Map');
+//  var $helpers = array('Map');
+  public $helpers = array('GoogleMap'); 
 
 	function beforeRender() {
 	  parent::beforeRender();
