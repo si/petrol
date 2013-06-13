@@ -18,14 +18,16 @@
 
 	<?php 
 
-  $my_locations=array();
+  $map_locations=array();
 	
 	
 	foreach ($reports as $report): 
-	
-    $my_locations[] = array('address' => $report['Report']['location'], 'title' => $report['Report']['reg_plate']);
-	
-	 
+	   // 1, "1 Infinite Loop, Cupertino, California"
+    $map_locations[] = array(
+      'id' => $report['Report']['id'],
+      'address' => $report['Report']['location'], 
+      'registration' => $report['Report']['reg_plate']
+    );
 	?>
 	<tr>
 		<td>
@@ -52,9 +54,9 @@
 <?php 
 $map_options = array(
   'id' => 'map_canvas',
-  'width' => '800px',
+  'width' => '100%',
   'height' => '300px',
-//  'zoom' => 7,
+  'zoom' => 7,
 //  'type' => 'HYBRID',
   'localize' => true,
 /*
@@ -69,11 +71,15 @@ $map_options = array(
 //  'infoWindow' => true,
 //  'windowText' => 'My Position'
 );
-echo $this->GoogleMap->map($map_options); ?>
+echo $this->GoogleMap->map($map_options); 
 
-<?php // echo $this->GoogleMap->addMarker("map_canvas", 1, "1 Infinite Loop, Cupertino, California"); ?>
+var_dump($map_locations);
+$marker = $map_locations[count($map_locations)-2];
 
-<?php 
+//foreach($map_locations as $index=>$marker) {
+  echo $this->GoogleMap->addMarker("map_canvas", $marker['id'], $marker['address']);
+//}
+
 echo $this->Html->link('Add Report',array('controller' => 'reports', 'action' => 'add'), array('class'=>'btn btn-primary btn-large'));
 ?>
 
