@@ -6,7 +6,9 @@
 	<link href="/img/petrol-touch-icon.png" type="image/x-icon" rel="shortcut icon" />
 	<link rel="apple-touch-icon" sizes="114x114" href="/img/petrol-touch-icon.png" />
 	
-	<?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Fugaz+One'); ?>
+	<?php // echo $this->Html->css('http://fonts.googleapis.com/css?family=Fugaz+One'); ?>
+	<?php echo $this->Html->css('http://fast.fonts.com/cssapi/c9d297d8-eddb-4a05-b33c-d30b84b12285.css'); ?>
+
 	<?php
 	$css = array('app','bootstrap','bootstrap-responsive','jquery-ui-1.8.18.custom');
 	$css = array(
