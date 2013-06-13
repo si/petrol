@@ -87,7 +87,7 @@ echo $this->Form->create('Receipt');
 			));		  
 		endif;
 		?>	
-    <div class="vehicle row-fluid">
+    <div class="vehicle">
 		<?php
 			echo $this->Form->input('odometer', array(
 				'label' => 'Current Mileage',
@@ -96,7 +96,7 @@ echo $this->Form->create('Receipt');
 				'div'=>'span6',
 				'class'=>'input-medium',
 				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
-				'min' => (($latest!=null) ? $latest['Receipt']['odometer'] : ''),
+				'min' => (($latest!=null && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
 			));
 		?>	
  		<?php
