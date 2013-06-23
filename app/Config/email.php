@@ -51,12 +51,12 @@ class EmailConfig {
 
 	public $smtp = array(
 		'transport' => 'Smtp',
-		'from' => array('site@localhost' => 'My Site'),
-		'host' => 'localhost',
-		'port' => 25,
+		'from' => array('receipts@petrolapp.me' => 'Petrol app'),
+		'host' => 'smtp.mandrillapp.com',
+		'port' => 587,
 		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
+		'username' => 'simon.jobling@gmail.com',
+		'password' => 'aHSvp_wGxGKKAKaojosu-w',
 		'client' => null,
 		'log' => false
 		//'charset' => 'utf-8',

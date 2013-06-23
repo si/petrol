@@ -91,11 +91,11 @@ class ReceiptsController extends AppController {
             $data = $this->Receipt->findById($this->Receipt->id);
             
             // Send email
-						$Email = new CakeEmail();
+						$Email = new CakeEmail('smtp');
 						$Email->template('receipt');
 						$Email->from(array('receipts@petrolapp.me' => 'Petrol app'));
 						$Email->to($this->Session->read('Auth.User.email'));
-						$Email->subject('[Petrol] Your Receipt #<?php echo $data['Receipt']['id']; ?>');
+						$Email->subject('[Petrol] Your Receipt #' . $data['Receipt']['id']);
 						$Email->emailFormat('html');
 						$Email->helpers(array('Html', 'Number', 'Time'));
 						$Email->viewVars(array('data'=>$data));
