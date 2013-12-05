@@ -1,5 +1,5 @@
 body {
-  background: #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
+  background: fixed #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
   background-size: cover;
   color: #FFF;
   font-family: 'Text Me One', Helvetica, Arial, sans-serif; 
