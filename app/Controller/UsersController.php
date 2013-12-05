@@ -2,8 +2,6 @@
 // app/Controller/UsersController.php
 class UsersController extends AppController {
 
-    var $scaffold;
-
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'logout');
