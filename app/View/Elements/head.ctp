@@ -7,14 +7,16 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="/img/petrol-touch-icon.png" />
 	
 	<?php // echo $this->Html->css('http://fonts.googleapis.com/css?family=Fugaz+One'); ?>
-	<?php echo $this->Html->css('http://fast.fonts.com/cssapi/c9d297d8-eddb-4a05-b33c-d30b84b12285.css'); ?>
+	<?php // echo $this->Html->css('http://fast.fonts.com/cssapi/c9d297d8-eddb-4a05-b33c-d30b84b12285.css'); ?>
 
 	<?php
 	$css = array('app','bootstrap','bootstrap-responsive','jquery-ui-1.8.18.custom');
 	$css = array(
+/*
   	'http://twitter.github.com/bootstrap/assets/css/bootstrap.css',
   	'http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css',
   	'http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.css',
+*/
   	'app',
 	);
 	
