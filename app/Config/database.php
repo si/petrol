@@ -73,7 +73,7 @@ class DATABASE_CONFIG {
 	public $default  = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
+		'host' => '127.0.0.1',
 		'login' => 'petrol_man',
 		'password' => 'Unl34d3d',
 		'database' => 'petrol_dev',
