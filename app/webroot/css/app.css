@@ -1,115 +1,94 @@
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/app.scss */
 body {
-  background: fixed #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
+  background: black url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
   background-size: cover;
-  color: #FFF;
-  font-family: 'Text Me One', Helvetica, Arial, sans-serif; 
-  padding: 0 18% 0 0;
+  color: #FFF !important;
+  font-family: 'Text Me One', Helvetica, Arial, sans-serif;
+  padding: 10em 18% 2em 1em;
 }
 
-
-
-
-/* 
-
-Modules 
-=======
-*/
-footer {
-  color: #999;
-  padding: 3em 1em;
-  font-size: 0.85em;
-}
-footer a {
-  color: #666;
+/* line 11, ../sass/app.scss */
+nav {
+  background: rgba(0, 0, 0, 0.8);
 }
 
+/* line 15, ../sass/app.scss */
 h1, h2, h3 {
-  font-weight: normal;
-  font-family: 'HelveticaNeue-Light', "Helvetica Neue Light", "Helvetica Neue",Arial, sans-serif;
+  font-family: 'Oleo Script Swash Caps', cursive;
 }
 
-label {
-  font-size: 0.8em;
-  color: #666;
-  text-transform: uppercase;
-}
-.navbar-inner {
-  background: rgba(0,0,0,0.5);
-  border-bottom: 0;
+/* line 19, ../sass/app.scss */
+h4, strong {
+  font-family: 'Strait', Helvetica, Arial, sans-serif;
 }
 
-.navbar .nav > li > a {
-  color: #CCC;
-  text-shadow: 0 1px 0 #000;
-}
-.navbar .nav > .active > a {
-  background: #111;
-  color: #FFF;
-}
-.table th, .table td {
-  border-top: 0;
-}
-
-.table-striped tbody > tr:nth-child(odd) > td {
-  background: rgba(0,0,0,0.2);
-}
-.statistics {
-  width: 100%;
-}
-.statistics td, .statistics th {
-  text-align: center;
-}
-.statistics th {
-  font-size: 0.85em;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #777;
-}
-.statistics td {
-  font-size: 2em;
-  font-weight: normal;
-}
-
-ol.dates {
-	list-style: none;
-	border-left: 1px solid #AAA;
-	margin: 1em 0 2em 3em;
-}
-ol.dates li.date {
-	overflow: hidden;
-	padding: 0 0 1em;
-}
-ol.dates .date a {
-	display: block;
-	background: rgba(255,255,255,0.8);
-	color: #000;
-	text-align: center;
-	width: 5em;
-	height: 5em;
-	padding: 1.5em;
-	border-radius: 7em;
-}
-ol.dates .date a:hover {
-	background: #FFF;
-}
-
-
-form {
-  background: #FFF;
-  background: rgba(255,255,255,0.9);
-  padding: 1em;
-}
-fieldset {
-  border: rgba(0,0,0,0.1) 2px solid;
-}
+/* line 23, ../sass/app.scss */
 legend {
-  color: rgba(0,0,0,0.1);
-}
-
-
-/* Mobile device */
-@media (max-width: 767px) {
-  .extra {
-    display: none;
-  }
+  color: #888;
+  border-bottom: none;
 }

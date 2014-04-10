@@ -1,0 +1,26 @@
+@import "compass/reset";
+
+body {
+  background: #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
+  background-size: cover;
+  color: #FFF !important;
+  font-family: 'Text Me One', Helvetica, Arial, sans-serif; 
+  padding: 10em 18% 2em 1em;
+}
+
+nav {
+  background: rgba(0,0,0,0.8);
+}
+
+h1, h2, h3 {
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+h4, strong {
+  font-family: 'Strait', Helvetica, Arial, sans-serif;
+}
+
+legend {
+  color: #888;
+  border-bottom: none;
+}
