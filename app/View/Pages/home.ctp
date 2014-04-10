@@ -1,7 +1,7 @@
 <div class="hero-unit">
   <h1>Ever wondered how much you spend on fuel? You need Petrol</h1>
   <p>Created out of a personal interest for annual outgoings on commuting to work, Petrol is a simple little web app for recording and monitoring the money spent on your petrol.</p>
-  <p><a class="btn btn-primary btn-large" href="/users/add">Sign up</a></p>
+  <a class="btn btn-primary btn-large" href="/login">Sign up</a>
 </div>
 
 <div class="span12">
