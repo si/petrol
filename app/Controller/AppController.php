@@ -8,7 +8,7 @@ class AppController extends Controller {
     'Session',
     'Auth' => array(
       'loginRedirect' => array('controller' => 'receipts', 'action' => 'index'),
-      'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'holding'),
+      'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
     ),
   );
 
