@@ -11,14 +11,14 @@
 
 	<?php
 	$css = array('app','bootstrap','bootstrap-responsive','jquery-ui-1.8.18.custom');
-	$css = array(
 /*
+	$css = array(
   	'http://twitter.github.com/bootstrap/assets/css/bootstrap.css',
   	'http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css',
   	'http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.css',
-*/
   	'app',
 	);
+*/
 	
 	echo $this->Html->css($css);
 //	echo $this->Html->script(array('bootstrap.min','modernizr','jquery-1.7.1.min','jquery-ui-1.8.18.custom.min','app')); 
