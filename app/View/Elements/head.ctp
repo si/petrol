@@ -1,7 +1,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $title_for_layout; ?> – Petrol</title>
+	<title><?php echo $title_for_layout; ?> – Commute</title>
 	<link href="/img/petrol-touch-icon.png" type="image/x-icon" rel="icon" />
 	<link href="/img/petrol-touch-icon.png" type="image/x-icon" rel="shortcut icon" />
 	<link rel="apple-touch-icon" sizes="114x114" href="/img/petrol-touch-icon.png" />

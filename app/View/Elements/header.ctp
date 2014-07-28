@@ -6,7 +6,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="/">Petrol</a>
+        <a class="brand" href="/">Commute</a>
         
         <?php if($this->Session->read('Auth.User.id')!='') : ?>
         <div class="btn-group pull-right">
@@ -29,7 +29,6 @@
         
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="/">Home</a></li>
             <?php if($this->Session->read('Auth.User.id')=='') : ?>
             <li><?php echo $this->Html->link('Sign In', array('controller'=>'users','action'=>'login')); ?></li>
             <li><?php echo $this->Html->link('Register', array('controller'=>'users','action'=>'add')); ?></li>
