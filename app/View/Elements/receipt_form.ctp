@@ -96,7 +96,7 @@ echo $this->Form->create('Receipt');
 				'div'=>'span6',
 				'class'=>'input-medium',
 				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
-				'min' => (($latest!=null && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
+				'min' => (($latest!=null && isset($this->data['Receipt']['id']) && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
 			));
 		?>	
  		<?php
