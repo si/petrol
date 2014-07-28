@@ -7,6 +7,29 @@
     foreach($data as $item) : 
     ?>
     <li class="row">
+
+        <span class="units span2">
+          <i class="icon-shopping-cart icon-white"></i>
+          <?php echo '&pound;'.number_format($item['Receipt']['cost'],2); ?>
+        </span>
+
+        <span class="units span2">
+          <i class="icon-tint  icon-white"></i>
+          <?php echo $item['Receipt']['litres']; ?> litres
+          @ 
+          <?php echo '&pound;'.number_format($item['Receipt']['price_per_litre'],3); ?>
+        </span>
+
+        <span class="location span2">
+          <i class="icon-road icon-white"></i>
+          <?php echo $item['Receipt']['odometer']; ?>
+        </span>  
+
+        <span class="location span3">
+          <i class="icon-map-marker icon-white"></i>
+          <?php echo $item['Receipt']['location']; ?>
+        </span>  
+
       <span class="date span3">
         <?php echo $this->Html->link(
           $this->Time->niceShort($item['Receipt']['created']), 
@@ -21,27 +44,6 @@
         ); ?>
       </span>
 
-      <small>
-
-        <span class="units span3">        
-          <i class="icon-tint  icon-white"></i>
-          <?php echo $item['Receipt']['litres']; ?> litres
-          @ 
-          <?php echo '&pound;'.number_format($item['Receipt']['price_per_litre'],3); ?>
-        </span>
-
-        <span class="units span3">        
-          <i class="icon-tint  icon-white"></i>
-          <?php echo '&pound;'.number_format($item['Receipt']['cost'],2); ?>
-        </span>
-
-        <span class="location span3">
-          <i class="icon-map-marker icon-white"></i>
-          <?php echo $item['Receipt']['location']; ?>
-        </span>  
-
-
-      </small>
 
         <?php
         /*
