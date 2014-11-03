@@ -90,7 +90,7 @@ class ReceiptsController extends AppController {
 	        
             $data = $this->Receipt->findById($this->Receipt->id);
             
-            // Send email
+            /* Send email - disabled until debugged on new server
 						$Email = new CakeEmail('smtp');
 						$Email->template('receipt');
 						$Email->from(array('receipts@petrolapp.me' => 'Petrol app'));
@@ -100,7 +100,7 @@ class ReceiptsController extends AppController {
 						$Email->helpers(array('Html', 'Number', 'Time'));
 						$Email->viewVars(array('data'=>$data));
 						$Email->send();
-
+	    */
 	        
             $this->Session->setFlash("Receipt saved!");
             $this->redirect('/receipts');
