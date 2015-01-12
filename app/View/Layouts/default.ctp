@@ -9,7 +9,7 @@
   <?php echo $this->element('header'); ?>
 
   <div class="container-fluid">
-  
+
     <div class="row-fluid">
       <?php echo $content_for_layout; ?>
 		</div>
