@@ -59,17 +59,6 @@
  */
 class DATABASE_CONFIG {
 
-	public $dreamhost = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'mysql.unstyled.com',
-		'login' => 'jobling',
-		'password' => '67izodroad',
-		'database' => 'petrol_tracker',
-		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
-
 	public $default  = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
