@@ -1,38 +1,33 @@
 <?php
 
-  if(isset($data) && count($data)>0) : 
+  if(isset($data) && count($data)>0) :
   ?>
   <ol class="dates">
-    <?php 
-    foreach($data as $item) : 
+    <?php
+    foreach($data as $item) :
     ?>
     <li class="row">
 
-        <span class="units span2">
+        <span class="units col-md-2">
           <i class="icon-shopping-cart icon-white"></i>
           <?php echo '&pound;'.number_format($item['Receipt']['cost'],2); ?>
         </span>
 
-        <span class="units span2">
+        <span class="units col-md-2">
           <i class="icon-tint  icon-white"></i>
           <?php echo $item['Receipt']['litres']; ?> litres
-          @ 
+          @
           <?php echo '&pound;'.number_format($item['Receipt']['price_per_litre'],3); ?>
         </span>
 
-        <span class="location span2">
-          <i class="icon-road icon-white"></i>
-          <?php echo $item['Receipt']['odometer']; ?>
-        </span>  
-
-        <span class="location span3">
+        <span class="location col-md-3">
           <i class="icon-map-marker icon-white"></i>
           <?php echo $item['Receipt']['location']; ?>
-        </span>  
+        </span>
 
-      <span class="date span3">
+      <span class="date col-md-3">
         <?php echo $this->Html->link(
-          $this->Time->niceShort($item['Receipt']['created']), 
+          $this->Time->niceShort($item['Receipt']['created']),
           array(
             'controller'=>'receipts',
             'action'=>'view',
@@ -45,11 +40,7 @@
       </span>
 
 
-        <?php
-        /*
-        Remove until the Bootstrap JS is fixed
-        
-        <div class="btn-group">
+        <span class="btn-group col-md-2">
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
             Options
             <span class="caret"></span>
@@ -57,38 +48,36 @@
           <ul class="dropdown-menu">
             <li>
             <?php echo $this->Html->link(
-              'View', 
+              'View',
               array(
-                'controller'=>'Receipts',
+                'controller'=>'receipts',
                 'action'=>'view',
-                $item['id']
+                $item['Receipt']['id']
               )
             ); ?>
             </li>
             <li>
             <?php echo $this->Html->link(
-              'Edit', 
+              'Edit',
               array(
-                'controller'=>'Receipts',
+                'controller'=>'receipts',
                 'action'=>'edit',
-                $item['id']
+                $item['Receipt']['id']
               )
             ); ?>
             </li>
             <li>
             <?php echo $this->Html->link(
-              'Delete', 
+              'Delete',
               array(
-                'controller'=>'Receipts',
+                'controller'=>'receipts',
                 'action'=>'delete',
-                $item['id']
+                $item['Receipt']['id']
               )
             ); ?>
             </li>
           </ul>
-        </div>
-        */
-        ?>
+        </span>
 
     </li>
     <?php endforeach; ?>

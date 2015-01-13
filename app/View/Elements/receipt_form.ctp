@@ -1,5 +1,5 @@
 <?php
-echo $this->Form->create('Receipt');
+echo $this->Form->create('Receipt', array('class'=>'navbar-form'));
 
   if(isset($this->data['Receipt']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
@@ -10,26 +10,26 @@ echo $this->Form->create('Receipt');
 			echo $this->Form->input('cost', array(
         'label' => 'Cost',
         'placeholder' => '£',
-        'div' => 'span4',
-        'class' => 'input-mini',
+        'div' => 'input-group col-md-4',
+        'class' => 'form-control',
 			));
-		?>	
+		?>
 		<?php
 			echo $this->Form->input('litres', array(
         'label' => 'Capacity',
         'placeholder' => 'litres',
-        'div' => 'span4',
-        'class' => 'input-mini',
-			));
-		?>	
+        'div' => 'input-group col-md-4',
+        'class' => 'form-control',
+      ));
+		?>
 		<?php
 			echo $this->Form->input('price_per_litre', array(
         'label' => 'Price',
-        'div' => 'span4',
         'placeholder' => '£/litre',
-        'class' => 'input-mini',
-			));
-		?>	
+        'div' => 'input-group col-md-4',
+        'class' => 'form-control',
+      ));
+		?>
     </div>
 
     <div class="row-fluid station">
@@ -37,10 +37,10 @@ echo $this->Form->create('Receipt');
 			echo $this->Form->input('discount', array(
         'label' => 'Discount',
         'placeholder'=> '£',
-        'div' => 'span4',
-        'class' => 'input-mini',
-			));
-		?>	
+        'div' => 'input-group col-md-4',
+        'class' => 'form-control',
+      ));
+		?>
 
 		<?php
 			echo $this->Form->input('location', array(
@@ -48,11 +48,11 @@ echo $this->Form->create('Receipt');
 				'type' => 'text',
 				'placeholder' => 'eg. BP Corporation Street, Rugby',
 				'list'=>'location_history',
-        'div' => 'span8',
-        'class' => 'input-large',
-			));
-			
-			if(isset($locations) && count($locations)>0) : 
+        'div' => 'input-group col-md-8',
+        'class' => 'form-control',
+      ));
+
+			if(isset($locations) && count($locations)>0) :
 			?>
 			<datalist id="location_history">
 			<?php foreach($locations as $location) : ?>
@@ -61,16 +61,16 @@ echo $this->Form->create('Receipt');
 			 </datalist>
   		<?php
   		endif;
-  		
+
   		/***
   		Try integrating Chris Coyier's Relevant Dropdown polyfill (https://github.com/chriscoyier/Relevant-Dropdowns)
   		***/
-		?>	
+		?>
 			<p id="status"></p>
 			<p><span id="latitude"></span> <span id="longitude"></span> <span id="accuracy"></span></p>
   		<div id="placeholder" style="margin: 20px 0px 10px; width: 100%; height: 100%; position: relative;"><i>Note: May take a few seconds to get the location.</i></div>
 		</div>
-				
+
 </fieldset>
 <fieldset>
   <legend>Vehicle</legend>
@@ -79,26 +79,28 @@ echo $this->Form->create('Receipt');
 			echo $this->Form->input('vehicle_id', array(
 				'label' => 'Vehicle',
 				'options' => $vehicles,
-			));
-		else: 
+        'div'=>'input-group col-md-12',
+        'class' => 'form-control',
+      ));
+		else:
 			echo $this->Form->input('vehicle_id', array(
         'type' => 'hidden',
 				'value' => current($vehicles),
-			));		  
+			));
 		endif;
-		?>	
+		?>
     <div class="vehicle">
 		<?php
 			echo $this->Form->input('odometer', array(
 				'label' => 'Current Mileage',
-				'size' => 6,
-				'maxlength' => 7,
-				'div'=>'span6',
-				'class'=>'input-medium',
-				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
-				'min' => (($latest!=null && isset($this->data['Receipt']['id']) && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
+        'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
+        'size' => 6,
+        'min' => (($latest!=null && isset($this->data['Receipt']['id']) && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
+        'maxlength' => 7,
+				'div'=>'input-group col-md-6',
+        'class' => 'form-control',
 			));
-		?>	
+		?>
  		<?php
 			echo $this->Form->input('indicator', array(
 				'label' => 'Tank Level',
@@ -132,9 +134,9 @@ echo $this->Form->create('Receipt');
 				'step' => '0.125',
 				'default' => 0,
 				'data-highlight' => 'true',
-				'div'=>'span6',
-				'class'=>'input-medium',
-			));
+				'div'=>'input-group col-md-n6',
+        'class' => 'form-control',
+      ));
 
 /*
     <script>
@@ -155,14 +157,14 @@ echo $this->Form->create('Receipt');
     });
     </script>
 */
-		?>	
+		?>
 
 		<?php
 			echo $this->Form->input('created', array(
 				'label' => 'When',
-				'class' => 'input-mini',
-			));
-		?>	
+        'class' => 'form-control',
+      ));
+		?>
 </fieldset>
 <?php
 
