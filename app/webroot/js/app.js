@@ -11,7 +11,7 @@ $(document).ready(function() {
 	   cost = $('#ReceiptCost').val();
 	   litres = $('#ReceiptLitres').val();
 	   ppl = $('#ReceiptPricePerLitre').val();
-	   
+
 	   if((current=='ReceiptCost' || current=='ReceiptLitres') && (cost>0 && litres>0)) {
 	     $('#ReceiptPricePerLitre').val(roundNumber(cost/litres,3));
 	   } else if((current=='ReceiptCost' || current=='ReceiptPricePerLitre') && (cost>0 && ppl>0)) {
@@ -20,10 +20,6 @@ $(document).ready(function() {
 	 }
 
 	 $('#ReceiptCost, #ReceiptLitres, #ReceiptPricePerLitre').on('keydown', updatePPL);
-	 
-
-    /* Chartify plugin */
-    $('table.chart').chartify('bar', {chartType: 'bhg'});
 
 
 	 /***
@@ -44,24 +40,24 @@ $(document).ready(function() {
     var latitude;
     var longitude;
     var accuracy;
-    
+
     function loadLocation() {
-    
-        if(navigator.geolocation) {
+				var status = document.getElementById("status");
+        if(navigator.geolocation && status !== null) {
             document.getElementById("status").innerHTML = "HTML5 Geolocation is supported in your browser.";
             document.getElementById("status").style.color = "#1ABC3C";
-            
-            if($.cookie("posLat")) {
+
+            if($.cookie && $.cookie("posLat")) {
                 latitude = $.cookie("posLat");
                 longitude = $.cookie("posLon");
                 accuracy = $.cookie("posAccuracy");
                 document.getElementById("status").innerHTML = "Location data retrieved from cookies. <a id=\"clear_cookies\" href=\"javascript:clear_cookies();\" style=\"cursor:pointer; margin-left: 15px;\"> clear cookies</a>";
                 updateDisplay();
-                
+
             } else {
                 navigator.geolocation.getCurrentPosition(
-                                    success_handler, 
-                                    error_handler, 
+                                    success_handler,
+                                    error_handler,
                                     {timeout:10000});
             }
         }
@@ -71,25 +67,25 @@ $(document).ready(function() {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
         accuracy = position.coords.accuracy;
-        
+
         if (!latitude || !longitude) {
             document.getElementById("status").innerHTML = "HTML5 Geolocation supported, but location data is currently unavailable.";
             return;
         }
-        
+
         updateDisplay();
-        
+
         $.cookie("posLat", latitude);
         $.cookie("posLon", longitude);
         $.cookie("posAccuracy", accuracy);
-      
+
     }
-    
+
     function updateDisplay() {
-    
+
 /*
         var gmapdata = '<img src="http://maps.google.com/maps/api/staticmap?center=' + latitude + ',' + longitude + '&zoom=16&size=400x300&sensor=true" />';
-                
+
         $("#placeholder").innerHTML = gmapdata;
         $("#latitude").innerHTML = latitude;
         $("#longitude").innerHTML = longitude;
@@ -98,17 +94,17 @@ $(document).ready(function() {
 
         // Let's get some local businesses.
         local_search = 'http://dev.petrolapp.me/receipts/local_search/' + latitude + '/' + longitude;
-                
+
 				$.ajax({
 				  url: local_search,
 				  dataTypeString: 'json',
 				  success: function(data) {
 				    // Output raw data for debugging
 				  	$('#ReceiptLocation').after('<textarea id="LocationLocalRaw" style="display:none;">' + data + '</textarea>');
-				  	
+
 				  	// Parse data as JSON
 				  	var locs = $.parseJSON(data);
-				  	
+
 				  	// Create array of OPTIONS from Places ID and Name
 						var items = [];
 						$.each(locs.results, function(key, val) {
@@ -116,12 +112,12 @@ $(document).ready(function() {
 					  });
 
 					  items.push('<option value="-">Not listed...</option>');
-					  
+
 					  // Output SELECT with OPTIONs
 					  select = $('<select name="data[Receipt][location]" id="ReceiptLocationLocal">', {
 				    	'class': 'local-places',
 				    }).prepend(items.join(''));
-				    				    
+
 				    $(document).on("change", "#ReceiptLocationLocal", function(){
               console.log($('#ReceiptLocationLocal').val());
               if($(this).val()=='-') {
@@ -136,18 +132,18 @@ $(document).ready(function() {
 				  },
 				  error: function(jqXHR, textStatus, errorThrown) {
 					  $('#placeholder').append('Error: ' + textStatus);
-					  
+
 				  }
 				});
 
     }
-    
-    
+
+
 //    $('#status').hide();
-    
+
     function error_handler(error) {
         var locationError = '';
-        
+
         switch(error.code){
         case 0:
             locationError = "There was an error while retrieving your location: " + error.message;
@@ -166,10 +162,10 @@ $(document).ready(function() {
         document.getElementById("status").innerHTML = locationError;
         document.getElementById("status").style.color = "#D03C02";
     }
-    
+
 
     loadLocation();
-    
+
 });
 
 // For clearing geo-location cookies
