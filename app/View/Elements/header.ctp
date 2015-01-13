@@ -29,8 +29,10 @@
         <?php if($this->Session->read('Auth.User.id')!='') : ?>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-user"></i>
-              <?php echo $this->Session->read('Auth.User.username'); ?> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <img src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $this->Session->read('Auth.User.email') ) ) ); ?>?s=24">
+              <?php echo $this->Session->read('Auth.User.username'); ?>
+              <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><?php echo $this->Html->link('New Receipt', array('controller'=>'receipts','action'=>'add')); ?></li>
               <li><?php echo $this->Html->link('New Report', array('controller'=>'reports','action'=>'add')); ?></li>
