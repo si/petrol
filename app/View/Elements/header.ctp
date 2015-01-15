@@ -23,6 +23,7 @@
             <li><?php echo $this->Html->link('Receipts', array('controller'=>'receipts','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Reports', array('controller'=>'reports','action'=>'index')); ?></li>
+            <li><?php echo $this->Html->link('Trains', array('controller'=>'train_tickets','action'=>'index')); ?></li>
           <?php endif; ?>
         </ul>
 
