@@ -1,20 +1,20 @@
 <?php
-class TrainsController extends AppController {
+class TrainTicketsController extends AppController {
 
-  var $name = 'Trains';
+  var $name = 'TrainTickets';
   var $scaffold;
-  
+
 //  var $helpers = array('Map');
-  public $helpers = array('GoogleMap'); 
+  public $helpers = array('GoogleMap');
 
 	function beforeRender() {
 	  parent::beforeRender();
 	}
-	
+
 	function beforeFilter() {
 	  parent::beforeFilter();
 	}
-	
+
 
 
 }
