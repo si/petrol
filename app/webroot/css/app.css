@@ -1,0 +1,20 @@
+/* line 2, ../sass/app.scss */
+body {
+  background: #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
+  background-size: cover;
+  color: #FFF !important;
+  padding: 5rem 18% 2rem 1rem;
+}
+
+/* line 9, ../sass/app.scss */
+input, select {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.5rem;
+}
+
+/* line 15, ../sass/app.scss */
+label {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: none;
+}
