@@ -37,6 +37,7 @@ echo $this->Form->create('TrainTicket', array('class'=>'navbar-form'));
   		?>
       <?php
       echo $this->Form->input('train_ticket_restriction_id', array(
+        'empty' => '-',
         'div' => 'input-group col-md-3',
         'class' => 'form-control',
       ));

@@ -1,5 +1,5 @@
 <?php
 class TrainTicketClass extends AppModel {
 	var $name = 'TrainTicketClass';
-	var $order = array('name ASC');
+	var $order = array('name DESC');
 }
