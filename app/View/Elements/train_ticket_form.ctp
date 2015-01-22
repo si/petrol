@@ -24,19 +24,19 @@ echo $this->Form->create('TrainTicket', array('class'=>'navbar-form'));
 
     <div class="row-fluid settings">
   		<?php
-  			echo $this->Form->input('train_ticket_type', array(
+  			echo $this->Form->input('train_ticket_type_id', array(
           'div' => 'input-group col-md-3',
           'class' => 'form-control',
         ));
   		?>
       <?php
-  			echo $this->Form->input('train_ticket_class', array(
+  			echo $this->Form->input('train_ticket_class_id', array(
           'div' => 'input-group col-md-3',
           'class' => 'form-control',
         ));
   		?>
       <?php
-      echo $this->Form->input('train_ticket_restriction', array(
+      echo $this->Form->input('train_ticket_restriction_id', array(
         'div' => 'input-group col-md-3',
         'class' => 'form-control',
       ));
