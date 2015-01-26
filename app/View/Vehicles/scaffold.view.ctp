@@ -5,7 +5,7 @@
 
 <h2>Recent Fillups</h2>
 <?php
-  echo $this->element('fillups_list', array('data'=>$vehicle['Fillup']));
+  echo $this->element('receipts_list', array('data'=>$vehicle['Receipt']));
 ?>
 
     <?php echo $this->Html->link('Edit Vehicle',array('action'=>'edit',$vehicle['Vehicle']['id']),array('class'=>'btn btn-mini')); ?>
