@@ -10,15 +10,15 @@ echo $this->Session->flash();
 
 		<?php
 			echo $this->Form->input('registration');
-		?>	
+		?>
 
 		<?php
 			echo $this->Form->input('manufacturer');
-		?>	
+		?>
 
 		<?php
 			echo $this->Form->input('model');
-		?>	
+		?>
 
 		<?php
 			echo $this->Form->input('fuel_type', array(
@@ -28,7 +28,7 @@ echo $this->Session->flash();
 			   'A'=>'Autogas',
 			 )
 			));
-		?>	
+		?>
 
 		<?php
 			echo $this->Form->input('tank_capacity', array(
@@ -36,17 +36,18 @@ echo $this->Session->flash();
 			 'placeholder'=>'litres',
 			));
 			if(isset($max_litres['Fillup']['litres'])) echo '<em>Your top fillup was ' . $max_litres['Fillup']['litres'] . '</em>';
-		?>	
+		?>
 
 		<?php
 			echo $this->Form->input('status', array(
-			 'options'=> array(
-			   ''=>'On the road',
-			   'R'=>'Rental',
-			   'S'=>'SORN',
-			 )
+				'options'=> array(
+					''=>'On the road',
+					'R'=>'Rental',
+					'O'=>'Off road',
+					'S'=>'Sold',
+				)
 			));
-		?>	
+		?>
 
 </fieldset>
 
