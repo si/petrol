@@ -9,16 +9,16 @@ class VehiclesController extends AppController {
 			'Vehicle.created' => 'desc',
 		),
 	);
-    
+
 	function beforeFilter() {
 	    parent::beforeFilter();
 	}
 
   function index() {
-  
+
 	  $data = $this->paginate('Vehicle',array("Vehicle.user_id" => $this->Session->read('Auth.User.id')));
 	  $this->set('data', $data);
-	  	  
+
   }
 
 	function add() {
@@ -41,7 +41,7 @@ class VehiclesController extends AppController {
     // Lookup data
     if($id!='') {
       $this->data = $this->Vehicle->findById($id);
-      $this->set('max_litres',$this->Vehicle->Fillup->find('first',array('fields'=>array('litres'),'conditions'=>array('Receipt.vehicle_id'=>$id),'order'=>array('litres DESC'))));
+      $this->set('max_litres',$this->Vehicle->Receipt->find('first',array('fields'=>array('litres'),'conditions'=>array('Receipt.vehicle_id'=>$id),'order'=>array('litres DESC'))));
     }
 	}
 
@@ -52,6 +52,6 @@ class VehiclesController extends AppController {
         $this->redirect('/vehicles');
       }
     }
-  }	
+  }
 
 }
