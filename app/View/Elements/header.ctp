@@ -24,6 +24,7 @@
             <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Reports', array('controller'=>'reports','action'=>'index')); ?></li>
             <li><?php echo $this->Html->link('Trains', array('controller'=>'train_tickets','action'=>'index')); ?></li>
+            <li><?php echo $this->Html->link('Parking', array('controller'=>'car_parks','action'=>'index')); ?></li>
           <?php endif; ?>
         </ul>
 
