@@ -15,3 +15,5 @@ app/Config/app_secrets.php
 
 app/composer.phar
 app/webroot/bower_components/*
+
+app/Config/database.php
