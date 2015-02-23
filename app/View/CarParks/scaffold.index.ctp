@@ -18,7 +18,7 @@
   </tbody>
 </table>
 
-<?php echo $this->Html->link('Add Parking', array('action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
+<?php echo $this->Html->link('Add Parking', array('action'=>'edit'), array('class'=>'btn btn-primary btn-large')); ?>
 <?php
 echo $this->element('car_parks_table', array('data' => $carParks));
 ?>
