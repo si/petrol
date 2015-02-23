@@ -53,7 +53,7 @@
   </nav>
 
   <?php if($this->Session->check('Message.flash')) : ?>
-  <div class="alert">
+  <div class="alert alert-warning">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <?php echo $this->Session->flash(); ?>
   </div>
