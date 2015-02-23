@@ -6,22 +6,20 @@
     <?php
         echo $this->Form->input('username', array(
           'placeholder'=>'yourname',
-          'div' => 'input-prepend',
-          'between' => '<span class="add-on">@</span>',
-          'class' => 'input-medium',
+          'div' => 'input-group col-md-6',
+          'class' => 'form-control',
         ));
 
-        echo $this->Form->input('password');
-/*
-        echo $this->Form->input('conf_password', array(
-        	'label'=>'Confirm password',
+        echo $this->Form->input('password', array(
+          'div' => 'input-group col-md-6',
+          'class' => 'form-control',
         ));
-*/
 
         echo $this->Form->input('email', array(
           'type'=>'email',
           'placeholder'=>'you@example.com',
-          'class' => 'input-large',
+          'div' => 'input-group col-md-6',
+          'class' => 'form-control',
         ));
 
         echo $this->Form->input('role', array(
