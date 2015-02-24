@@ -1,18 +1,14 @@
 <h1>Your Receipts</h1>
 
-<table class="statistics">
+<table class="table">
   <tbody>
   <tr>
     <td><?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?></td>
-    <td><?php echo $this->Number->format($totals[0][0]['entries']); ?></td>
-    <td><?php echo $this->Number->format($totals[0][0]['stations']); ?></td>
     <td><?php echo $this->Number->format($totals[0][0]['miles']); ?></td>
     <td><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></td>
   </tr>
   <tr>
     <th>total spent</th>
-    <th>Receipts</th>
-    <th>stations</th>
     <th>total miles</th>
     <th>per mile</th>
   </tr>
