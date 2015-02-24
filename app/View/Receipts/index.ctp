@@ -47,7 +47,7 @@ if(count($vehicles)>1) :
 <?php
 endif;
 
-echo $this->element('receipts_list', array('data'=>$data));
+echo $this->element('receipts_table', array('data'=>$data));
 
 ?>
 
