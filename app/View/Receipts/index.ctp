@@ -5,11 +5,13 @@
   <tr>
     <td><?php echo $this->Number->currency($totals[0][0]['spent'],'GBP'); ?></td>
     <td><?php echo $this->Number->format($totals[0][0]['miles']); ?></td>
+    <td><?php echo $this->Number->format( $gallons = $totals[0][0]['miles'] / ($totals[0][0]['litres'] * 0.219), 2 ); ?></td>
     <td><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></td>
   </tr>
   <tr>
     <th>total spent</th>
     <th>total miles</th>
+    <th>MPG</th>
     <th>per mile</th>
   </tr>
   </tbody>

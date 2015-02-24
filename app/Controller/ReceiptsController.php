@@ -45,6 +45,7 @@ class ReceiptsController extends AppController {
 	  $totals = $this->Receipt->find('all', array(
       'fields'=> array(
         'SUM(cost) AS spent',
+        'SUM(litres) AS litres',
         'MAX(odometer) - MIN(odometer) AS miles',
         'COUNT(*) AS entries',
         'COUNT(DISTINCT location) AS stations',
