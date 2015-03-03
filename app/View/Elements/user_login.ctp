@@ -1,6 +1,6 @@
 <div class="users form">
 
-<?php echo $this->Form->create('User');?>
+<?php echo $this->Form->create('User', array('action'=>'login'));?>
     <fieldset>
         <legend>Sign in</legend>
         <div class="row-fluid">
