@@ -2,16 +2,16 @@
 
 <?php echo $this->Form->create('User');?>
     <fieldset>
-        <legend><?php echo __('Please enter your username and password'); ?></legend>
+        <legend>Sign in</legend>
         <div class="row-fluid">
         <?php
             echo $this->Form->input('username', array(
               'placeholder'=>'yourname',
-              'div' => 'input-group col-md-6',
+              'div' => 'form-group',
               'class' => 'form-control',
             ));
             echo $this->Form->input('password', array(
-              'div' => 'input-group col-md-6', 
+              'div' => 'form-group', 
               'class' => 'form-control'
             ));
         ?>
@@ -19,8 +19,8 @@
     </fieldset>
 <?php 
     echo $this->Form->button('Login', array(
-      'div'=>'form-actions',
-      'class' => 'btn btn-primary',
+      'div'=>'form-group',
+      'class' => 'btn btn-default',
     ));
     
   echo $this->Form->end();
