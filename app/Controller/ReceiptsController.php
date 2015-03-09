@@ -61,12 +61,13 @@ class ReceiptsController extends AppController {
   
 	function add() {
 	
-			$vehicles = $this->Receipt->Vehicle->find('list', array(
+			$vehicles = $this->Receipt->Vehicle->find('all', array(
 	    	'conditions' => array(
 	    		"Vehicle.user_id" => $this->Session->read('Auth.User.id')
 	    	)
 	    ));
-	    $this->set('vehicles', $vehicles);	    
+	    $this->set('vehicles', $vehicles);
+
 	    if($vehicles==null) {
 	    	$this->Session->setFlash('You need to add a vehicle first');
 	    	$this->redirect(array('controller'=>'vehicles','action'=>'add'));

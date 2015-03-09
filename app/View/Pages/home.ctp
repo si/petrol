@@ -1,12 +1,13 @@
 <?php if($this->Session->read('Auth.User.id')=='') : ?>
-  <div class="container-fluid">
+<div class="container-fluid">
+  <div class="col-md-8">
     <h1>Ever wondered how much you spend on fuel? You need Petrol</h1>
     <p>Created out of a personal interest for annual outgoings on commuting to work, Petrol is a simple little web app for recording and monitoring the money spent on your petrol.</p>
-    <a class="btn btn-primary btn-large" href="/login">Sign up</a>
+    <a class="btn btn-primary btn-large" href="/register">Sign up</a>
+    <a class="btn btn-primary btn-large" href="/login">Log in</a>
   </div>
-
-  <?php echo $this->element('user_login'); ?>
-
+  <?php echo '<div class="col-md-4">' . $this->element('user_login') . '</div>'; ?>
+</div>
 <?php else: ?>
 
   
