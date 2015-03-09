@@ -140,7 +140,7 @@ class ReceiptsController extends AppController {
     }
     
     // Get Vehicles
-		$vehicles = $this->Receipt->Vehicle->find('list', array(
+	$vehicles = $this->Receipt->Vehicle->find('all', array(
     	'conditions' => array(
     		"Vehicle.user_id" => $this->Session->read('Auth.User.id')
     	)
@@ -148,13 +148,13 @@ class ReceiptsController extends AppController {
     $this->set('vehicles', $vehicles);	    
 
     // Get locations
-		$locations = $this->Receipt->find('all', array(
-		  'fields' => array('DISTINCT location'),
-    	'conditions' => array(
-        'location <>' => '', 
-    		"Vehicle.user_id" => $this->Session->read('Auth.User.id'),
-    	),
-    	'order' => array('Receipt.created DESC'),
+	$locations = $this->Receipt->find('all', array(
+		'fields' => array('DISTINCT location'),
+		'conditions' => array(
+	    'location <>' => '', 
+		"Vehicle.user_id" => $this->Session->read('Auth.User.id'),
+	),
+		'order' => array('Receipt.created DESC'),
     ));
     $this->set('locations', $locations);	    
 
