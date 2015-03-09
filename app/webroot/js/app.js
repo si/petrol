@@ -21,6 +21,14 @@ $(document).ready(function() {
 
 	 $('#ReceiptCost, #ReceiptLitres, #ReceiptPricePerLitre').on('keydown', updatePPL);
 
+     var setReceiptOdometer = function() {
+        var selectedOdometer = $('option:selected',this).attr('data-odometer');
+        console.log(selectedOdometer);
+        $('#ReceiptOdometer').attr('placeholder','Previously ' + selectedOdometer);
+        $('#ReceiptOdometer').attr('min',selectedOdometer);
+     };
+
+     $('#ReceiptVehicleId').on('change', setReceiptOdometer);
 
 	 /***
 	 Polyfill DATALIST on non-supported browsers
@@ -42,7 +50,8 @@ $(document).ready(function() {
     var accuracy;
 
     function loadLocation() {
-				var status = document.getElementById("status");
+
+        var status = document.getElementById("status");
         if(navigator.geolocation && status !== null) {
             document.getElementById("status").innerHTML = "HTML5 Geolocation is supported in your browser.";
             document.getElementById("status").style.color = "#1ABC3C";
