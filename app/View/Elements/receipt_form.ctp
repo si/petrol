@@ -76,15 +76,27 @@ echo $this->Form->create('Receipt', array('class'=>'navbar-form'));
   <legend>Vehicle</legend>
 		<?php
 		if(count($vehicles)>1) :
-			echo $this->Form->input('vehicle_id', array(
-				'label' => 'Vehicle',
-				'options' => $vehicles,
-        'div'=>'input-group col-md-12',
-        'class' => 'form-control',
-      ));
+		?>
+		    <div class="input-group col-md-12">
+		    	<label for="ReceiptVehicleId">Vehicle</label>
+		    	<select id="ReceiptVehicleId" name="ReceiptVehicleId" class="form-control">
+		    	<?php 
+		    	foreach($vehicles as $vehicle) : 
+		    		echo '<option value="' . $vehicle['Vehicle']['id'] . '"'
+		    			. 'data-registration="' . $vehicle['Vehicle']['registration'] . '"'
+		    			. ( ( count($vehicle['Receipt'])>0 ) ? 'data-odometer="' . $vehicle['Receipt'][0]['odometer'] . '"' : '')
+		    			. ( ( isset($this->data['Receipt']) && $this->data['Receipt']['vehicle_id'] == $vehicle['Vehicle']['id'] ) ? 'selected="selected"' : '' )
+		    			. '>' 
+		    			. $vehicle['Vehicle']['name'] 
+		    			. '</option>';
+		    	endforeach;
+		    	?>
+		    	</select>
+		    </div>
+		<?php
 		else:
 			echo $this->Form->input('vehicle_id', array(
-        'type' => 'hidden',
+        		'type' => 'hidden',
 				'value' => current($vehicles),
 			));
 		endif;
