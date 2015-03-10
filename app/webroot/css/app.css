@@ -45,16 +45,21 @@ textarea {
 }
 
 /* line 36, ../sass/_global/_forms.scss */
-button {
+button,
+.btn {
   background: rgba(0, 0, 0, 0.8);
   border: none;
   color: #FFF;
   display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 1px;
   padding: 1rem;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
-/* line 45, ../sass/_global/_forms.scss */
+/* line 50, ../sass/_global/_forms.scss */
 .input-group {
   /* flexbox specific properties */
   display: -webkit-flex;
@@ -63,42 +68,42 @@ button {
   flex-direction: row;
   margin: 0 0 0.67rem;
 }
-/* line 54, ../sass/_global/_forms.scss */
+/* line 59, ../sass/_global/_forms.scss */
 .input-group > div {
   /* flexbox specific properties */
   -webkit-flex: auto;
   flex: auto;
   margin-right: 7%;
 }
-/* line 61, ../sass/_global/_forms.scss */
+/* line 66, ../sass/_global/_forms.scss */
 .input-group input, .input-group textarea, .input-group select {
   width: 100%;
 }
-/* line 65, ../sass/_global/_forms.scss */
+/* line 70, ../sass/_global/_forms.scss */
 .input-group .col-12 {
   width: 100%;
 }
-/* line 68, ../sass/_global/_forms.scss */
+/* line 73, ../sass/_global/_forms.scss */
 .input-group .col-9 {
   width: 75%;
 }
-/* line 71, ../sass/_global/_forms.scss */
+/* line 76, ../sass/_global/_forms.scss */
 .input-group .col-8 {
   width: 66.66667%;
 }
-/* line 74, ../sass/_global/_forms.scss */
+/* line 79, ../sass/_global/_forms.scss */
 .input-group .col-6 {
   width: 50%;
 }
-/* line 77, ../sass/_global/_forms.scss */
+/* line 82, ../sass/_global/_forms.scss */
 .input-group .col-4 {
   width: 100%/3;
 }
-/* line 80, ../sass/_global/_forms.scss */
+/* line 85, ../sass/_global/_forms.scss */
 .input-group .col-3 {
   width: 25%;
 }
-/* line 83, ../sass/_global/_forms.scss */
+/* line 88, ../sass/_global/_forms.scss */
 .input-group .col-2 {
   width: 100%/6;
 }

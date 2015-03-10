@@ -33,12 +33,17 @@ textarea {
 	padding: 0.5rem;
 }
 
-button {
+button, 
+.btn {
 	background: rgba(#000,0.8);
 	border: none;
 	color: #FFF;
 	display: block;
+	font-family: inherit;
+	font-size: inherit;
+	margin-right: 1px;
 	padding: 1rem;
+	text-decoration: none;
 	text-transform: uppercase;
 }
 
