@@ -1,20 +1,103 @@
-/* line 2, ../sass/app.scss */
+/* line 1, ../sass/_global/_page.scss */
 body {
-  background: #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
-  background-size: cover;
-  color: #FFF !important;
-  padding: 5rem 18% 2rem 1rem;
+  background: -webkit-linear-gradient(#660ed8 0%, #aa84f5 100%);
+  color: #FFF;
 }
 
-/* line 9, ../sass/app.scss */
-input, select {
+/* line 1, ../sass/_global/_forms.scss */
+form {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 5, ../sass/_global/_forms.scss */
+fieldset {
   border: none;
+}
+
+/* line 9, ../sass/_global/_forms.scss */
+legend {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  color: rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 0.67rem;
+  margin-bottom: 0.67rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* line 22, ../sass/_global/_forms.scss */
+label {
+  display: block;
+}
+
+/* line 26, ../sass/_global/_forms.scss */
+input,
+select,
+textarea {
+  background: #FFF;
+  border: none;
+  color: #000;
+  display: block;
   padding: 0.5rem;
 }
 
-/* line 15, ../sass/app.scss */
-label {
-  color: rgba(255, 255, 255, 0.5);
-  border-bottom: none;
+/* line 36, ../sass/_global/_forms.scss */
+button {
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: #FFF;
+  display: block;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+/* line 45, ../sass/_global/_forms.scss */
+.input-group {
+  /* flexbox specific properties */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin: 0 0 0.67rem;
+}
+/* line 54, ../sass/_global/_forms.scss */
+.input-group > div {
+  /* flexbox specific properties */
+  -webkit-flex: auto;
+  flex: auto;
+}
+/* line 60, ../sass/_global/_forms.scss */
+.input-group input {
+  width: 75%;
+}
+/* line 64, ../sass/_global/_forms.scss */
+.input-group .col-12 {
+  width: 100%;
+}
+/* line 67, ../sass/_global/_forms.scss */
+.input-group .col-9 {
+  width: 75%;
+}
+/* line 70, ../sass/_global/_forms.scss */
+.input-group .col-8 {
+  width: 66.66667%;
+}
+/* line 73, ../sass/_global/_forms.scss */
+.input-group .col-6 {
+  width: 50%;
+}
+/* line 76, ../sass/_global/_forms.scss */
+.input-group .col-4 {
+  width: 100%/3;
+}
+/* line 79, ../sass/_global/_forms.scss */
+.input-group .col-3 {
+  width: 25%;
+}
+/* line 82, ../sass/_global/_forms.scss */
+.input-group .col-2 {
+  width: 100%/6;
 }

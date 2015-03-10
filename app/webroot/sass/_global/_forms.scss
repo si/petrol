@@ -1,0 +1,86 @@
+form {
+	background: rgba(#FFF,0.2);
+}
+
+fieldset {
+	border: none;
+}
+
+legend {
+	background: rgba(#000,0.05);
+	border: none;
+	color: rgba(#000,0.2);
+	display: block;
+	font-size: 0.67rem;
+	margin-bottom: 0.67rem;
+	padding: 1rem;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+label {
+	display: block;
+}
+
+input,
+select,
+textarea {
+	background: #FFF;
+	border: none;
+	color: #000;
+	display: block;
+	padding: 0.5rem;
+}
+
+button {
+	background: rgba(#000,0.8);
+	border: none;
+	color: #FFF;
+	display: block;
+	padding: 1rem;
+	text-transform: uppercase;
+}
+
+.input-group {
+	
+	/* flexbox specific properties */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    margin: 0 0 0.67rem;
+
+    > div {
+	    /* flexbox specific properties */
+		-webkit-flex: auto;
+		flex: auto;
+    }
+    
+    input {
+	    width: 75%;
+    }
+    
+	.col-12 {
+		width: 100%;
+	}
+	.col-9 {
+		width: 75%;
+	}
+	.col-8 {
+		width: 100%/3*2;
+	}
+	.col-6 {
+		width: 50%;
+	}
+	.col-4 {
+		width: 100%/3;
+	}
+	.col-3 {
+		width: 25%;
+	}
+	.col-2 {
+		width: 100%/6;
+	}
+	
+}
