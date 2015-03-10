@@ -9,7 +9,7 @@
 	<link href="/img/petrol-touch-icon.png" type="image/x-icon" rel="shortcut icon" />
 	<link rel="apple-touch-icon" sizes="114x114" href="/img/petrol-touch-icon.png" />
 	<?php
-		$css = array('bootstrap.min','app');
+		$css = array('app');
 		echo $this->Html->css($css);
 	?>
 </head>
