@@ -61,6 +61,10 @@ button,
 		-webkit-flex: auto;
 		flex: auto;
 		margin-right: 7%;
+		
+		&.no-label {
+			margin-top: 1.33rem;
+		}
     }
     
     input, textarea, select {

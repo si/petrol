@@ -2,6 +2,7 @@
 body {
   background: -webkit-linear-gradient(#660ed8 0%, #aa84f5 100%);
   color: #FFF;
+  font-family: AvenirNext-Regular, sans-serif;
 }
 
 /* line 1, ../sass/_global/_forms.scss */
@@ -75,35 +76,39 @@ button,
   flex: auto;
   margin-right: 7%;
 }
-/* line 66, ../sass/_global/_forms.scss */
+/* line 65, ../sass/_global/_forms.scss */
+.input-group > div.no-label {
+  margin-top: 1.33rem;
+}
+/* line 70, ../sass/_global/_forms.scss */
 .input-group input, .input-group textarea, .input-group select {
   width: 100%;
 }
-/* line 70, ../sass/_global/_forms.scss */
+/* line 74, ../sass/_global/_forms.scss */
 .input-group .col-12 {
   width: 100%;
 }
-/* line 73, ../sass/_global/_forms.scss */
+/* line 77, ../sass/_global/_forms.scss */
 .input-group .col-9 {
   width: 75%;
 }
-/* line 76, ../sass/_global/_forms.scss */
+/* line 80, ../sass/_global/_forms.scss */
 .input-group .col-8 {
   width: 66.66667%;
 }
-/* line 79, ../sass/_global/_forms.scss */
+/* line 83, ../sass/_global/_forms.scss */
 .input-group .col-6 {
   width: 50%;
 }
-/* line 82, ../sass/_global/_forms.scss */
+/* line 86, ../sass/_global/_forms.scss */
 .input-group .col-4 {
   width: 100%/3;
 }
-/* line 85, ../sass/_global/_forms.scss */
+/* line 89, ../sass/_global/_forms.scss */
 .input-group .col-3 {
   width: 25%;
 }
-/* line 88, ../sass/_global/_forms.scss */
+/* line 92, ../sass/_global/_forms.scss */
 .input-group .col-2 {
   width: 100%/6;
 }
