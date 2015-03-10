@@ -55,10 +55,11 @@ button {
 	    /* flexbox specific properties */
 		-webkit-flex: auto;
 		flex: auto;
+		margin-right: 7%;
     }
     
-    input {
-	    width: 75%;
+    input, textarea, select {
+	    width: 100%;
     }
     
 	.col-12 {
