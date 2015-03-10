@@ -97,16 +97,6 @@ echo $this->Form->create('Receipt', array());
 	?>
 	<div class="input-group">
 		<?php
-			echo $this->Form->input('odometer', array(
-				'label' => 'Current Mileage',
-				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
-				'size' => 6,
-				'min' => (($latest!=null && isset($this->data['Receipt']['id']) && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
-				'maxlength' => 7,
-				'div'=>'col-6',
-			));
-		?>
-		<?php
 		echo $this->Form->input('indicator', array(
 			'label' => 'Tank Level',
 			'options' => array(
@@ -129,12 +119,46 @@ echo $this->Form->create('Receipt', array());
 			'div'=>'col-6',
 		));
 		?>
+		<?php
+			echo $this->Form->input('odometer', array(
+				'label' => 'Mileage',
+				'placeholder'=> (($latest!=null) ? 'Previously ' . $latest['Receipt']['odometer'] : ''),
+				'size' => 6,
+				'min' => (($latest!=null && isset($this->data['Receipt']['id']) && $this->data['Receipt']['id']=='') ? $latest['Receipt']['odometer'] : ''),
+				'maxlength' => 7,
+				'div'=>'col-6',
+			));
+		?>
 	</div>
 	<div class="input-group">
 	<?php
-		echo $this->Form->input('created', array(
-			'label' => 'When',
-			'class' => 'col-2',
+		echo $this->Form->input('Receipt.created.hour', array(
+		    'type' => 'number',
+		    'name' => 'data[Receipt][created][hour]',
+			'div' => 'col-3',
+			'label' => 'Time',
+			'placeholder' => 'HH'
+		));
+		echo $this->Form->input('Receipt.created.minute', array(
+		    'type' => 'number',
+		    'name' => 'data[Receipt][created][minute]',
+			'div' => 'col-3 no-label',
+			'label' => '',
+			'placeholder' => 'MI'
+		));
+		echo $this->Form->input('Receipt.created.day', array(
+		    'type' => 'number',
+		    'name' => 'data[Receipt][created][day]',
+			'div' => 'col-3',
+			'label' => 'Date',
+			'placeholder' => 'DD'
+		));
+		echo $this->Form->input('Receipt.created.month', array(
+		    'type' => 'number',
+		    'name' => 'data[Receipt][created][month]',
+			'div' => 'col-3 no-label',
+			'label' => '',
+			'placeholder' => 'MM'
 		));
 	?>
 	</div>

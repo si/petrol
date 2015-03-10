@@ -61,7 +61,7 @@ class ReceiptsController extends AppController {
   
 	function add() {
 	
-			$vehicles = $this->Receipt->Vehicle->find('all', array(
+		$vehicles = $this->Receipt->Vehicle->find('all', array(
 	    	'conditions' => array(
 	    		"Vehicle.user_id" => $this->Session->read('Auth.User.id')
 	    	)
@@ -73,56 +73,62 @@ class ReceiptsController extends AppController {
 	    	$this->redirect(array('controller'=>'vehicles','action'=>'add'));
 	    }
 
-			$locations = $this->Receipt->find('all', array(
-			  'fields' => array('DISTINCT location'),
+		$locations = $this->Receipt->find('all', array(
+			'fields' => array('DISTINCT location'),
 	    	'conditions' => array(
-          'location <>' => '', 
-	    		"Vehicle.user_id" => $this->Session->read('Auth.User.id'),
+				'location <>' => '', 
+				"Vehicle.user_id" => $this->Session->read('Auth.User.id'),
 	    	),
-	    	'order' => array('Receipt.created DESC'),
+			'order' => array('Receipt.created DESC'),
 	    ));
 	    $this->set('locations', $locations);	    
 
 	    if(!empty($this->data)) {
 	    
-        if($this->Receipt->validates()) {
+	        if($this->Receipt->validates()) {
 
-	        if($this->Receipt->save($this->data)) {
+		        if($this->Receipt->save($this->data)) {
 	        
-	        
-            $data = $this->Receipt->findById($this->Receipt->id);
+		            $data = $this->Receipt->findById($this->Receipt->id);
             
-            /* Send email - disabled until debugged on new server
-						$Email = new CakeEmail('smtp');
-						$Email->template('receipt');
-						$Email->from(array('receipts@petrolapp.me' => 'Petrol app'));
-						$Email->to($this->Session->read('Auth.User.email'));
-						$Email->subject('[Petrol] Your Receipt #' . $data['Receipt']['id']);
-						$Email->emailFormat('html');
-						$Email->helpers(array('Html', 'Number', 'Time'));
-						$Email->viewVars(array('data'=>$data));
-						$Email->send();
-	    */
+		            /* Send email - disabled until debugged on new server
+					$Email = new CakeEmail('smtp');
+					$Email->template('receipt');
+					$Email->from(array('receipts@petrolapp.me' => 'Petrol app'));
+					$Email->to($this->Session->read('Auth.User.email'));
+					$Email->subject('[Petrol] Your Receipt #' . $data['Receipt']['id']);
+					$Email->emailFormat('html');
+					$Email->helpers(array('Html', 'Number', 'Time'));
+					$Email->viewVars(array('data'=>$data));
+					$Email->send();
+					*/
 	        
-            $this->Session->setFlash("Receipt saved!");
-            $this->redirect('/receipts');
-	        }
-
-	      }
-	      
+					$this->Session->setFlash("Receipt saved!");
+					$this->redirect('/receipts');
+				}
+			}
+	    } else {
+	    	// Set some defaults
+	    	
+		    $defaults['Receipt']['created']['hour'] = date('H');
+		    $defaults['Receipt']['created']['minute'] = date('i');
+		    $defaults['Receipt']['created']['day'] = date('d');
+		    $defaults['Receipt']['created']['month'] = date('m');
+		    
+		    $this->data = $defaults;
 	    }
 	 
 	    $this->set('latest', $this->Receipt->find(
-        'first', 
-        array(
-          'conditions' => array(
-          'Receipt.user_id' => $this->Session->read('Auth.User.id')
-         ),
-         'order' => array(
-           'Receipt.created DESC'
-         )
-        )
-      ));
+	        'first', 
+	        array(
+				'conditions' => array(
+					'Receipt.user_id' => $this->Session->read('Auth.User.id')
+				),
+				'order' => array(
+					'Receipt.created DESC'
+				)
+			)
+		));
 
 	}
 
