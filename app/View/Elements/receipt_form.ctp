@@ -1,56 +1,46 @@
 <?php
-echo $this->Form->create('Receipt', array('class'=>'navbar-form'));
+echo $this->Form->create('Receipt', array());
 
   if(isset($this->data['Receipt']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
 <fieldset>
-  <legend>Garage</legend>
-  <div class="row-fluid">
+	<legend>Garage</legend>
+	<div class="input-group">
 		<?php
 			echo $this->Form->input('cost', array(
-        'label' => 'Cost',
-        'placeholder' => '£',
-        'div' => 'input-group col-md-4',
-        'class' => 'form-control',
+				'type' => 'number',
+		        'label' => 'Cost',
+		        'placeholder' => '£',
+		        'div' => 'col-4',
 			));
 		?>
 		<?php
 			echo $this->Form->input('litres', array(
-        'label' => 'Capacity',
-        'placeholder' => 'litres',
-        'div' => 'input-group col-md-4',
-        'class' => 'form-control',
-      ));
+				'type' => 'number',
+		        'label' => 'Capacity',
+		        'placeholder' => 'litres',
+		        'div' => 'col-4',
+			));
 		?>
 		<?php
 			echo $this->Form->input('price_per_litre', array(
-        'label' => 'Price',
-        'placeholder' => '£/litre',
-        'div' => 'input-group col-md-4',
-        'class' => 'form-control',
-      ));
+				'type' => 'number',
+				'label' => 'Price',
+				'placeholder' => '£/litre',
+				'div' => 'col-4',
+			));
 		?>
-    </div>
+	</div>
 
-    <div class="row-fluid station">
-		<?php
-			echo $this->Form->input('discount', array(
-        'label' => 'Discount',
-        'placeholder'=> '£',
-        'div' => 'input-group col-md-4',
-        'class' => 'form-control',
-      ));
-		?>
-
+    <div class="input-group">
 		<?php
 			echo $this->Form->input('location', array(
 				'label' => 'Petrol Station',
 				'type' => 'text',
 				'placeholder' => 'eg. BP Corporation Street, Rugby',
 				'list'=>'location_history',
-        'div' => 'input-group col-md-8',
-        'class' => 'form-control',
-      ));
+		        'div' => 'col-8',
+			));
 
 			if(isset($locations) && count($locations)>0) :
 			?>
@@ -64,12 +54,14 @@ echo $this->Form->create('Receipt', array('class'=>'navbar-form'));
 
   		/***
   		Try integrating Chris Coyier's Relevant Dropdown polyfill (https://github.com/chriscoyier/Relevant-Dropdowns)
+
+
+		<p id="status"></p>
+		<p><span id="latitude"></span> <span id="longitude"></span> <span id="accuracy"></span></p>
+		<div id="placeholder" style="margin: 20px 0px 10px; width: 100%; height: 100%; position: relative;"></div>
   		***/
 		?>
-			<p id="status"></p>
-			<p><span id="latitude"></span> <span id="longitude"></span> <span id="accuracy"></span></p>
-  		<div id="placeholder" style="margin: 20px 0px 10px; width: 100%; height: 100%; position: relative;"><i>Note: May take a few seconds to get the location.</i></div>
-		</div>
+	</div>
 
 </fieldset>
 <fieldset>
