@@ -24,7 +24,7 @@ echo $this->Form->create('Receipt', array());
 		?>
 		<?php
 			echo $this->Form->input('price_per_litre', array(
-				'type' => 'number',
+				'type' => 'text',
 				'label' => 'Price',
 				'placeholder' => '£/litre',
 				'div' => 'col-4',
@@ -72,7 +72,7 @@ echo $this->Form->create('Receipt', array());
 	<div class="input-group">
 	    <div class="col-12">
 	    	<label for="ReceiptVehicleId">Vehicle</label>
-	    	<select id="ReceiptVehicleId" name="ReceiptVehicleId" class="">
+	    	<select id="ReceiptVehicleId" name="data[Receipt][vehicle_id]" class="">
 	    	<?php 
 	    	foreach($vehicles as $vehicle) : 
 	    		echo '<option value="' . $vehicle['Vehicle']['id'] . '"'
