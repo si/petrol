@@ -84,6 +84,18 @@ class ReceiptsController extends AppController {
 	    $this->set('locations', $locations);	    
 
 	    if(!empty($this->data)) {
+		    
+		    $data = $this->data;
+		    $time = strtotime($data['Receipt']['created']['hour'] .':'.$data['Receipt']['created']['minute']);
+		    $created = array(
+			    'day' => $data['Receipt']['created']['day'],
+			    'month' => $data['Receipt']['created']['month'],
+			    'year' => date('Y'),
+			    'hour' => date('h', $time),
+			    'minute' => date('i', $time),
+			    'meridian' => date('a', $time),
+		    );
+		    $data['Receipt']['created'] = $created;
 	    
 	        if($this->Receipt->validates()) {
 
