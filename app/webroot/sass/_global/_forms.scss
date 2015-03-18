@@ -33,6 +33,45 @@ textarea {
 	padding: 0.5rem;
 }
 
+input[type=range] {
+	background: transparent;
+	-webkit-appearance: none;
+	width: 100%;
+	
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+	}
+
+	&::-ms-track {
+		width: 100%;
+		cursor: pointer;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		background: #FFF;
+		height: 2rem;
+		width: 2rem;
+		margin: -0.5rem 0;
+		cursor: pointer;
+	}
+	
+	&::-webkit-slider-runnable-track {
+		width: 100%;
+		cursor: pointer;
+		background: rgba(0,0,0,0.2);
+
+	}
+
+}
+
 button, 
 .btn {
 	background: rgba(#000,0.8);
@@ -46,6 +85,7 @@ button,
 	text-decoration: none;
 	text-transform: uppercase;
 }
+
 
 .input-group {
 	
