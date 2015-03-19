@@ -1,3 +1,4 @@
+/*** Global	***/
 body {
   background: -webkit-linear-gradient(#660ed8 0%, #aa84f5 100%);
   color: #FFF;
@@ -24,7 +25,9 @@ legend {
 label {
   display: block; }
 
-input, select, textarea {
+input,
+select,
+textarea {
   background: #FFF;
   border: none;
   color: #000;
@@ -57,7 +60,8 @@ input[type=range] {
     cursor: pointer;
     background: rgba(0, 0, 0, 0.2); }
 
-button, .btn {
+button,
+.btn {
   background: rgba(0, 0, 0, 0.8);
   border: none;
   color: #FFF;
@@ -99,3 +103,33 @@ button, .btn {
     width: 25%; }
   .input-group .col-2 {
     width: 100%/6; }
+
+.brand {
+  color: #FFF;
+  font-size: 1.5rem;
+  text-decoration: none; }
+
+nav {
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  margin: 0;
+  padding: 1rem;
+  width: 75%; }
+  nav:before {
+    background: url(/img/svg/menu.svg) no-repeat 0 0;
+    background-size: 30px;
+    content: " ";
+    display: inline-block;
+    position: relative;
+    margin-left: -60px;
+    width: 30px;
+    height: 30px; }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  nav a {
+    color: #FFF; }
