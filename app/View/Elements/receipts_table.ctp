@@ -1,4 +1,4 @@
-<canvas id="receiptsChart" width="400" height="300"></canvas>
+<canvas id="receiptsChart" width="300" height="300"></canvas>
 
 <table class="table chart">
   <thead>
