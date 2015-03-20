@@ -12,4 +12,5 @@
 		$css = array('app');
 		echo $this->Html->css($css);
 	?>
+	<script src="/js/plugins/snap.svg.js"></script>
 </head>
