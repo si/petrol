@@ -1,20 +1,135 @@
-/* line 2, ../sass/app.scss */
+/*** Global	***/
 body {
-  background: #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
-  background-size: cover;
-  color: #FFF !important;
-  padding: 5rem 18% 2rem 1rem;
-}
+  background: -webkit-linear-gradient(#660ed8 0%, #aa84f5 100%);
+  color: #FFF;
+  font-family: AvenirNext-Regular, sans-serif; }
 
-/* line 9, ../sass/app.scss */
-input, select {
-  background: rgba(255, 255, 255, 0.2);
+form {
+  background: rgba(255, 255, 255, 0.2); }
+
+fieldset {
+  border: none; }
+
+legend {
+  background: rgba(0, 0, 0, 0.05);
   border: none;
-  padding: 0.5rem;
-}
+  color: rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 0.67rem;
+  margin-bottom: 0.67rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
 
-/* line 15, ../sass/app.scss */
 label {
-  color: rgba(255, 255, 255, 0.5);
-  border-bottom: none;
-}
+  display: block; }
+
+input,
+select,
+textarea {
+  background: #FFF;
+  border: none;
+  color: #000;
+  display: block;
+  padding: 0.5rem; }
+
+input[type=range] {
+  background: transparent;
+  -webkit-appearance: none;
+  width: 100%; }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; }
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent; }
+  input[type=range]:focus {
+    outline: none; }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #FFF;
+    height: 2rem;
+    width: 2rem;
+    margin: -0.5rem 0;
+    cursor: pointer; }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2); }
+
+button,
+.btn {
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: #FFF;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 1px;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.input-group {
+  /* flexbox specific properties */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin: 0 0 0.67rem; }
+  .input-group > div {
+    /* flexbox specific properties */
+    -webkit-flex: auto;
+    flex: auto;
+    margin-right: 7%; }
+    .input-group > div.no-label {
+      margin-top: 1.33rem; }
+  .input-group input, .input-group textarea, .input-group select {
+    width: 100%; }
+  .input-group .col-12 {
+    width: 100%; }
+  .input-group .col-9 {
+    width: 75%; }
+  .input-group .col-8 {
+    width: 66.66667%; }
+  .input-group .col-6 {
+    width: 50%; }
+  .input-group .col-4 {
+    width: 100%/3; }
+  .input-group .col-3 {
+    width: 25%; }
+  .input-group .col-2 {
+    width: 100%/6; }
+
+.brand {
+  color: #FFF;
+  font-size: 1.5rem;
+  text-decoration: none; }
+
+nav {
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  margin: 0;
+  padding: 1rem;
+  width: 75%; }
+  nav:before {
+    background: url(/img/svg/menu.svg) no-repeat 0 0;
+    background-size: 30px;
+    content: " ";
+    display: inline-block;
+    position: relative;
+    margin-left: -60px;
+    width: 30px;
+    height: 30px; }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  nav a {
+    color: #FFF; }

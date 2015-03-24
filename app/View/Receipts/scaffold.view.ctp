@@ -48,7 +48,7 @@
 	</table>
 
 
-	<?php echo $this->Html->link('Edit',array('action'=>'edit',$receipt['Receipt']['id']),array('class'=>'btn')); ?>
+	<?php echo $this->Html->link('Edit',array('action'=>'add',$receipt['Receipt']['id']),array('class'=>'btn')); ?>
 	<?php echo $this->Html->link('Delete',array('action'=>'delete',$receipt['Receipt']['id']),array('class'=>'btn')); ?>
 	<?php echo $this->Html->link('Back to Wallet',array('action'=>'index'),array('class'=>'btn')); ?>
 	

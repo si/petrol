@@ -3,16 +3,14 @@
 <?php echo $this->Form->create('User', array('action'=>'login'));?>
     <fieldset>
         <legend>Sign in</legend>
-        <div class="row-fluid">
+        <div class="input-group">
         <?php
             echo $this->Form->input('username', array(
               'placeholder'=>'yourname',
-              'div' => 'form-group',
-              'class' => 'form-control',
+              'div' => 'col-6',
             ));
             echo $this->Form->input('password', array(
-              'div' => 'form-group', 
-              'class' => 'form-control'
+              'div' => 'col-6', 
             ));
         ?>
         </div>
@@ -20,7 +18,7 @@
 <?php 
     echo $this->Form->button('Login', array(
       'div'=>'form-group',
-      'class' => 'btn btn-default',
+      'class' => 'btn',
     ));
     
   echo $this->Form->end();

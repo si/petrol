@@ -1,18 +1,5 @@
 
-body {
-  background: #000 url(/img/backgrounds/civic_dashboard_hq.jpg) no-repeat top right;
-  background-size: cover;
-  color: #FFF !important;
-  padding: 5rem 18% 2rem 1rem;
-}
-
-input, select {
-  background: rgba(#FFF, 0.2);
-  border: none;
-  padding: 0.5rem;
-}
-
-label {
-  color: rgba(#FFF, 0.5);
-  border-bottom: none;
-}
+/*** Global	***/
+@import "_global/_page";
+@import "_global/_forms";
+@import "_global/_nav";
