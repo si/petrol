@@ -77,6 +77,7 @@ button,
 	background: rgba(#000,0.8);
 	border: none;
 	color: #FFF;
+	cursor: pointer;
 	display: block;
 	font-family: inherit;
 	font-size: inherit;
@@ -84,6 +85,11 @@ button,
 	padding: 1rem;
 	text-decoration: none;
 	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+		background: rgba(#000,1);
+	}
 }
 
 

@@ -90,6 +90,7 @@ button,
   background: rgba(0, 0, 0, 0.8);
   border: none;
   color: #FFF;
+  cursor: pointer;
   display: block;
   font-family: inherit;
   font-size: inherit;
@@ -98,8 +99,14 @@ button,
   text-decoration: none;
   text-transform: uppercase;
 }
+/* line 89, ../sass/_global/_forms.scss */
+button:hover, button:focus,
+.btn:hover,
+.btn:focus {
+  background: black;
+}
 
-/* line 90, ../sass/_global/_forms.scss */
+/* line 96, ../sass/_global/_forms.scss */
 .input-group {
   /* flexbox specific properties */
   display: -webkit-flex;
@@ -108,46 +115,46 @@ button,
   flex-direction: row;
   margin: 0 0 0.67rem;
 }
-/* line 99, ../sass/_global/_forms.scss */
+/* line 105, ../sass/_global/_forms.scss */
 .input-group > div {
   /* flexbox specific properties */
   -webkit-flex: auto;
   flex: auto;
   margin-right: 7%;
 }
-/* line 105, ../sass/_global/_forms.scss */
+/* line 111, ../sass/_global/_forms.scss */
 .input-group > div.no-label {
   margin-top: 1.33rem;
 }
-/* line 110, ../sass/_global/_forms.scss */
+/* line 116, ../sass/_global/_forms.scss */
 .input-group input, .input-group textarea, .input-group select {
   width: 100%;
 }
-/* line 114, ../sass/_global/_forms.scss */
+/* line 120, ../sass/_global/_forms.scss */
 .input-group .col-12 {
   width: 100%;
 }
-/* line 117, ../sass/_global/_forms.scss */
+/* line 123, ../sass/_global/_forms.scss */
 .input-group .col-9 {
   width: 75%;
 }
-/* line 120, ../sass/_global/_forms.scss */
+/* line 126, ../sass/_global/_forms.scss */
 .input-group .col-8 {
   width: 66.66667%;
 }
-/* line 123, ../sass/_global/_forms.scss */
+/* line 129, ../sass/_global/_forms.scss */
 .input-group .col-6 {
   width: 50%;
 }
-/* line 126, ../sass/_global/_forms.scss */
+/* line 132, ../sass/_global/_forms.scss */
 .input-group .col-4 {
   width: 100%/3;
 }
-/* line 129, ../sass/_global/_forms.scss */
+/* line 135, ../sass/_global/_forms.scss */
 .input-group .col-3 {
   width: 25%;
 }
-/* line 132, ../sass/_global/_forms.scss */
+/* line 138, ../sass/_global/_forms.scss */
 .input-group .col-2 {
   width: 100%/6;
 }
