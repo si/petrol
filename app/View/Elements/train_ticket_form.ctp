@@ -5,72 +5,105 @@ echo $this->Form->create('TrainTicket', array('class'=>'navbar-form'));
 ?>
 <fieldset>
   <legend>Stations</legend>
-  <div class="row-fluid">
+  <div class="input-group">
 		<?php
 			echo $this->Form->input('origin_id', array(
         'label' => 'Origin',
-        'div' => 'input-group col-md-6',
-        'class' => 'form-control',
+        'div' => 'col-6',
+        'options' => $train_stations,
 			));
 		?>
 		<?php
 			echo $this->Form->input('destination_id', array(
         'label' => 'Destination',
-        'div' => 'input-group col-md-6',
-        'class' => 'form-control',
+        'div' => 'col-6',
+        'options' => $train_stations,
       ));
 		?>
     </div>
+</fieldset>
 
-    <div class="row-fluid settings">
+<fieldset>
+  <legend>Ticket</legend>
+
+    <div class="input-group">
   		<?php
   			echo $this->Form->input('train_ticket_type_id', array(
-          'div' => 'input-group col-md-3',
-          'class' => 'form-control',
+          'label' => 'Type',
+          'div' => 'col-6',
+          'options' => $train_ticket_types,
         ));
   		?>
       <?php
   			echo $this->Form->input('train_ticket_class_id', array(
-          'div' => 'input-group col-md-3',
-          'class' => 'form-control',
+          'label' => 'Class',
+          'div' => 'col-6',
+          'options' => $train_ticket_classes,
         ));
   		?>
-      <?php
-      echo $this->Form->input('train_ticket_restriction_id', array(
-        'empty' => '-',
-        'div' => 'input-group col-md-3',
-        'class' => 'form-control',
-      ));
-      ?>
-      <?php
-      echo $this->Form->input('price', array(
-        'div' => 'input-group col-md-3',
-        'class' => 'form-control',
-      ));
-      ?>
     </div>
 
-    <div class="row-fluid date">
+    <div class="input-group">
       <?php
-			echo $this->Form->input('created', array(
-				'label' => 'When',
-        'class' => 'form-control',
-      ));
-		?>
+        echo $this->Form->input('train_ticket_restriction_id', array(
+          'label' => 'Restrictions',
+          'empty' => '-',
+          'div' => 'col-6',
+          'options' => $train_ticket_restrictions,
+        ));
+      ?>
+      <?php
+        echo $this->Form->input('price', array(
+          'label' => 'Price',
+          'div' => 'col-6',
+          'class' => 'price'
+        ));
+      ?>
+    </div>
 </fieldset>
-<?php
 
-// var_dump($this->Session);
-		echo $this->Form->input('user_id', array(
-				'type' => 'hidden',
-				'value' => $this->Session->read('Auth.User.id'),
-			));
-?>
-</div>
+<fieldset>
+  <legend>When</legend>
 
+  <div class="input-group">
+  <?php
+    echo $this->Form->input('TrainTicket.created.hour', array(
+      'type' => 'number',
+      'name' => 'data[TrainTicket][created][hour]',
+      'div' => 'col-3',
+      'label' => 'Time',
+      'placeholder' => 'HH'
+    ));
+    echo $this->Form->input('TrainTicket.created.minute', array(
+      'type' => 'number',
+      'name' => 'data[TrainTicket][created][minute]',
+      'div' => 'col-3 no-label',
+      'label' => '',
+      'placeholder' => 'MI'
+    ));
+    echo $this->Form->input('TrainTicket.created.day', array(
+      'type' => 'number',
+      'name' => 'data[TrainTicket][created][day]',
+      'div' => 'col-3',
+      'label' => 'Date',
+      'placeholder' => 'DD'
+    ));
+    echo $this->Form->input('TrainTicket.created.month', array(
+      'type' => 'number',
+      'name' => 'data[TrainTicket][created][month]',
+      'div' => 'col-3 no-label',
+      'label' => '',
+      'placeholder' => 'MM'
+    ));
+  ?>
+  </div>
 
+</fieldset>
+
+<div class="input-group">
 	<?php echo $this->Form->button('Save',array('class'=>'btn btn-large')); ?>
 	<?php echo $this->Html->link('Cancel',array('action'=>'index'),array('class'=>'btn')); ?>
+</div>
 
 <?
 	echo $this->Form->end();
