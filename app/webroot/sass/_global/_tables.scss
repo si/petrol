@@ -1,0 +1,29 @@
+$primary-color: #FFF;
+
+table {
+	border-collapse: collapse;
+	margin: 1rem 2%;
+	width: 96%;
+
+	th, td {
+		padding: 0.5rem;
+		text-align: center;
+	}
+
+	thead {
+		opacity: 0.3;
+
+		a.asc, 
+		a.desc {
+
+			&:after {
+				background: red;
+				content: 'UP';
+			}
+		}
+	}
+
+	tbody {
+		background-color: rgba($primary-color, 0.2);
+	}
+}
