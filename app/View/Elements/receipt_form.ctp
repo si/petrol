@@ -9,25 +9,28 @@ echo $this->Form->create('Receipt', array());
 		<?php
 			echo $this->Form->input('cost', array(
 				'type' => 'number',
-		        'label' => 'Cost',
-		        'placeholder' => '£',
-		        'div' => 'col-4',
+			        'label' => 'Cost',
+			        'placeholder' => '£',
+			        'div' => 'col-4',
+			        'step' => 'any',
 			));
 		?>
 		<?php
 			echo $this->Form->input('litres', array(
 				'type' => 'number',
-		        'label' => 'Capacity',
-		        'placeholder' => 'litres',
-		        'div' => 'col-4',
+			        'label' => 'Capacity',
+			        'placeholder' => 'litres',
+			        'div' => 'col-4',
+			        'step' => 'any',
 			));
 		?>
 		<?php
 			echo $this->Form->input('price_per_litre', array(
-				'type' => 'text',
+				'type' => 'number',
 				'label' => 'Price',
 				'placeholder' => '£/litre',
 				'div' => 'col-4',
+			        'step' => 'any',
 			));
 		?>
 	</div>
