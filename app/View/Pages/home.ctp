@@ -3,8 +3,8 @@
     <h1>Ever wondered how much you spend on fuel? You need Petrol</h1>
     <p>Created out of a personal interest for annual outgoings on commuting to work, Petrol is a simple little web app for recording and monitoring the money spent on your petrol.</p>
     <a class="btn btn-primary btn-large" href="/register">Sign up</a>
-    <a class="btn btn-primary btn-large" href="/login">Log in</a>
-  <?php echo '<div class="col-md-4">' . $this->element('user_login') . '</div>'; ?>
+
+    <?php echo '<div class="col-md-4">' . $this->element('user_login') . '</div>'; ?>
   
 <?php else: ?>
 
