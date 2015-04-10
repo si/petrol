@@ -3,3 +3,12 @@ body {
 	color: #FFF;
 	font-family: AvenirNext-Regular, sans-serif;
 }
+
+a {
+	color: rgba(#000,0.8);
+
+	&:hover,
+	&:focus {
+		color: rgba(#000,1);
+	}
+}
