@@ -48,8 +48,16 @@ class User extends AppModel {
     );
 
     public $hasMany = array(
-      'Fillup' => array(
-        'order' => 'Fillup.created DESC',
+      'Receipt' => array(
+        'order' => 'Receipt.created DESC',
+        'limit' => '10',
+      ),
+      'TrainTicket' => array(
+        'order' => 'TrainTicket.created DESC',
+        'limit' => '10',
+      ),
+      'CarPark' => array(
+        'order' => 'CarPark.created DESC',
         'limit' => '10',
       ),
       'Vehicle',
