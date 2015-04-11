@@ -22,11 +22,6 @@
 
 if(count($vehicles)>1) : 
 ?>
-<div class="btn-group pull-right">
-  <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">
-    Filter by Vehicle
-    <span class="caret"></span>
-  </a>
   <ul class="dropdown-menu">
     <li><a href="<?php echo $this->Html->url(array("controller" => "receipts","action" => "index")); ?>">All</a></li>
     <?php 
@@ -41,7 +36,6 @@ if(count($vehicles)>1) :
       endforeach;
     ?>
   </ul>
-</div>
 <?php
 endif;
 
