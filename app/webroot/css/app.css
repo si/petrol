@@ -129,12 +129,10 @@ table {
   table th, table td {
     padding: 0.5rem;
     text-align: center; }
-  table thead {
-    opacity: 0.3; }
-    table thead a.asc:after,
-    table thead a.desc:after {
-      background: red;
-      content: 'UP'; }
+  table thead a {
+    color: rgba(0, 0, 0, 0.3); }
+    table thead a.asc, table thead a.desc {
+      color: rgba(0, 0, 0, 0.5); }
   table tbody {
     background-color: rgba(255, 255, 255, 0.2); }
 
@@ -318,11 +316,26 @@ body,
     right: 0; }
 
 /*** Components ***/
-.route abbr {
-  display: inline-block;
-  font-size: 3rem;
-  padding: 1rem; }
-.route span {
-  display: inline-block;
-  position: relative;
-  top: -0.75rem; }
+.route,
+.vitals {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex-direction: row; }
+  .route abbr,
+  .route span,
+  .route .price,
+  .route time,
+  .vitals abbr,
+  .vitals span,
+  .vitals .price,
+  .vitals time {
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: space-between; }
+  .route abbr,
+  .vitals abbr {
+    font-size: 3rem; }
+  .route .price,
+  .vitals .price {
+    font-size: 2rem; }

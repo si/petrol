@@ -1,14 +1,29 @@
-.route {
-	
+.route,
+.vitals {
+
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+
+	display: flex;
+	flex-direction: row;
+
+	abbr,
+	span,
+	.price,
+	time {
+		align-items: center;
+		flex: 1 1 auto;
+		justify-content: space-between;
+	}
+
 	abbr {
-		display: inline-block;
 		font-size: 3rem;
-		padding: 1rem;
+	}
+
+	.price {
+		font-size: 2rem;
 	}
 
 	span {
-		display: inline-block;
-		position: relative;
-		top: -0.75rem;
 	}
 }
