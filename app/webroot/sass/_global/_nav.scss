@@ -50,12 +50,12 @@ body,
 .menu-button {
 	position: fixed;
 	z-index: 1000;
-	margin: 0.5em 1%;
+	top: 20px;
+	right: 0;
 	padding: 0;
 	width: 2.5em;
 	height: 2.25em;
 	border: none;
-//	text-indent: 2.5em;
 	font-size: 1.5em;
 	color: transparent;
 	background: transparent;
@@ -70,7 +70,8 @@ body,
 		content: '';
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: transparent;
 		opacity: 0.6;
 	}
@@ -110,6 +111,10 @@ body,
 	&::after {
 		-webkit-transform: rotate(-45deg);
 		transform: rotate(-45deg);
+	}
+
+	&:hover {
+		color: transparent;
 	}
 }
 
