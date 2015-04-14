@@ -2,4 +2,9 @@
 /*** Global	***/
 @import "_global/_page";
 @import "_global/_forms";
+@import "_global/_tables";
 @import "_global/_nav";
+@import "_global/_messages";
+
+/*** Components ***/
+@import "_components/_routes";

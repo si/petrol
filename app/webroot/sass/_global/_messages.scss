@@ -1,0 +1,13 @@
+.alert {
+	background: rgba(#FFF, 0.5);
+	color: #000;
+	padding: 1rem;
+	position: relative;
+
+	button.close {
+		background: rgba(#000,0.1);
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}

@@ -1,0 +1,29 @@
+.route,
+.vitals {
+
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+
+	display: flex;
+	flex-direction: row;
+
+	abbr,
+	span,
+	.price,
+	time {
+		align-items: center;
+		flex: 1 1 auto;
+		justify-content: space-between;
+	}
+
+	abbr {
+		font-size: 3rem;
+	}
+
+	.price {
+		font-size: 2rem;
+	}
+
+	span {
+	}
+}

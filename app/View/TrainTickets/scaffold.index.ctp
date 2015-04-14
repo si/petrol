@@ -18,7 +18,7 @@
   </tbody>
 </table>
 
-<?php echo $this->Html->link('Add Ticket', array('controller'=>'train_tickets','action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
+<?php echo $this->Html->link('Add Ticket', array('controller'=>'train_tickets','action'=>'form'), array('class'=>'btn')); ?>
 <?php
 echo $this->element('train_tickets_table', array('data' => $trainTickets));
 ?>

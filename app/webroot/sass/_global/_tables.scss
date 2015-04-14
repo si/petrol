@@ -1,0 +1,28 @@
+$primary-color: #FFF;
+
+table {
+	border-collapse: collapse;
+	margin: 1rem 2%;
+	width: 96%;
+
+	th, td {
+		padding: 0.5rem;
+		text-align: center;
+	}
+
+	thead {
+
+		a {
+			color: rgba(#000, 0.3);
+	
+			&.asc, 
+			&.desc {
+				color: rgba(#000, 0.5);
+			}
+		}
+	}
+
+	tbody {
+		background-color: rgba($primary-color, 0.2);
+	}
+}

@@ -8,18 +8,18 @@ class TrainTicket extends AppModel {
 		'TrainTicketClass',
 		'TrainTicketRestriction',
 		'TrainTicketType',
-
+		'TrainStation' => array(
+			'className'    => 'TrainStation',
+			'foreignKey'   => 'origin_id',
+		),
 		'OriginId' => array(
 			'className'    => 'TrainStation',
 			'foreignKey'   => 'origin_id',
 		),
-
 		'DestinationId' => array(
 			'className'    => 'TrainStation',
 			'foreignKey'   => 'destination_id',
 		),
-
-
 	);
 
   var $validation = array(

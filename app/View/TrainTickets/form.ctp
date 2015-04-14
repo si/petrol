@@ -1,3 +1,3 @@
-<h1>Train Ticket</h1>
+<h1>Ticket Details</h1>
 
 <?php echo $this->element('train_ticket_form'); ?>
