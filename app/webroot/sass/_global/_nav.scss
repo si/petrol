@@ -1,3 +1,5 @@
+$burger-color : rgba(#FFF,0.7);
+
 html, 
 body, 
 .container, 
@@ -48,7 +50,7 @@ body,
 .menu-button {
 	position: fixed;
 	z-index: 1000;
-	margin: 1em;
+	margin: 0.5em 1%;
 	padding: 0;
 	width: 2.5em;
 	height: 2.25em;
@@ -64,14 +66,14 @@ body,
 		right: 0.5em;
 		bottom: 0.5em;
 		left: 0.5em;
-		background: linear-gradient(#373a47 20%, transparent 20%, transparent 40%, #373a47 40%, #373a47 60%, transparent 60%, transparent 80%, #373a47 80%);
+		background: linear-gradient($burger-color 20%, transparent 20%, transparent 40%, $burger-color 40%, $burger-color 60%, transparent 60%, transparent 80%, $burger-color 80%);
 		content: '';
 	}
 
-/*	&:hover {
+	&:hover {
+		color: transparent;
 		opacity: 0.6;
 	}
-*/
 }
 
 
@@ -170,7 +172,7 @@ body,
 	height: 100%;
 	top: 0;
 	right: 0;
-	fill: #373a47;
+	fill: rgba(#000,0.9);
 }
 
 /* Shown menu */
