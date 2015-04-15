@@ -16,3 +16,4 @@ app/webroot/bower_components/*
 
 app/Config/app_secrets.php
 app/Config/database.php
+codekit-config.json
