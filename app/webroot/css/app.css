@@ -16,6 +16,13 @@ a {
   margin: 10px 5%;
   width: 90% !important; }
 
+footer {
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 0.75rem;
+  margin: 2rem -5% 0;
+  padding: 2rem 1rem;
+  width: 100% !important; }
+
 form {
   background: rgba(255, 255, 255, 0.2); }
 
@@ -178,7 +185,7 @@ body,
   position: fixed;
   z-index: 1000;
   top: 20px;
-  right: 0;
+  right: 5%;
   padding: 0;
   width: 2.5em;
   height: 2.25em;
@@ -332,7 +339,8 @@ body,
   .vitals time {
     align-items: center;
     flex: 1 1 auto;
-    justify-content: space-between; }
+    justify-content: space-between;
+    text-align: center; }
   .route abbr,
   .vitals abbr {
     font-size: 3rem; }
