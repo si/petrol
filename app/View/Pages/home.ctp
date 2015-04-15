@@ -19,11 +19,12 @@
 
 <?php endif; ?>
 
-    <h2>Coming soon!</h2>
-    <p>The app is currently in development with no official launch date but we're hoping to roll out the first release in <strong>Summer 2012</strong>.</p>
     <p>If you're interested in an early invite to test the app, follow <a href="http://twitter.com/petrolapp">@petrolapp</a> on Twitter or register to our newsletter (we promise not to spam you or share it with nasty people).</p>
 
     <form action="http://unstyled.createsend.com/t/r/s/guryhi/" method="post" id="subForm" class="well form-inline">
-      <input type="email" name="cm-guryhi-guryhi" id="guryhi-guryhi" placeholder="you@domain.com" />
-      <button type="submit" class="btn">Subscribe</button>
+        <fieldset>
+            <legend>Engage</legend>
+                <input type="email" name="cm-guryhi-guryhi" id="guryhi-guryhi" placeholder="you@domain.com" />
+            <button type="submit" class="btn">Subscribe</button>
+        </fieldset>
     </form>    
