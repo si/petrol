@@ -7,8 +7,6 @@ app/tmp/cache/views/*
 app/tmp/logs/*
 app/tmp/sessions/*
 app/tmp/tests/*
-app/[Cc]onfig/database.php
-app/Config/app_secrets.php
 .sass-cache
 
 !empty
@@ -16,4 +14,5 @@ app/Config/app_secrets.php
 app/composer.phar
 app/webroot/bower_components/*
 
+app/Config/app_secrets.php
 app/Config/database.php
