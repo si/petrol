@@ -11,13 +11,13 @@ table {
 	}
 
 	thead {
-
+		opacity: 0.6;
 		a {
 			color: rgba(#000, 0.3);
 	
 			&.asc, 
 			&.desc {
-				color: rgba(#000, 0.5);
+				color: rgba(#000, 0.8);
 			}
 		}
 	}

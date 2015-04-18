@@ -23,6 +23,9 @@ footer {
   padding: 2rem 1rem;
   width: 100% !important; }
 
+h1 {
+  line-height: 1.1; }
+
 form {
   background: rgba(255, 255, 255, 0.2); }
 
@@ -90,6 +93,7 @@ button,
   font-size: inherit;
   margin: 0 5px 5px 0;
   padding: 1rem;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase; }
   button:hover, button:focus,
@@ -97,6 +101,18 @@ button,
   .btn:focus {
     background-color: black;
     color: #FFF; }
+
+progress {
+  width: 100%;
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none; }
+  progress::-webkit-progress-bar {
+    background-color: rgba(0, 0, 0, 0.2); }
+  progress::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #0099cc, #ff4444);
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%; }
 
 .input-group {
   /* flexbox specific properties */
@@ -136,10 +152,12 @@ table {
   table th, table td {
     padding: 0.5rem;
     text-align: center; }
-  table thead a {
-    color: rgba(0, 0, 0, 0.3); }
-    table thead a.asc, table thead a.desc {
-      color: rgba(0, 0, 0, 0.5); }
+  table thead {
+    opacity: 0.6; }
+    table thead a {
+      color: rgba(0, 0, 0, 0.3); }
+      table thead a.asc, table thead a.desc {
+        color: rgba(0, 0, 0, 0.8); }
   table tbody {
     background-color: rgba(255, 255, 255, 0.2); }
 
@@ -362,3 +380,10 @@ body,
   .route .price,
   .vitals .price {
     font-size: 2rem; }
+
+.map {
+  background: rgba(255, 255, 255, 0.8) url("/img/map.png") no-repeat 50% 50%;
+  color: #000;
+  height: 300px;
+  padding: 2rem 1rem;
+  text-align: center; }
