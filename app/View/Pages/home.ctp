@@ -4,7 +4,7 @@
     <p>Created out of a personal interest for annual outgoings on commuting to work, Petrol is a simple little web app for recording and monitoring the money spent on your petrol.</p>
     <a class="btn btn-primary btn-large" href="/register">Sign up</a>
 
-    <?php echo '<div class="col-md-4">' . $this->element('user_login') . '</div>'; ?>
+    <?php echo $this->element('user_login'); ?>
   
 <?php else: ?>
 
@@ -24,7 +24,9 @@
     <form action="http://unstyled.createsend.com/t/r/s/guryhi/" method="post" id="subForm" class="well form-inline">
         <fieldset>
             <legend>Engage</legend>
-                <input type="email" name="cm-guryhi-guryhi" id="guryhi-guryhi" placeholder="you@domain.com" />
-            <button type="submit" class="btn">Subscribe</button>
+            <div class="input-group">
+                <input type="email" name="cm-guryhi-guryhi" id="guryhi-guryhi" placeholder="you@domain.com" class="col-6" />
+                <button type="submit" class="btn col-6">Subscribe</button>
+            </div>
         </fieldset>
     </form>    
