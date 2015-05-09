@@ -38,18 +38,6 @@ input[type=range] {
 	-webkit-appearance: none;
 	width: 100%;
 	
-	&::-webkit-slider-thumb {
-		-webkit-appearance: none;
-	}
-
-	&::-ms-track {
-		width: 100%;
-		cursor: pointer;
-		background: transparent;
-		border-color: transparent;
-		color: transparent;
-	}
-
 	&:focus {
 		outline: none;
 	}
@@ -61,6 +49,18 @@ input[type=range] {
 		width: 2rem;
 		margin: -0.5rem 0;
 		cursor: pointer;
+		position: relative;
+		
+		&:before {
+			content: attr('value');
+			height: 2rem;
+			left: 0;
+			position: absolute;
+			width: 2rem;
+			text-align: center;
+			top: 0.75em;
+		}
+
 	}
 	
 	&::-webkit-slider-runnable-track {
@@ -68,6 +68,14 @@ input[type=range] {
 		cursor: pointer;
 		background: rgba(0,0,0,0.2);
 
+	}
+
+	&::-ms-track {
+		width: 100%;
+		cursor: pointer;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
 	}
 
 }
