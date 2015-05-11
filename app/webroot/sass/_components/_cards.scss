@@ -1,0 +1,15 @@
+.card {
+	background: rgba(#FFF,0.95);
+	color: #444;
+	padding: 1rem;
+
+	.price {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	time {
+		color: #888;
+		text-align: center;
+	}
+}

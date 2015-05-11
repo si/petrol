@@ -2,8 +2,8 @@ $primary-color: #FFF;
 
 table {
 	border-collapse: collapse;
-	margin: 1rem 2%;
-	width: 96%;
+	margin: 1rem 0;
+	width: 100%;
 
 	th, td {
 		padding: 0.5rem;
@@ -11,13 +11,13 @@ table {
 	}
 
 	thead {
-
+		opacity: 0.6;
 		a {
 			color: rgba(#000, 0.3);
 	
 			&.asc, 
 			&.desc {
-				color: rgba(#000, 0.5);
+				color: rgba(#000, 0.8);
 			}
 		}
 	}
@@ -25,4 +25,32 @@ table {
 	tbody {
 		background-color: rgba($primary-color, 0.2);
 	}
+}
+
+.pager {
+
+	opacity: 0.5;
+
+	display: flex;
+	flex-direction: row;
+
+	.prev,
+	.next,
+	span {
+
+		align-items: space-between;
+		flex: 1 1 auto;
+		//justify-content: center;
+		text-align: center;
+
+	}
+
+	.prev {
+		text-align: left;
+	}
+
+	.next {
+		text-align: right;
+	}
+
 }

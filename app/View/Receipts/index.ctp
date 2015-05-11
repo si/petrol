@@ -43,19 +43,13 @@ echo $this->element('receipts_table', array('data'=>$data));
 
 ?>
 
-<p><?php echo 'Page ' . $this->Paginator->counter(); ?></p>
 
-<ul class="pager">
-  <li class="previous">
-  	<?php
-  	if($this->Paginator->hasPrev()) echo $this->Paginator->prev('« Previous', null, null, array('class' => 'disabled')); ?>
-  </li>
-  <li class="next">
+<div class="pager">
 	<?php
-  	if($this->Paginator->hasNext()) echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled')); ?> 
-  </li>
-</ul>
+	if($this->Paginator->hasPrev()) echo $this->Paginator->prev('Previous', null, null, array('class' => 'disabled')); ?>
+  
+  <span><?php echo 'Page ' . $this->Paginator->counter(); ?></span>
 
-
-	
+	<?php
+  	if($this->Paginator->hasNext()) echo $this->Paginator->next('Next', null, null, array('class' => 'disabled')); ?> 
 </div>

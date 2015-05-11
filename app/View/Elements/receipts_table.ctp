@@ -1,6 +1,6 @@
-<canvas id="receiptsChart" width="300" height="300"></canvas>
+<canvas id="receiptsChart" class="chart" data-source="receipts-table" data-label="date" data-val="ppl" width="300" height="300"></canvas>
 
-<table class="table chart">
+<table id="receipts-table" class="table chart">
   <thead>
 	<tr> 
 		<th><?php echo $this->Paginator->sort('created', 'When'); ?></th> 
@@ -12,9 +12,21 @@
 	<tbody>
   <?php foreach($data as $Receipt): ?> 
 	<tr> 
-		<td><?php echo $this->Html->link($this->Time->niceShort($Receipt['Receipt']['created']), array('controller'=>'Receipts','action'=>'view',$Receipt['Receipt']['id']), array('data-utc'=> $this->Time->format($Receipt['Receipt']['created'], '%c'), 'data-short'=> $this->Time->format($Receipt['Receipt']['created'], '%e %b %y'))); ?> </td> 
+		<td class="date">
+		<?php 
+			echo $this->Html->link(
+				$this->Time->format($Receipt['Receipt']['created'], '%d/%m'), 
+				array('controller'=>'Receipts','action'=>'view',$Receipt['Receipt']['id']),
+				array(
+					'data-utc'=> $this->Time->format($Receipt['Receipt']['created'], '%c'),
+					'data-short'=> $this->Time->format($Receipt['Receipt']['created'], '%e %b %y'
+					)
+				)
+			);
+		?>
+		</td> 
 		<td><?php echo $this->Number->currency($Receipt['Receipt']['cost'],'GBP'); ?> </td> 
-		<td><?php echo $this->Number->currency($Receipt['Receipt']['price_per_litre'],'GBP',array('places'=>3)); ?> </td> 
+		<td class="ppl"><?php echo $this->Number->currency($Receipt['Receipt']['price_per_litre'],'GBP',array('places'=>3)); ?> </td> 
 		<td>
 		<?php 
 		  echo '<a href="' 

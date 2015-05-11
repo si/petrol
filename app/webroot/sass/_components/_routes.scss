@@ -1,5 +1,4 @@
-.route,
-.vitals {
+.route {
 
 	display: -webkit-flex;
 	-webkit-flex-direction: row;
@@ -14,6 +13,7 @@
 		align-items: center;
 		flex: 1 1 auto;
 		justify-content: space-between;
+		text-align: center;
 	}
 
 	abbr {
