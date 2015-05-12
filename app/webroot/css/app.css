@@ -245,14 +245,25 @@ table thead a.asc, table thead a.desc {
 table tbody {
   background-color: rgba(255, 255, 255, 0.2);
 }
+/* line 31, ../sass/_global/_tables.scss */
+table.stats td {
+  font-size: 1.5rem;
+  padding-bottom: 0;
+}
+/* line 35, ../sass/_global/_tables.scss */
+table.stats th {
+  font-size: 0.5rem;
+  padding-top: 0;
+  text-transform: uppercase;
+}
 
-/* line 30, ../sass/_global/_tables.scss */
+/* line 43, ../sass/_global/_tables.scss */
 .pager {
   opacity: 0.5;
   display: flex;
   flex-direction: row;
 }
-/* line 39, ../sass/_global/_tables.scss */
+/* line 52, ../sass/_global/_tables.scss */
 .pager .prev,
 .pager .next,
 .pager span {
@@ -260,11 +271,11 @@ table tbody {
   flex: 1 1 auto;
   text-align: center;
 }
-/* line 48, ../sass/_global/_tables.scss */
+/* line 61, ../sass/_global/_tables.scss */
 .pager .prev {
   text-align: left;
 }
-/* line 52, ../sass/_global/_tables.scss */
+/* line 65, ../sass/_global/_tables.scss */
 .pager .next {
   text-align: right;
 }
