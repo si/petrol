@@ -3,7 +3,7 @@
 <div class="menu-wrap">
 	<nav class="menu" role="navigation">
 		<ul class="nav navbar-nav icon-list">
-		    <li><?php echo $this->Html->link('Home', '/', array('class'=>'brand')); ?></li>
+		    <li><?php echo $this->Html->link('Home', '/', array('class'=>'i brand')); ?></li>
 
 			<?php if($this->Session->read('Auth.User.id')=='') : ?>
 		    
@@ -13,13 +13,13 @@
 			<?php else: ?>
 
 		    <li>
-		    	<a href="#" class="user" data-gravatar-src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $this->Session->read('Auth.User.email') ) ) ); ?>?s=24">
+		    	<a href="#" class="i user" data-gravatar-src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $this->Session->read('Auth.User.email') ) ) ); ?>?s=24">
 					<?php echo $this->Session->read('Auth.User.username'); ?>
 				</a>
 			</li>
-		    <li><?php echo $this->Html->link('Petrol', array('controller'=>'receipts','action'=>'index'), array('class'=>'petrol')); ?></li>
-		    <li><?php echo $this->Html->link('Trains', array('controller'=>'train_tickets','action'=>'index'), array('class'=>'trains')); ?></li>
-		    <li><?php echo $this->Html->link('Parking', array('controller'=>'car_parks','action'=>'index'), array('class'=>'parking')); ?></li>
+		    <li><?php echo $this->Html->link('Petrol', array('controller'=>'receipts','action'=>'index'), array('class'=>'i petrol')); ?></li>
+		    <li><?php echo $this->Html->link('Trains', array('controller'=>'train_tickets','action'=>'index'), array('class'=>'i trains')); ?></li>
+		    <li><?php echo $this->Html->link('Parking', array('controller'=>'car_parks','action'=>'index'), array('class'=>'i parking')); ?></li>
 			<li><?php echo $this->Html->link('Sign Out', array('controller'=>'users','action'=>'logout')); ?></li>
 
 			<?php endif; ?>
