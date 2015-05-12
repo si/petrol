@@ -126,7 +126,7 @@ input[type=range]::-ms-track {
 /* line 84, ../sass/_global/_forms.scss */
 button,
 .btn {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   border: none;
   color: #FFF;
   cursor: pointer;
