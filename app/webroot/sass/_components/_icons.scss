@@ -1,0 +1,44 @@
+// General icon settings
+.i {
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+}
+
+// Sizes
+.s {
+	background-size: 24px;
+}
+
+.m {
+	background-size: 36px;
+}
+
+.l {
+	background-size: 48px;
+}
+
+// Modularised
+.btn.i {
+	background-position: 10px 50%;
+}
+
+// Images
+.brand {
+	background-image: url(/img/svg/home.svg);
+}
+
+.petrol {
+	background-image: url(/img/svg/petrol.svg);
+}
+
+.trains {
+	background-image: url(/img/svg/train.svg);
+}
+
+.parking {
+	background-image: url(/img/svg/timer.svg);
+}
+
+.user {
+	background-image: url(/img/svg/head.svg);
+}

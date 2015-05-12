@@ -54,7 +54,15 @@ class ReceiptsController extends AppController {
     ));
 	  $this->set('totals',$totals);
 	  
-	  $vehicles = $this->Receipt->Vehicle->find('list', array('conditions'=>array('user_id'=>$this->Session->read('Auth.User.id'))));
+	  $vehicles = $this->Receipt->Vehicle->find(
+	  	'list', 
+	  	array(
+	  		'conditions' => array(
+	  			'user_id' => $this->Session->read('Auth.User.id'),
+	  			'Vehicle.status' => '',
+	  		)
+	  	)
+	  );
 	  $this->set('vehicles',$vehicles);
 	  
   }
