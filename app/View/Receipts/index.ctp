@@ -20,19 +20,24 @@
 
 if(count($vehicles)>1) : 
 ?>
-  <ul class="dropdown-menu">
-    <li><a href="<?php echo $this->Html->url(array("controller" => "receipts","action" => "index")); ?>">All</a></li>
+<ul class="tabs">
+  <li class="<?php echo !isset($vehicle) ? 'selected' : ''; ?>">
     <?php 
-      foreach($vehicles as $id=>$name) :
-        echo '<li '
-          . ((isset($vehicle) && $vehicle['Vehicle']['id']==$id) ? 'class="disabled"' : '') 
-          . '>' 
-          . '<a href="'. $this->Html->url(array("controller" => "receipts","action" => "index","vehicle" => $id)) . '">'
-          . $name 
-          . '</a>'
-          . '</li>';
-      endforeach;
-    ?>
+    echo $this->Html->link('All', 
+      array("controller" => "receipts","action" => "index")
+    ); ?>
+  </li>
+  <?php 
+    foreach($vehicles as $id=>$name) :
+      echo '<li '
+        . ((isset($vehicle) && $vehicle['Vehicle']['id']==$id) ? 'class="selected"' : '') 
+        . '>' 
+        . '<a href="'. $this->Html->url(array("controller" => "receipts","action" => "index","vehicle" => $id)) . '">'
+        . $name 
+        . '</a>'
+        . '</li>';
+    endforeach;
+  ?>
   </ul>
 <?php
 endif;

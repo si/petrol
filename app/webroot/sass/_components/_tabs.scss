@@ -1,0 +1,29 @@
+.tabs {
+
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		align-items: center;
+		flex: 1 1 auto;
+		justify-content: space-between;
+
+		background: rgba(#FFF, 0.1);
+		padding: 0.6rem 0.3rem;
+		text-align: center;
+
+		&.selected {
+			background: rgba(#FFF, 0.4);
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
