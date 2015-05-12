@@ -269,7 +269,7 @@ table tbody {
   text-align: right;
 }
 
-/* line 6, ../sass/_global/_nav.scss */
+/* line 7, ../sass/_global/_nav.scss */
 html,
 body,
 .container,
@@ -279,16 +279,16 @@ body,
   height: 100%;
 }
 
-/* line 12, ../sass/_global/_nav.scss */
+/* line 13, ../sass/_global/_nav.scss */
 .menu-wrap a {
   color: #b8b7ad;
 }
-/* line 16, ../sass/_global/_nav.scss */
+/* line 17, ../sass/_global/_nav.scss */
 .menu-wrap a:hover, .menu-wrap a:focus {
   color: #c94e50;
 }
 
-/* line 21, ../sass/_global/_nav.scss */
+/* line 22, ../sass/_global/_nav.scss */
 .content-wrap {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -296,12 +296,12 @@ body,
   transition: transform 0.4s;
 }
 
-/* line 28, ../sass/_global/_nav.scss */
+/* line 29, ../sass/_global/_nav.scss */
 .content {
   position: relative;
   background: #b4bad2;
 }
-/* line 32, ../sass/_global/_nav.scss */
+/* line 33, ../sass/_global/_nav.scss */
 .content::before {
   position: absolute;
   top: 0;
@@ -319,7 +319,7 @@ body,
 }
 
 /* Menu Button */
-/* line 50, ../sass/_global/_nav.scss */
+/* line 51, ../sass/_global/_nav.scss */
 .menu-button {
   position: fixed;
   z-index: 1000;
@@ -333,7 +333,7 @@ body,
   color: transparent;
   background: transparent;
 }
-/* line 63, ../sass/_global/_nav.scss */
+/* line 64, ../sass/_global/_nav.scss */
 .menu-button::before {
   position: absolute;
   top: 0.5em;
@@ -343,14 +343,14 @@ body,
   background: linear-gradient(rgba(255, 255, 255, 0.7) 20%, transparent 20%, transparent 40%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.7) 60%, transparent 60%, transparent 80%, rgba(255, 255, 255, 0.7) 80%);
   content: '';
 }
-/* line 74, ../sass/_global/_nav.scss */
+/* line 75, ../sass/_global/_nav.scss */
 .menu-button:hover, .menu-button:focus {
   color: transparent;
   opacity: 0.6;
 }
 
 /* Close Button */
-/* line 82, ../sass/_global/_nav.scss */
+/* line 83, ../sass/_global/_nav.scss */
 .close-button {
   width: 16px;
   height: 16px;
@@ -364,7 +364,7 @@ body,
   background: transparent;
   color: transparent;
 }
-/* line 96, ../sass/_global/_nav.scss */
+/* line 97, ../sass/_global/_nav.scss */
 .close-button::before, .close-button::after {
   content: '';
   position: absolute;
@@ -374,23 +374,23 @@ body,
   left: 50%;
   background: #777;
 }
-/* line 106, ../sass/_global/_nav.scss */
+/* line 107, ../sass/_global/_nav.scss */
 .close-button::before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 111, ../sass/_global/_nav.scss */
+/* line 112, ../sass/_global/_nav.scss */
 .close-button::after {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 116, ../sass/_global/_nav.scss */
+/* line 117, ../sass/_global/_nav.scss */
 .close-button:hover {
   color: transparent;
 }
 
 /* Menu */
-/* line 123, ../sass/_global/_nav.scss */
+/* line 124, ../sass/_global/_nav.scss */
 .menu-wrap {
   position: absolute;
   z-index: 1001;
@@ -403,14 +403,14 @@ body,
   transition: transform 0.4s;
 }
 
-/* line 135, ../sass/_global/_nav.scss */
+/* line 136, ../sass/_global/_nav.scss */
 .menu {
   position: relative;
   z-index: 1000;
   padding: 3em 1em 0;
 }
 
-/* line 142, ../sass/_global/_nav.scss */
+/* line 143, ../sass/_global/_nav.scss */
 .menu,
 .close-button {
   opacity: 0;
@@ -422,27 +422,49 @@ body,
   transition-timing-function: cubic-bezier(0.17, 0.67, 0.1, 1.27);
 }
 
-/* line 154, ../sass/_global/_nav.scss */
+/* line 153, ../sass/_global/_nav.scss */
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 159, ../sass/_global/_nav.scss */
 .icon-list a {
   display: block;
   padding: 0.8em;
-}
-/* line 158, ../sass/_global/_nav.scss */
-.icon-list a span {
-  margin-left: 10px;
+  padding-left: 34px;
   font-size: 0.85em;
   font-weight: 700;
-  vertical-align: middle;
+  line-height: 14px;
 }
-/* line 166, ../sass/_global/_nav.scss */
-.icon-list i {
-  font-size: 1.5em;
-  vertical-align: middle;
-  color: #282a35;
+/* line 168, ../sass/_global/_nav.scss */
+.icon-list .brand {
+  background: url(/img/svg/home.svg) no-repeat 0 50%;
+  background-size: 24px;
+}
+/* line 173, ../sass/_global/_nav.scss */
+.icon-list .petrol {
+  background: url(/img/svg/petrol.svg) no-repeat 0 50%;
+  background-size: 24px;
+}
+/* line 178, ../sass/_global/_nav.scss */
+.icon-list .trains {
+  background: url(/img/svg/train.svg) no-repeat 0 50%;
+  background-size: 24px;
+}
+/* line 183, ../sass/_global/_nav.scss */
+.icon-list .parking {
+  background: url(/img/svg/timer.svg) no-repeat 0 50%;
+  background-size: 24px;
+}
+/* line 188, ../sass/_global/_nav.scss */
+.icon-list .user {
+  background: url(/img/svg/head.svg) no-repeat 0 50%;
+  background-size: 24px;
 }
 
 /* Morph Shape */
-/* line 174, ../sass/_global/_nav.scss */
+/* line 196, ../sass/_global/_nav.scss */
 .morph-shape {
   position: absolute;
   width: 100%;
@@ -453,14 +475,14 @@ body,
 }
 
 /* Shown menu */
-/* line 185, ../sass/_global/_nav.scss */
+/* line 207, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .content::before {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
-/* line 194, ../sass/_global/_nav.scss */
+/* line 216, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .menu,
 .show-menu .close-button,
@@ -470,7 +492,7 @@ body,
   transform: translate3d(0, 0, 0);
 }
 
-/* line 200, ../sass/_global/_nav.scss */
+/* line 222, ../sass/_global/_nav.scss */
 .show-menu .menu,
 .show-menu .close-button {
   opacity: 1;
@@ -480,7 +502,7 @@ body,
   transition-delay: 0.4s;
 }
 
-/* line 208, ../sass/_global/_nav.scss */
+/* line 230, ../sass/_global/_nav.scss */
 .show-menu .content::before {
   opacity: 1;
   -webkit-transition: opacity 0.4s;
