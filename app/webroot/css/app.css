@@ -437,34 +437,17 @@ body,
   font-weight: 700;
   line-height: 14px;
 }
-/* line 168, ../sass/_global/_nav.scss */
-.icon-list .brand {
-  background: url(/img/svg/home.svg) no-repeat 0 50%;
-  background-size: 24px;
-}
-/* line 173, ../sass/_global/_nav.scss */
-.icon-list .petrol {
-  background: url(/img/svg/petrol.svg) no-repeat 0 50%;
-  background-size: 24px;
-}
-/* line 178, ../sass/_global/_nav.scss */
-.icon-list .trains {
-  background: url(/img/svg/train.svg) no-repeat 0 50%;
-  background-size: 24px;
-}
-/* line 183, ../sass/_global/_nav.scss */
-.icon-list .parking {
-  background: url(/img/svg/timer.svg) no-repeat 0 50%;
-  background-size: 24px;
-}
-/* line 188, ../sass/_global/_nav.scss */
+/* line 172, ../sass/_global/_nav.scss */
+.icon-list .brand,
+.icon-list .petrol,
+.icon-list .trains,
+.icon-list .parking,
 .icon-list .user {
-  background: url(/img/svg/head.svg) no-repeat 0 50%;
   background-size: 24px;
 }
 
 /* Morph Shape */
-/* line 196, ../sass/_global/_nav.scss */
+/* line 179, ../sass/_global/_nav.scss */
 .morph-shape {
   position: absolute;
   width: 100%;
@@ -475,14 +458,14 @@ body,
 }
 
 /* Shown menu */
-/* line 207, ../sass/_global/_nav.scss */
+/* line 190, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .content::before {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
-/* line 216, ../sass/_global/_nav.scss */
+/* line 199, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .menu,
 .show-menu .close-button,
@@ -492,7 +475,7 @@ body,
   transform: translate3d(0, 0, 0);
 }
 
-/* line 222, ../sass/_global/_nav.scss */
+/* line 205, ../sass/_global/_nav.scss */
 .show-menu .menu,
 .show-menu .close-button {
   opacity: 1;
@@ -502,7 +485,7 @@ body,
   transition-delay: 0.4s;
 }
 
-/* line 230, ../sass/_global/_nav.scss */
+/* line 213, ../sass/_global/_nav.scss */
 .show-menu .content::before {
   opacity: 1;
   -webkit-transition: opacity 0.4s;
@@ -576,6 +559,57 @@ body,
 .input-group .col-2,
 .item-group .col-2 {
   width: 100%/6;
+}
+
+/* line 2, ../sass/_components/_icons.scss */
+.i {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+/* line 8, ../sass/_components/_icons.scss */
+.s {
+  background-size: 24px;
+}
+
+/* line 12, ../sass/_components/_icons.scss */
+.m {
+  background-size: 36px;
+}
+
+/* line 16, ../sass/_components/_icons.scss */
+.l {
+  background-size: 48px;
+}
+
+/* line 21, ../sass/_components/_icons.scss */
+.btn.i {
+  background-position: 10px 50%;
+}
+
+/* line 26, ../sass/_components/_icons.scss */
+.brand {
+  background-image: url(/img/svg/home.svg);
+}
+
+/* line 30, ../sass/_components/_icons.scss */
+.petrol {
+  background-image: url(/img/svg/petrol.svg);
+}
+
+/* line 34, ../sass/_components/_icons.scss */
+.trains {
+  background-image: url(/img/svg/train.svg);
+}
+
+/* line 38, ../sass/_components/_icons.scss */
+.parking {
+  background-image: url(/img/svg/timer.svg);
+}
+
+/* line 42, ../sass/_components/_icons.scss */
+.user {
+  background-image: url(/img/svg/head.svg);
 }
 
 /* line 1, ../sass/_components/_cards.scss */

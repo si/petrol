@@ -165,28 +165,11 @@ body,
 		line-height: $icon-size - 10;
 	}
 
-	.brand {
-		background: url(/img/svg/home.svg) no-repeat 0 50%;
-		background-size: $icon-size;
-	}
-
-	.petrol {
-		background: url(/img/svg/petrol.svg) no-repeat 0 50%;
-		background-size: $icon-size;
-	}
-
-	.trains {
-		background: url(/img/svg/train.svg) no-repeat 0 50%;
-		background-size: $icon-size;
-	}
-	
-	.parking {
-		background: url(/img/svg/timer.svg) no-repeat 0 50%;
-		background-size: $icon-size;
-	}
-
+	.brand,
+	.petrol,
+	.trains,
+	.parking,
 	.user {
-		background: url(/img/svg/head.svg) no-repeat 0 50%;
 		background-size: $icon-size;
 	}
 
