@@ -16,7 +16,12 @@ class VehiclesController extends AppController {
 
   function index() {
 
-	  $data = $this->paginate('Vehicle',array("Vehicle.user_id" => $this->Session->read('Auth.User.id')));
+	  $data = $this->Vehicle->find('all', array(
+      'conditions'=> array(
+        "Vehicle.user_id" => $this->Session->read('Auth.User.id')
+      ),
+      'order' => array('Vehicle.status ASC','Vehicle.created DESC')
+    ));
 	  $this->set('data', $data);
 
   }
