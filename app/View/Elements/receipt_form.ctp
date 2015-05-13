@@ -81,7 +81,7 @@ echo $this->Form->create('Receipt', array());
 	    		echo '<option value="' . $vehicle['Vehicle']['id'] . '"'
 	    			. 'data-registration="' . $vehicle['Vehicle']['registration'] . '"'
 	    			. ( ( count($vehicle['Receipt'])>0 ) ? 'data-odometer="' . $vehicle['Receipt'][0]['odometer'] . '"' : '')
-	    			. ( ( isset($this->data['Receipt']) && $this->data['Receipt']['vehicle_id'] == $vehicle['Vehicle']['id'] ) ? 'selected="selected"' : '' )
+	    			. ( ( isset($this->data['Receipt']['vehicle_id']) && $this->data['Receipt']['vehicle_id'] == $vehicle['Vehicle']['id'] ) ? 'selected="selected"' : '' )
 	    			. '>' 
 	    			. $vehicle['Vehicle']['name'] 
 	    			. '</option>';
