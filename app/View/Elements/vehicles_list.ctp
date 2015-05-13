@@ -2,7 +2,7 @@
 
   if(isset($data) && count($data)>0) : 
   ?>
-  <ol class="unstyled">
+  <ul>
     <?php 
     
     foreach($data as $item) : 
@@ -10,8 +10,8 @@
       if(isset($item['Vehicle'])) $item = $item['Vehicle'];  
       
     ?>
-    <li>
-      <h2>
+    <li class="<?php echo ($item['status']!='') ? 'inactive' : ''; ?>">
+      <h2 class="reg">
         <?php echo $this->Html->link(
           $item['registration'], 
           array(
@@ -25,12 +25,11 @@
         ); ?>
       </h2>
 
-      <small>
-        <i class="icon-info-sign"></i>
-        <?php echo $item['manufacturer'] . ' ' . $item['model']; ?>
-        <i class="icon-time"></i>
-        <?php echo $this->Time->niceShort($item['created']); ?>
-      </small>
+      <div class="item-group">
+        <span class="col-6 detail"><?php echo $item['manufacturer'] . ' ' . $item['model']; ?></span>
+        <span class="col-3 fuel-type-<?php echo $item['fuel_type']; ?>"><?php echo $item['fuel_type']; ?></span>
+        <span class="col-3 fuel-capacity"><?php echo $item['tank_capacity']; ?>l</span>
+      </div>
 
     </li>
     <?php endforeach; ?>
