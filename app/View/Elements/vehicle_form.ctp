@@ -16,10 +16,16 @@ echo $this->Form->create('Vehicle');
 		<?php
 			echo $this->Form->input('manufacturer');
 		?>
+		<?php
+			echo $this->Form->input('model');
+		?>
 	</div>
 	<div class="input-group">  
 		<?php
-			echo $this->Form->input('model');
+			echo $this->Form->input('nickname');
+		?>
+		<?php
+			echo $this->Form->input('avatar', array('type'=>'file'));
 		?>
 	</div>
 	<div class="input-group">  
@@ -47,8 +53,8 @@ echo $this->Form->create('Vehicle');
 			echo $this->Form->input('status', array(
 				'options'=> array(
 					''=>'On the road',
-					'R'=>'Rental',
 					'O'=>'Off road',
+					'R'=>'Rental',
 					'S'=>'Sold',
 				)
 			));
