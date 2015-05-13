@@ -1,3 +1,5 @@
+$size-droplet : 20px;
+
 .inactive {
 	opacity: 0.5;
 }
@@ -12,4 +14,13 @@
 	a {
 		text-decoration: none;
 	}
+}
+
+*[class^="fuel-type-"], 
+*[class*=" fuel-type-"] {
+	background: url(/img/svg/droplet.svg) no-repeat 20% 0;
+	background-size: $size-droplet;
+	height: $size-droplet;
+	text-align: center;
+	width: $size-droplet;
 }
