@@ -38,6 +38,13 @@ h1 {
   line-height: 1.1;
 }
 
+/* line 38, ../sass/_global/_page.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* line 1, ../sass/_global/_forms.scss */
 form {
   background: rgba(255, 255, 255, 0.2);
