@@ -1,6 +1,6 @@
 <h1>Your Parking Tickets</h1>
 
-<table class="statistics">
+<table class="stats">
   <tbody>
   <tr>
     <td><?php
