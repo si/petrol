@@ -702,3 +702,21 @@ body,
   padding: 2rem 1rem;
   text-align: center;
 }
+
+/* line 1, ../sass/_components/_vehicles.scss */
+.inactive {
+  opacity: 0.5;
+}
+
+/* line 5, ../sass/_components/_vehicles.scss */
+.reg {
+  background: #FFF;
+  color: #333;
+  padding: 0.3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 12, ../sass/_components/_vehicles.scss */
+.reg a {
+  text-decoration: none;
+}
