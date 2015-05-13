@@ -3,41 +3,46 @@
 <?php
 echo $this->Session->flash();
 
-	echo $this->Form->create('Vehicle');
+echo $this->Form->create('Vehicle');
 ?>
 <fieldset>
   <legend>Vehicle Details</legend>
-
+	<div class="input-group">  
 		<?php
 			echo $this->Form->input('registration');
 		?>
-
+	</div>
+	<div class="input-group">  
 		<?php
 			echo $this->Form->input('manufacturer');
 		?>
-
+	</div>
+	<div class="input-group">  
 		<?php
 			echo $this->Form->input('model');
 		?>
-
+	</div>
+	<div class="input-group">  
 		<?php
 			echo $this->Form->input('fuel_type', array(
 			 'options'=> array(
 			   'U'=>'Unleaded',
 			   'D'=>'Diesel',
 			   'A'=>'Autogas',
-			 )
+			 ),
+			 'div' => 'col-6'
 			));
 		?>
-
 		<?php
 			echo $this->Form->input('tank_capacity', array(
 			 'type'=>'number',
 			 'placeholder'=>'litres',
+			 'div' => 'col-6'
 			));
-			if(isset($max_litres['Fillup']['litres'])) echo '<em>Your top fillup was ' . $max_litres['Fillup']['litres'] . '</em>';
+			if(isset($max_litres['Receipts']['litres'])) echo '<em>Your top fillup was ' . $max_litres['Fillup']['litres'] . '</em>';
 		?>
-
+	</div>
+	<div class="input-group">
 		<?php
 			echo $this->Form->input('status', array(
 				'options'=> array(
@@ -48,20 +53,19 @@ echo $this->Session->flash();
 				)
 			));
 		?>
-
+	</div>
 </fieldset>
 
+<?php echo $this->Form->button('Save'); ?>
+<?php echo $this->Html->link('Cancel', array('action' => 'index'), array('class'=>'btn')); ?>
 
 <?php
+echo $this->Form->input('user_id', array(
+		'type' => 'hidden',
+		'value' => $this->Session->read('Auth.User.id'),
+	));
 
-		echo $this->Form->input('user_id', array(
-				'type' => 'hidden',
-				'value' => $this->Session->read('Auth.User.id'),
-			));
+if(isset($this->data['Vehicle']['id']))	echo $this->Form->input('id', array('type' => 'hidden'));
 
-		if(isset($this->data['Vehicle']['id'])) :
-  		echo $this->Form->input('id', array('type' => 'hidden'));
-		endif;
-
-	echo $this->Form->end('Save');
+echo $this->Form->end();
 ?>
