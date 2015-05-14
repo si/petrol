@@ -19,8 +19,7 @@ class VehiclesController extends AppController {
 	  $data = $this->Vehicle->find('all', array(
       'conditions'=> array(
         "Vehicle.user_id" => $this->Session->read('Auth.User.id')
-      ),
-      'order' => array('Vehicle.status ASC','Vehicle.created DESC')
+      )
     ));
 	  $this->set('data', $data);
 
