@@ -13,7 +13,7 @@
 			<?php else: ?>
 
 		    <li>
-		    	<a href="#" class="i user" data-gravatar-src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $this->Session->read('Auth.User.email') ) ) ); ?>?s=24">
+		    	<a href="/profile" class="i user" data-gravatar-src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( $this->Session->read('Auth.User.email') ) ) ); ?>?s=24">
 					<?php echo $this->Session->read('Auth.User.username'); ?>
 				</a>
 			</li>
