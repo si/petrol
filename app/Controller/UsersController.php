@@ -33,6 +33,21 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         $this->set('user', $this->User->read(null, $id));
+
+        $conditions = array(
+            "Receipt.user_id" => $this->Session->read('Auth.User.id')
+        );
+
+        $this->set('stats', $this->User->Receipt->find('all', array(
+            'fields'=> array(
+                'ROUND(SUM(cost),2) AS pounds_spent',
+                'ROUND(SUM(litres),2) AS litres',
+                'MAX(odometer) - MIN(odometer) AS miles',
+                'COUNT(*) AS receipts',
+                'COUNT(DISTINCT location) AS locations',
+            ),
+            'conditions' => $conditions,
+        )));
     }
     public function add() {
         if ($this->request->is('post')) {
