@@ -60,7 +60,11 @@ class User extends AppModel {
         'order' => 'CarPark.created DESC',
         'limit' => '10',
       ),
-      'Vehicle',
+      'Vehicle' => array(
+        'conditions' => array("Vehicle.status = ''"),
+        'order' => array('Vehicle.created DESC')
+
+      )
     );
 
 
