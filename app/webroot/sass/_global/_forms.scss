@@ -39,8 +39,9 @@ select {
 
 input[type=range] {
 	background: transparent;
-	-webkit-appearance: none;
+	padding: 0.25rem 0;
 	width: 100%;
+	-webkit-appearance: none;
 	
 	&:focus {
 		outline: none;
@@ -49,6 +50,7 @@ input[type=range] {
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		background: #FFF;
+		border-radius: 50%;
 		height: 2rem;
 		width: 2rem;
 		margin: -0.5rem 0;
