@@ -13,6 +13,8 @@
 if(count($stats)>0): 
     $stats = $stats[0][0];
     foreach($stats as $label=>$value) :
+        if(strpos($label,'pound')>-1) $value = $this->Number->currency($value, 'GBP');
+        $label = str_replace('_', ' ', $label);
         echo '<span><strong>' . $value . '</strong> ' . $label . '</span> ';
     endforeach;
 endif;
