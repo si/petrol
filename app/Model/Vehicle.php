@@ -13,7 +13,9 @@ class Vehicle extends AppModel {
 			'order' => 'Receipt.created DESC',
 			'limit' => '10',
 		),
-		'VehicleEvent'
+		'VehicleEvent' => array(
+			'order' => 'date DESC'
+		)
 	);
 
 	var $belongsTo = 'User';
