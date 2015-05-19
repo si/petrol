@@ -1,4 +1,5 @@
-<h1><?php echo $vehicle['Vehicle']['registration']; ?></h1>
+<h1 class="reg"><?php echo $vehicle['Vehicle']['registration']; ?></h1>
+<h2><?php echo $vehicle['Vehicle']['nickname']; ?></h2>
 
 <table>
 	<thead>
@@ -36,8 +37,11 @@
 
 
 <h3>
-	<?php echo $this->Html->link('Vehicle Events', array('controller'=>'vehicle_events', 'action'=>'index')); ?>
+	<?php echo $this->Html->link('Vehicle History', array('controller'=>'vehicle_events', 'action'=>'index')); ?>
 </h3>
+
+<?php echo $this->Html->link('Add Record', array('controller'=>'vehicle_events', 'action'=>'add'), array('class'=>'btn')); ?>
+
 <table>
 	<?php foreach($vehicle['VehicleEvent'] as $event) : ?>
 	<thead>
@@ -64,7 +68,9 @@
 		<?php if($event['provider_telephone']!='') : ?>
 		<tr>
 			<th>Telephone</th>
-			<td><?php echo $event['provider_telephone']; ?></td>
+			<td><?php echo '<a href="tel:' . $event['provider_telephone'] . '">'
+				. $event['provider_telephone']
+				. '</a>'; ?></td>
 		</tr>
 		<?php endif; ?>
 	</tbody>
