@@ -43,33 +43,33 @@
 <?php echo $this->Html->link('Add Record', array('controller'=>'vehicle_events', 'action'=>'add'), array('class'=>'btn')); ?>
 
 <table>
-	<?php foreach($vehicle['VehicleEvent'] as $event) : ?>
+	<?php foreach($vehicleEvents as $event) : ?>
 	<thead>
 		<th colspan="2">
-			<?php echo $this->Html->link($event['vehicle_event_type_id'],
-				array('controller'=>'vehicle_events', 'action'=>'edit', $event['id'])); ?>
+			<?php echo $this->Html->link($event['VehicleEventType']['name'],
+				array('controller'=>'vehicle_events', 'action'=>'edit', $event['VehicleEvent']['id'])); ?>
 		</th>
 	</thead>
 	<tbody>
 		<tr>
 			<th>When</th>
-			<td><?php echo $this->Time->format('d M Y', $event['date']); ?></td>
+			<td><?php echo $this->Time->format('d M Y', $event['VehicleEvent']['date']); ?></td>
 		</tr>
 		<tr>
 			<th>Provider</th>
-			<td><?php echo $event['provider']; ?></td>
+			<td><?php echo $event['VehicleEvent']['provider']; ?></td>
 		</tr>
-		<?php if($event['provider_reference']!='') : ?>
+		<?php if($event['VehicleEvent']['provider_reference']!='') : ?>
 		<tr>
 			<th>Reference</th>
-			<td><?php echo $event['provider_reference']; ?></td>
+			<td><?php echo $event['VehicleEvent']['provider_reference']; ?></td>
 		</tr>
 		<?php endif; ?>
-		<?php if($event['provider_telephone']!='') : ?>
+		<?php if($event['VehicleEvent']['provider_telephone']!='') : ?>
 		<tr>
 			<th>Telephone</th>
-			<td><?php echo '<a href="tel:' . $event['provider_telephone'] . '">'
-				. $event['provider_telephone']
+			<td><?php echo '<a href="tel:' . $event['VehicleEvent']['provider_telephone'] . '">'
+				. $event['VehicleEvent']['provider_telephone']
 				. '</a>'; ?></td>
 		</tr>
 		<?php endif; ?>

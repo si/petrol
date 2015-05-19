@@ -25,6 +25,13 @@ class VehiclesController extends AppController {
 
   }
 
+  function view($id) {
+
+    $this->set('vehicle', $this->Vehicle->findById($id));
+    $this->set('vehicleEvents', $this->Vehicle->VehicleEvent->find('all', array('conditions'=>array('vehicle_id'=>$id))));
+
+  }
+
 	function add() {
     if(!empty($this->data)) {
       if($this->Vehicle->save($this->data)) {
