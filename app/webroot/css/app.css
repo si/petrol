@@ -1,5 +1,5 @@
 /*** Global	***/
-/* line 3, ../sass/_global/_page.scss */
+/* line 4, ../sass/_global/_page.scss */
 body {
   background: -webkit-linear-gradient(#660ed8 0%, #aa84f5 100%);
   background: -moz-linear-gradient(#660ed8 0%, #aa84f5 100%);
@@ -9,43 +9,46 @@ body {
   padding: 0;
 }
 
-/* line 12, ../sass/_global/_page.scss */
+/* line 13, ../sass/_global/_page.scss */
 a {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 16, ../sass/_global/_page.scss */
+/* line 17, ../sass/_global/_page.scss */
 a:hover, a:focus {
   color: black;
 }
 
-/* line 21, ../sass/_global/_page.scss */
+/* line 22, ../sass/_global/_page.scss */
 .content-wrap {
   margin: 10px 5%;
   width: 90% !important;
 }
 
-/* line 26, ../sass/_global/_page.scss */
+/* line 27, ../sass/_global/_page.scss */
 footer {
-  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.3);
   font-size: 0.75rem;
-  margin: 2rem -5% 0;
-  padding: 2rem 1rem;
-  width: 100% !important;
+  margin: 2rem 0 0;
+  text-align: center;
+}
+/* line 33, ../sass/_global/_page.scss */
+footer a {
+  color: rgba(0, 0, 0, 0.3);
 }
 
-/* line 34, ../sass/_global/_page.scss */
+/* line 38, ../sass/_global/_page.scss */
 h1 {
   line-height: 1.1;
 }
 
-/* line 38, ../sass/_global/_page.scss */
+/* line 42, ../sass/_global/_page.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 44, ../sass/_global/_page.scss */
+/* line 48, ../sass/_global/_page.scss */
 textarea.code {
   font-family: Courier;
   width: 100%;
