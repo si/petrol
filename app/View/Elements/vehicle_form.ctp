@@ -63,7 +63,7 @@ echo $this->Form->create('Vehicle');
 </fieldset>
 
 <?php echo $this->Form->button('Save'); ?>
-<?php echo $this->Html->link('Cancel', array('action' => 'index'), array('class'=>'btn')); ?>
+<?php echo $this->Html->link('Cancel', array('action' => (isset($this->data['Vehicle']['id']) ? 'view/'.$this->data['Vehicle']['id'] : 'index')), array('class'=>'btn')); ?>
 
 <?php
 echo $this->Form->input('user_id', array(
