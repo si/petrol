@@ -2,21 +2,27 @@
 
   if(isset($this->data['VehicleEvent']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
+<div class="input-group radio-group">
+    <?php
+		echo $this->Form->input('vehicle_event_type_id', array(
+			'div' => 'col-12',
+			'legend' => false,
+			'type' => 'radio',
+			'class' => 'radio',
+			'data-label' => 'TBC'
+		));
+    ?>
+</div>
+
 <fieldset>
 	<legend>Details</legend>
 	<div class="input-group">
 		<?php
 			echo $this->Form->input('vehicle_id', array(
 		        'label' => 'Vehicle',
-		        'div' => 'col-6'
+		        'div' => 'col-12'
 		    ));
 		?>
-	    <?php
-			echo $this->Form->input('vehicle_event_type_id', array(
-				'div' => 'col-6',
-				'label' => 'Type',
-			));
-	    ?>
 	</div>
 
 	<div>
