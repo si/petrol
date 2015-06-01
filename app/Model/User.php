@@ -56,8 +56,8 @@ class User extends AppModel {
         'order' => 'TrainTicket.created DESC',
         'limit' => '10',
       ),
-      'CarPark' => array(
-        'order' => 'CarPark.created DESC',
+      'ParkingTicket' => array(
+        'order' => 'ParkingTicket.created DESC',
         'limit' => '10',
       ),
       'Vehicle' => array(

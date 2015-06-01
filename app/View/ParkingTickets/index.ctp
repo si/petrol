@@ -19,7 +19,7 @@
 
 <?php echo $this->Html->link('Add Parking', array('action'=>'edit'), array('class'=>'btn btn-primary btn-large')); ?>
 <?php
-echo $this->element('car_parks_table', array('data' => $carParks));
+echo $this->element('parking_tickets_table', array('data' => $parkingTickets));
 ?>
 
 <p><?php echo 'Page ' . $this->Paginator->counter(); ?></p>

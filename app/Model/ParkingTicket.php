@@ -1,14 +1,14 @@
 <?php
-class CarPark extends AppModel {
-	var $name = 'CarPark';
-	var $order = array('CarPark.created DESC');
+class ParkingTicket extends AppModel {
+	var $name = 'ParkingTicket';
+	var $order = array('ParkingTicket.created DESC');
 
 	var $belongsTo = array(
 	 'Location',
   );
 
   var $virtualFields = array(
-    'expires' => "DATE_ADD(`CarPark.created`, INTERVAL `duration_hours` HOUR)"
+    'expires' => "DATE_ADD(`ParkingTicket.created`, INTERVAL `duration_hours` HOUR)"
   );
 
   var $validation = array(

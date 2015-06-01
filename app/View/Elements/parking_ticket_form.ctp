@@ -1,7 +1,7 @@
 <?php
-echo $this->Form->create('CarPark', array('class'=>'navbar-form'));
+echo $this->Form->create('ParkingTicket', array('class'=>'navbar-form'));
 
-  if(isset($this->data['CarPark']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
+  if(isset($this->data['ParkingTicket']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
 <fieldset>
   <legend>Details</legend>
@@ -44,33 +44,33 @@ echo $this->Form->create('CarPark', array('class'=>'navbar-form'));
 
   <div class="input-group">
   <?php
-    echo $this->Form->input('CarPark.created.hour', array(
+    echo $this->Form->input('ParkingTicket.created.hour', array(
         'type' => 'number',
-        'name' => 'data[CarPark][created][hour]',
+        'name' => 'data[ParkingTicket][created][hour]',
       'div' => 'col-3',
       'label' => 'Time',
       'placeholder' => 'HH',
       'max' => '23'
     ));
-    echo $this->Form->input('CarPark.created.minute', array(
+    echo $this->Form->input('ParkingTicket.created.minute', array(
         'type' => 'number',
-        'name' => 'data[CarPark][created][minute]',
+        'name' => 'data[ParkingTicket][created][minute]',
       'div' => 'col-3 no-label',
       'label' => '',
       'placeholder' => 'MI',
       'max' => '59'
     ));
-    echo $this->Form->input('CarPark.created.day', array(
+    echo $this->Form->input('ParkingTicket.created.day', array(
         'type' => 'number',
-        'name' => 'data[CarPark][created][day]',
+        'name' => 'data[ParkingTicket][created][day]',
       'div' => 'col-3',
       'label' => 'Date',
       'placeholder' => 'DD',
       'max' => '31'
     ));
-    echo $this->Form->input('CarPark.created.month', array(
+    echo $this->Form->input('ParkingTicket.created.month', array(
         'type' => 'number',
-        'name' => 'data[CarPark][created][month]',
+        'name' => 'data[ParkingTicket][created][month]',
       'div' => 'col-3 no-label',
       'label' => '',
       'placeholder' => 'MM',

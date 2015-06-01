@@ -14,7 +14,7 @@
     <p>You must be here to check these&hellip;</p>
     
     <?php echo $this->Html->link('Petrol', array('controller'=>'receipts'), array('class'=>'btn i petrol m')); ?>
-    <?php echo $this->Html->link('Parking', array('controller'=>'car_parks'), array('class'=>'btn i parking m')); ?>
+    <?php echo $this->Html->link('Parking', array('controller'=>'parking_tickets'), array('class'=>'btn i parking m')); ?>
     <?php echo $this->Html->link('Trains', array('controller'=>'train_tickets'), array('class'=>'btn i trains m')); ?>
 
 <?php endif; ?>
