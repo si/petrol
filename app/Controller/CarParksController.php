@@ -12,6 +12,24 @@ class CarParksController extends AppController {
 		parent::beforeFilter();
 	}
 
+	function index() {
+		// Get pagination results for Car Park model
+		$this->set('carParks', $this->paginate('CarPark'));
+
+		// Get some Car Park stats (total spent and tickets)
+		$options = array(
+			'fields' => array(
+				'SUM(cost) as total_spent',
+				'COUNT(*) as total_tickets',
+				'MIN(CarPark.created) first',
+				'MAX(CarPark.created) last',
+				'DATEDIFF(MAX(CarPark.created), MIN(CarPark.created)) duration'
+			),
+			'conditions' => array('CarPark.user_id' => $this->Session->read('Auth.User.id'))
+		);
+		$this->set('stats', $this->CarPark->find('all', $options));
+	}
+
 	function edit($id='') {
 		  // Save data
 		if(!empty($this->data)) {

@@ -3,17 +3,16 @@
 <table class="stats">
   <tbody>
   <tr>
-    <td><?php
-    $total = 0;
-    foreach($carParks as $carPark) {
-      $total += $carPark['CarPark']['cost'];
-    }
-    echo $this->Number->currency($total,'GBP'); ?></td>
-    <td><?php echo $this->Number->format(count($carParks)); ?></td>
+    <td><?php echo $this->Number->currency($stats[0][0]['total_spent'],'GBP'); ?></td>
+    <td><?php echo $this->Number->format($stats[0][0]['total_tickets']); ?></td>
+    <td title="<?php echo $this->Time->format('d M Y', $stats[0][0]['first']) . '–' . $this->Time->format('d M Y', $stats[0][0]['last']); ?>">
+      <?php echo $this->Number->format(($stats[0][0]['duration'])); ?>
+    </td>
   </tr>
   <tr>
     <th>total spent</th>
     <th>tickets</th>
+    <th>days</th>
   </tr>
   </tbody>
 </table>
