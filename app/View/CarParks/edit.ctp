@@ -1,4 +1,4 @@
 
-<h1>Car Park</h1>
+<h1>Parking Ticket</h1>
 
 <?php echo $this->element('car_park_form'); ?>

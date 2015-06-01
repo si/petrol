@@ -83,8 +83,10 @@ echo $this->Form->create('CarPark', array('class'=>'navbar-form'));
 
 </fieldset>
 
-<?php echo $this->Form->button('Save',array('class'=>'btn btn-large')); ?>
-<?php echo $this->Html->link('Cancel',array('action'=>'index'),array('class'=>'btn')); ?>
+<div class="input-group">
+  <?php echo $this->Form->button('Save',array('class'=>'btn btn-primary')); ?>
+  <?php echo $this->Html->link('Cancel',array('action'=>'index'),array('class'=>'btn')); ?>
+</div>
 
 <?php
 	echo $this->Form->end();
