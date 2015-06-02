@@ -1,0 +1,1 @@
+RENAME TABLE `car_parks` TO `parking_tickets`;
