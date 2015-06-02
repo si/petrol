@@ -7,11 +7,30 @@ echo $this->Form->create('ParkingTicket', array('class'=>'navbar-form'));
   <legend>Details</legend>
   <div class="input-group">
 		<?php
+      /*
 			echo $this->Form->input('location_id', array(
         'label' => 'Location',
         'div' => 'col-8',
         'options' => $locations
 			));
+      */
+      echo $this->Form->input('location', array(
+        'label' => 'Location',
+        'type' => 'text',
+        'placeholder' => (isset($locations) && count($locations)>0) ? 'eg. ' . $locations[1] : 'Start typing…',
+        'list'=>'location_history',
+        'div' => 'col-8',
+      ));
+
+      if(isset($locations) && count($locations)>0) :
+      ?>
+      <datalist id="location_history">
+        <?php foreach($locations as $id => $location) : ?>
+         <option value="<?php echo $location; ?>">
+        <?php endforeach; ?>
+      </datalist>
+      <?php
+      endif;
 		?>
     <?php
       echo $this->Form->input('cost', array(

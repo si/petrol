@@ -59,6 +59,18 @@ class ParkingTicketsController extends AppController {
 		    // Set userId to current account
 		    $form_data['ParkingTicket']['user_id'] = $this->Session->read('Auth.User.id');
 
+		    // Get location ID if already created
+		    $location_data = array('name'=>$form_data['ParkingTicket']['location']);
+		    $location = $this->ParkingTicket->Location->find('all', array('conditions' => $location_data));
+
+		    if(count($location)==0) {
+			    $location_data['user_id'] = $this->Session->read('Auth.User.id');
+		    	$location = $this->ParkingTicket->Location->save($location_data);
+		    }
+
+		    // Set location ID for Parking Ticket
+		    $form_data['ParkingTicket']['location_id'] = (isset($location['Location'])) ? $location['Location']['id'] : $location[0]['Location']['id'];
+
 			if($this->ParkingTicket->save($form_data)) {
 				$this->Session->setFlash("Parking ticket saved!");
 				$this->redirect(array('action'=>'view', $this->ParkingTicket->id));
@@ -88,6 +100,15 @@ class ParkingTicketsController extends AppController {
 		}
 
 		$this->set('locations', $this->ParkingTicket->Location->find('list'));
+		$this->set('location_history', $this->ParkingTicket->find('all', array(
+			'fields' => array(
+				'DISTINCT Location.id',
+				'Location.name',
+			),
+			'conditions'=>array(
+				'ParkingTicket.user_id'=>$this->Session->read('Auth.User.id')
+			)
+		)));
 	}
 
 
