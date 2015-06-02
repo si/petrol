@@ -3,23 +3,25 @@
 <table class="stats">
   <tbody>
   <tr>
-    <td><?php
-    $total = 0;
-    foreach($trainTickets as $ticket) {
-      $total += $ticket['TrainTicket']['price'];
-    }
-    echo $this->Number->currency($total,'GBP'); ?></td>
-    <td><?php echo $this->Number->format(count($trainTickets)); ?></td>
+    <td><?php echo $this->Number->currency($stats[0][0]['total_spent'],'GBP'); ?></td>
+    <td><?php echo $this->Number->format($stats[0][0]['total_tickets']); ?></td>
+    <td title="<?php echo $this->Time->format('d M Y', $stats[0][0]['first']) . '–' . $this->Time->format('d M Y', $stats[0][0]['last']); ?>">
+      <?php echo $this->Number->format(($stats[0][0]['duration'])); ?>
+    </td>
   </tr>
   <tr>
     <th>total spent</th>
     <th>tickets</th>
+    <th>days</th>
   </tr>
   </tbody>
 </table>
 
 <?php echo $this->Html->link('Add Ticket', array('controller'=>'train_tickets','action'=>'form'), array('class'=>'btn')); ?>
+<canvas class="chart" width="300" height="200" data-chart-source="<?php echo json_encode($totals); ?>" data-chart-x="month" data-chart-y="total_spent"></canvas>
+
 <?php
+echo '<textarea>'; var_dump($totals); echo '</textarea>';
 echo $this->element('train_tickets_table', array('data' => $trainTickets));
 ?>
 

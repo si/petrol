@@ -14,6 +14,31 @@ class TrainTicketsController extends AppController {
 
 	function index() {
 		$this->set('trainTickets', $this->paginate('TrainTicket'));
+
+		// Get some trainTickets stats (total spent and tickets)
+		$options = array(
+			'fields' => array(
+				'SUM(price) as total_spent',
+				'COUNT(*) as total_tickets',
+				'MIN(TrainTicket.created) first',
+				'MAX(TrainTicket.created) last',
+				'DATEDIFF(MAX(TrainTicket.created), MIN(TrainTicket.created)) duration'
+			),
+			'conditions' => array('TrainTicket.user_id' => $this->Session->read('Auth.User.id'))
+		);
+		$this->set('stats', $this->TrainTicket->find('all', $options));
+
+		// Get some monthly figures
+		$options = array(
+			'fields' => array(
+				"DATE_FORMAT(TrainTicket.created, '%Y-%m') month",
+				'SUM(price) as total_spent',
+			),
+			'conditions' => array('TrainTicket.user_id' => $this->Session->read('Auth.User.id')),
+			'group' => array("DATE_FORMAT(TrainTicket.created, '%Y-%m')"),
+			'order' => array('TrainTicket.created ASC')
+		);
+		$this->set('totals', $this->TrainTicket->find('all', $options));
 	}
 
 	function form($id='') {

@@ -1,5 +1,3 @@
-<canvas id="trainTicketsChart" width="300" height="300"></canvas>
-
 <table class="table-cards">
   <thead>
 	<?php if(isset($this->Paginator)) : ?>
