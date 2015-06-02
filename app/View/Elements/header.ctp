@@ -26,6 +26,15 @@
 			<?php endif; ?>
 
 		</ul>
+
+		<?php if($this->Session->read('Auth.User.id')=='1') : ?>
+		<h3>Admin</h3>
+		<ul class="nav navbar-nav icon-list">
+		    <li><?php echo $this->Html->link('Locations', array('controller'=>'locations','action'=>'index')); ?></li>
+		    <li><?php echo $this->Html->link('Train Stations', array('controller'=>'train_stations','action'=>'index')); ?></li>
+		</ul>		
+		<?php endif; ?>
+
 	</nav>
 	<button class="close-button" id="close-button">Close Menu</button>
 	<div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
