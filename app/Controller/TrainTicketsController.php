@@ -12,6 +12,10 @@ class TrainTicketsController extends AppController {
 	  parent::beforeFilter();
 	}
 
+	function index() {
+		$this->set('trainTickets', $this->paginate('TrainTicket'));
+	}
+
 	function form($id='') {
 		
 		// If data is posted
