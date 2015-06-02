@@ -39,16 +39,17 @@ footer a {
 /* line 38, ../sass/_global/_page.scss */
 h1 {
   line-height: 1.1;
+  margin: 0 0 1rem;
 }
 
-/* line 42, ../sass/_global/_page.scss */
+/* line 43, ../sass/_global/_page.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 48, ../sass/_global/_page.scss */
+/* line 49, ../sass/_global/_page.scss */
 textarea.code {
   font-family: Courier;
   width: 100%;
@@ -727,21 +728,26 @@ body,
   display: flex;
   flex-direction: row;
 }
-/* line 12, ../sass/_components/_routes.scss */
-.route abbr,
-.route span,
-.route .price,
-.route time {
+/* line 9, ../sass/_components/_routes.scss */
+.route > * {
   align-items: center;
   flex: 1 1 auto;
   justify-content: space-between;
   text-align: center;
+  vertical-align: middle;
 }
-/* line 19, ../sass/_components/_routes.scss */
+/* line 16, ../sass/_components/_routes.scss */
+.route > *:first-child {
+  background: url("/img/svg/chevron-right.svg") no-repeat 100% 50%;
+  background-size: 20px;
+  min-height: 20px;
+  padding-right: 30px;
+}
+/* line 24, ../sass/_components/_routes.scss */
 .route abbr {
   font-size: 3rem;
 }
-/* line 23, ../sass/_components/_routes.scss */
+/* line 28, ../sass/_components/_routes.scss */
 .route .price {
   font-size: 2rem;
 }

@@ -6,14 +6,19 @@
 	display: flex;
 	flex-direction: row;
 
-	abbr,
-	span,
-	.price,
-	time {
+	> * {
 		align-items: center;
 		flex: 1 1 auto;
 		justify-content: space-between;
 		text-align: center;
+        vertical-align: middle;
+
+		&:first-child {
+	        background: url('/img/svg/chevron-right.svg') no-repeat 100% 50%;
+	        background-size: 20px;
+	        min-height: 20px;
+	        padding-right: 30px;
+        }
 	}
 
 	abbr {
