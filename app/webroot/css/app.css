@@ -718,6 +718,7 @@ body,
 /* line 11, ../sass/_components/_cards.scss */
 .card time {
   color: #888;
+  display: block;
   text-align: center;
 }
 
