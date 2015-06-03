@@ -18,10 +18,9 @@
 </table>
 
 <?php echo $this->Html->link('Add Ticket', array('controller'=>'train_tickets','action'=>'form'), array('class'=>'btn')); ?>
-<canvas class="chart" width="300" height="200" data-chart-source="<?php echo json_encode($totals); ?>" data-chart-x="month" data-chart-y="total_spent"></canvas>
+<canvas class="chart" width="350" height="200" data-chart-source='<?php echo json_encode($totals); ?>' data-chart-x="month" data-chart-y="total_spent"></canvas>
 
 <?php
-echo '<textarea>'; var_dump($totals); echo '</textarea>';
 echo $this->element('train_tickets_table', array('data' => $trainTickets));
 ?>
 
