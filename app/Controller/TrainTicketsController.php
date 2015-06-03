@@ -38,7 +38,12 @@ class TrainTicketsController extends AppController {
 			'group' => array("DATE_FORMAT(TrainTicket.created, '%Y-%m')"),
 			'order' => array('TrainTicket.created ASC')
 		);
-		$this->set('totals', $this->TrainTicket->find('all', $options));
+		$totals = $this->TrainTicket->find('all', $options);
+		// Clean up totals array without the extra associative array around each object
+		foreach($totals as $total) {
+			$totals_clean[] = $total[0];
+		}
+		$this->set('totals', $totals_clean);
 	}
 
 	function form($id='') {
@@ -59,6 +64,7 @@ class TrainTicketsController extends AppController {
 		    );
 		    $data['TrainTicket']['created'] = $created;
 		    
+		    $data['TrainTicket']['user_id'] = $this->Session->read('Auth.User.id');
 			// Check validation
 	        //if($this->Receipt->validates()) {
 				// Check if saved
