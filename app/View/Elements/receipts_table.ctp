@@ -1,4 +1,4 @@
-<canvas class="chart" data-chart-source="#receipts-table" data-chart-item="tbody tr" data-chart-x=".date a[data-short]" data-chart-y=".ppl" data-chart-order="reverse" width="350" height="200"></canvas>
+<canvas class="chart" data-chart-source="#receipts-table" data-chart-item="tbody tr" data-chart-x=".date a[data-short]" data-chart-y=".ppl" data-chart-order="reverse" data-chart-debug="false" width="350" height="200"></canvas>
 
 <table id="receipts-table" class="table chart">
   <thead>
