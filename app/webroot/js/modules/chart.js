@@ -27,10 +27,11 @@ var CommuteChart = (function CommuteChart() {
 		};
 
 		// Get some data from the chart data-chart-source attribute
-		var data = $commuteChart.data('chart-source')!='' ? $commuteChart.data('chart-source') : {},
+		var source = $commuteChart.data('chart-source')!='' ? $commuteChart.data('chart-source') : {},
+			source_item = $commuteChart.data('chart-item')!='' ? $commuteChart.data('chart-item') : '',
 			chartXaxis = $commuteChart.data('chart-x')!='' ? $commuteChart.data('chart-x') : '',
-			chartYaxis = $commuteChart.data('chart-y')!='' ? $commuteChart.data('chart-y') : '';
-		console.log('Got data? ', data);
+			chartYaxis = $commuteChart.data('chart-y')!='' ? $commuteChart.data('chart-y') : '',
+			chartOrder = $commuteChart.data('chart-order')!='' ? $commuteChart.data('chart-order') : '';
 
 		// Setup chart data arrays
 		var chart_data = { 
@@ -38,77 +39,69 @@ var CommuteChart = (function CommuteChart() {
 			yAxis : [] 
 		};
 
-		// Loop through data source, mapping to chart data properties
-		$(data).each(function(index, row){
-			chart_data.xAxis.push(row[chartXaxis]);
-			chart_data.yAxis.push(row[chartYaxis]);
-		});
+		console.log('Data source: ', source);
+		console.log('Data format: ', typeof(source));
+
+		// Check if the data is just a string rather than JSON (object)
+		if (typeof(source) === 'string') {
+			
+			// Check if it's a selector by querying and checking for results
+			$data_dom = $(source);
+			
+			if($data_dom.length > 0) {
+
+				// Got something off the page!
+				console.log('Query selector: ', $data_dom);
+
+				// Loop through data table
+				$(source_item, $data_dom).each(function(index, item) {
+			
+					// Get x and y data from the item
+					data_x = $(chartXaxis, item);
+					data_y = $(chartYaxis, item);
+
+					// If got data for both, add to 
+					if(data_x !== null && data_y !== null) {
+						chart_data.xAxis.push(data_x.text());
+						chart_data.yAxis.push(convertStringToFloat(data_y.text()));
+					}				
+				});
+			}
+			// TODO: AJAX query testing for URL path instead
+
+		//	If source is already JSON, just extract necessary data
+		} else {
+			// Loop through data source, mapping to chart data properties
+			$(source).each(function(index, row){
+				chart_data.xAxis.push(row[chartXaxis]);
+				chart_data.yAxis.push(row[chartYaxis]);
+			});
+		}
+
+		// Reverse data if order parameter is set to reverse
+		if(chartOrder === 'reverse') {
+			chart_data.xAxis.reverse();
+			chart_data.yAxis.reverse();
+		}
 
 		// Show processed chart data
 		console.table(chart_data);
 
-		// Establish some data points
-		/*
-		var $table = $('table.chart tr'),
-			chart_data = {
-				dates : [],
-				prices : [],
-				totals : []
-			};
-		
-		// Loop through data table
-		$($table).each(function(index, row) {
-	
-			date = $('td:first a', row);
-			date_utc = date.data('short');
-			if(date_utc!==null) {
-			
-				chart_data.dates.push(date_utc);
-		
-				price = $('td:nth-child(3)', row);
-				price_float = convertPriceToFloat(price.text());
-				if(price_float!==0) chart_data.prices.push(price_float);
-		
-				total = $('td:nth-child(2)', row);
-				total_float = convertPriceToFloat(total.text());
-				if(total_float!==0) chart_data.totals.push(total_float);
-			}
-		});
-		
-		// Reverse array values
-		chart_data.dates.reverse();
-		chart_data.prices.reverse();
-		chart_data.totals.reverse();
-		*/
-		
 		// Compile chart data
 		var data = {
-			    labels: chart_data.xAxis,
-			    datasets: [
-			        {
-			            label: "Price",
-			            fillColor: "rgba(220,220,220,0.2)",
-			            strokeColor: "rgba(220,220,220,1)",
-			            pointColor: "rgba(220,220,220,1)",
-			            pointStrokeColor: "#fff",
-			            pointHighlightFill: "#fff",
-			            pointHighlightStroke: "rgba(220,220,220,1)",
-			            data: chart_data.yAxis
-			        }
-	/*
-			        ,
-			        {
-			            label: "Total",
-			            fillColor: "rgba(220,255,220,0.2)",
-			            strokeColor: "rgba(220,255,220,1)",
-			            pointColor: "rgba(220,255,220,1)",
-			            pointStrokeColor: "#cfc",
-			            pointHighlightFill: "#cfc",
-			            pointHighlightStroke: "rgba(220,255,220,1)",
-			            data: chart_data.totals
-			        }
-	*/
-			    ]
+		    labels: chart_data.xAxis,
+		    datasets: [
+		        {
+		            label: "Price",
+		            fillColor: "rgba(220,220,220,0.2)",
+		            strokeColor: "rgba(220,220,220,1)",
+		            pointColor: "rgba(220,220,220,1)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(220,220,220,1)",
+		            data: chart_data.yAxis
+		        }
+		    ]
 		};
 		
 		// Get context with jQuery - using jQuery's .get() method.
@@ -116,8 +109,9 @@ var CommuteChart = (function CommuteChart() {
 		// This will get the first returned node in the jQuery collection.
 		var myLineChart = new Chart(ctx).Line(data, options);
 	}
+
 })();
 
-function convertPriceToFloat(string) {
+function convertStringToFloat(string) {
 	return Number(string.replace(/[^0-9\.]+/g,""));
 }
