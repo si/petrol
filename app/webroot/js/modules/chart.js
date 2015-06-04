@@ -1,9 +1,16 @@
+/**	
+Commute Chart feature
+@author: Si Jobling (@si)
+*/
 
 var CommuteChart = (function CommuteChart() {
 
-	var $commuteChart = $("canvas.chart");
+	var $commuteChart = $("canvas.chart"),
+		debug = false;
 
-	console.log('Setting up CommuteChart: ', $commuteChart);
+	if($commuteChart.length > 0 && $commuteChart.data('chart-debug')) debug = true;
+
+	if(debug) console.log('Setting up CommuteChart: ', $commuteChart);
 
 	if($commuteChart.length > 0) {
 
@@ -39,8 +46,8 @@ var CommuteChart = (function CommuteChart() {
 			yAxis : [] 
 		};
 
-		console.log('Data source: ', source);
-		console.log('Data format: ', typeof(source));
+		if(debug) console.log('Data source: ', source);
+		if(debug) console.log('Data format: ', typeof(source));
 
 		// Check if the data is just a string rather than JSON (object)
 		if (typeof(source) === 'string') {
@@ -51,7 +58,7 @@ var CommuteChart = (function CommuteChart() {
 			if($data_dom.length > 0) {
 
 				// Got something off the page!
-				console.log('Query selector: ', $data_dom);
+				if(debug) console.log('Query selector: ', $data_dom);
 
 				// Loop through data table
 				$(source_item, $data_dom).each(function(index, item) {
@@ -85,7 +92,7 @@ var CommuteChart = (function CommuteChart() {
 		}
 
 		// Show processed chart data
-		console.table(chart_data);
+		if(debug) console.table(chart_data);
 
 		// Compile chart data
 		var data = {
