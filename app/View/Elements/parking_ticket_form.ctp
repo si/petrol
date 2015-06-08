@@ -7,16 +7,10 @@ echo $this->Form->create('ParkingTicket', array('class'=>'navbar-form'));
   <legend>Details</legend>
   <div class="input-group">
 		<?php
-      /*
-			echo $this->Form->input('location_id', array(
-        'label' => 'Location',
-        'div' => 'col-8',
-        'options' => $locations
-			));
-      */
       echo $this->Form->input('location', array(
         'label' => 'Location',
         'type' => 'text',
+        'value' => (isset($this->data['Location']['name'])) ? $this->data['Location']['name'] : '',
         'placeholder' => (isset($locations) && count($locations)>0) ? 'eg. ' . $locations[1] : 'Start typing…',
         'list'=>'location_history',
         'div' => 'col-8',
