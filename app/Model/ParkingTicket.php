@@ -2,6 +2,8 @@
 class ParkingTicket extends AppModel {
 	var $name = 'ParkingTicket';
 	var $order = array('ParkingTicket.created DESC');
+  var $displayField = 'created';
+
 
 	var $belongsTo = array(
 	 'Location',
