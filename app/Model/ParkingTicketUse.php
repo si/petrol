@@ -5,10 +5,10 @@ class ParkingTicketUse extends AppModel {
 
 	var $belongsTo = array(
 	 'ParkingTicket',
-  );
+	);
 
-  var $virtualFields = array(
-    'duration' => "DATEDIFF(`ends`,`starts`)"
-  );
+	var $virtualFields = array(
+		'duration' => "TIMEDIFF(`ends`,`starts`)"
+	);
 
 }
