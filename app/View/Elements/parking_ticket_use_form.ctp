@@ -38,6 +38,6 @@
 </fieldset>
 <div class="input-group">
 	<?php echo $this->Form->button('Save'); ?>
-	<?php echo $this->Html->link('Cancel',array('action'=>'index'),array('class'=>'btn')); ?>
+	<?php echo $this->Html->link('Cancel', (isset($this->data['ParkingTicketUse']['parking_ticket_id'])) ? array('controller'=>'parking_tickets', 'action'=>'view', $this->data['ParkingTicketUse']['parking_ticket_id']) : array('action'=>'index'), array('class'=>'btn')); ?>
 </div>
 <?php echo $this->Form->end(); ?>
