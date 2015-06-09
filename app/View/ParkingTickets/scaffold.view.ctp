@@ -23,14 +23,18 @@
 			<a href="/parking_ticket_uses/edit/<?php echo $use['id']; ?>">
 				<span class="date"><?php echo $this->Time->format('d/m', $use['starts']); ?></span>
 				<span class="times"><?php echo $this->Time->format('H:i', $use['starts']) . '–' . (($use['ends']!='') ? $this->Time->format('H:i', $use['ends']) : 'TBC'); ?></span>
-				<span class="duration">(<?php echo $this->Time->format('H:i',$use['duration']); ?>)</span>
+				<span class="duration">(<?php echo $this->Time->format('H\hi',$use['duration']); ?>)</span>
 			</a>
 		</li>
 		<?php endforeach; ?>
 	</ol>
 	<?php endif; ?>
 
-	<?php echo $this->Html->link('Quick Log', array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'])); ?>
+	<?php 
+	echo $this->Html->link('Add Use', 
+		array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id']),
+		array('class'=>'btn')
+	); ?>
 	</section>
 
 </article>
