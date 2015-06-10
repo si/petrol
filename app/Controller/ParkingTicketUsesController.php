@@ -32,8 +32,10 @@ class ParkingTicketUsesController extends AppController {
 				    'year' => date('Y', $starts),
 				    'hour' => date('h', $starts),
 				    'min' => date('i', $starts),
+				    'second' => date('s', $starts),
 				    'meridian' => date('a', $starts),
 			    );
+			    $response = 'Ticket use started!';
 			}
 
 			// Set END date/time based on passed parameter
@@ -50,7 +52,7 @@ class ParkingTicketUsesController extends AppController {
 			    		)
 			    	)
 			    );
-			    
+
 				$ends = strtotime($this->params['named']['ends']);
 				$form_data['ParkingTicketUse']['ends'] = array(
 				    'day' => date('d', $ends),
@@ -58,13 +60,14 @@ class ParkingTicketUsesController extends AppController {
 				    'year' => date('Y', $ends),
 				    'hour' => date('h', $ends),
 				    'min' => date('i', $ends),
+				    'second' => date('s', $ends),
 				    'meridian' => date('a', $ends),
 			    );
-
+				$response = 'Ticket use ended!';
 			}
 
 			if($this->ParkingTicketUse->save($form_data)) {
-				$this->Session->setFlash("Ticket use saved!");
+				$this->Session->setFlash($response);
 				$this->redirect(array('controller'=>'parking_tickets','action'=>'view', $form_data['ParkingTicketUse']['parking_ticket_id']));
 			}
 
