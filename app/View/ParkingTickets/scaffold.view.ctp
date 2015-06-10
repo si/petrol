@@ -25,6 +25,14 @@
 					<span class="times"><?php echo $this->Time->format('H:i', $use['starts']) . '–' . (($use['ends']!='') ? $this->Time->format('H:i', $use['ends']) : 'TBC'); ?></span>
 					<span class="duration">(<?php echo $this->Time->format('H\hi',$use['duration']); ?>)</span>
 				</a>
+
+				<?php 
+				// echo $this->Form->postButton('X', 
+				// 	array('controller'=>'parking_ticket_uses', 'action'=>'delete', $use['id']),
+				// 	array('title'=>'Delete', 'class'=>'btn-sm i-delete'),
+				// 	'Are you sure?'
+				// ) ;
+				?>
 			</li>
 			<?php 
 				$timer = ($use['ends']=='') ? true : false;
@@ -35,18 +43,18 @@
 
 		<div class="input-group">
 			<?php 
-			if(!$timer) 
-			echo $this->Html->link('Quick Start', 
-				array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'], 'starts'=>'now'),
-				array('class'=>'btn i-timer')
-			); ?>
-			<?php 
-			if($timer) 
-			echo $this->Html->link('Quick End', 
-				array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'], 'ends'=>'now'),
-				array('class'=>'btn i-timer')
-			); ?>
-			<?php 
+			if(!isset($timer) || !$timer) {
+				echo $this->Html->link('Quick Start', 
+					array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'], 'starts'=>'now'),
+					array('class'=>'btn i-timer')
+				);
+			} else {
+				echo $this->Html->link('Quick End', 
+					array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'], 'ends'=>'now'),
+					array('class'=>'btn i-timer')
+				); 
+			}
+
 			echo $this->Html->link('Add Use', 
 				array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id']),
 				array('class'=>'btn i-add')
