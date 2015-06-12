@@ -27,11 +27,11 @@
 				</a>
 
 				<?php 
-				// echo $this->Form->postButton('X', 
-				// 	array('controller'=>'parking_ticket_uses', 'action'=>'delete', $use['id']),
-				// 	array('title'=>'Delete', 'class'=>'btn-sm i-delete'),
-				// 	'Are you sure?'
-				// ) ;
+				echo $this->Html->link('X', 
+					array('controller'=>'parking_ticket_uses', 'action'=>'delete', $use['id']),
+					array('class'=>'btn-sm')
+					//'Are you sure?'
+				) ;
 				?>
 			</li>
 			<?php 

@@ -104,4 +104,13 @@ class ParkingTicketUsesController extends AppController {
 
 	}
 
+	function delete($id) {
+		if($id!='') {
+			$parkingTicketUse = $this->ParkingTicketUse->findById($id);
+			$this->ParkingTicketUse->delete($id);
+			$this->Session->setFlash('Ticket use removed');
+			$this->redirect(array('controller'=>'parking_tickets', 'action'=>'view', $parkingTicketUse['ParkingTicketUse']['parking_ticket_id']));
+		}
+	}
+
 }
