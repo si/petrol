@@ -23,7 +23,9 @@
 				<a href="/parking_ticket_uses/edit/<?php echo $use['id']; ?>">
 					<span class="date"><?php echo $this->Time->format('d/m', $use['starts']); ?></span>
 					<span class="times"><?php echo $this->Time->format('H:i', $use['starts']) . '–' . (($use['ends']!='') ? $this->Time->format('H:i', $use['ends']) : 'TBC'); ?></span>
+					<?php if($use['ends']!='') : ?>
 					<span class="duration">(<?php echo $this->Time->format('H\hi',$use['duration']); ?>)</span>
+					<?php endif; ?>
 				</a>
 
 				<?php 
