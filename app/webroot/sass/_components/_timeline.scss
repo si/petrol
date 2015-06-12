@@ -1,0 +1,43 @@
+.timeline {
+	background: linear-gradient(0deg, 
+		transparent, 
+		transparent 48%, 
+		rgba(#000,0.1) 48%, 
+		rgba(#000,0.1) 52%, 
+		transparent 52%, 
+		transparent
+	);
+	font-size: 0.85rem;
+	margin: 1rem 0;
+	overflow: scroll;
+	padding: 0 10px;
+	width: 1600px;
+
+	li {
+		background: rgba(#DDD,0.7);
+		border-radius: 50%;
+		float: left;
+		list-style: none;
+		margin: 0 10px 0 0;
+		padding: 10px 0;
+		width: 100px;
+		height: 80px;
+		text-align: center;
+
+		a {
+			text-decoration: none;
+
+			.date, .times, .duration {
+				display: block;
+			}
+
+			.date {
+				font-size: 1.2rem;
+				margin-top: 0.3rem;
+			}
+			.times, .duration {
+				color: rgba(#000,0.5);
+			}
+		}
+	}
+}

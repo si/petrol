@@ -17,7 +17,7 @@
 	<section class="usage">
 		<?php 
 		if(count($parkingTicket['ParkingTicketUse'])>0) : ?>
-		<ol class="marker">
+		<ol class="timeline">
 			<?php foreach($parkingTicket['ParkingTicketUse'] as $use): ?>
 			<li>
 				<a href="/parking_ticket_uses/edit/<?php echo $use['id']; ?>">

@@ -172,25 +172,25 @@ button:hover, button:focus,
   color: #FFF;
 }
 
-/* line 111, ../sass/_global/_forms.scss */
+/* line 115, ../sass/_global/_forms.scss */
 progress {
   width: 100%;
   /* Reset the default appearance */
   -webkit-appearance: none;
   appearance: none;
 }
-/* line 117, ../sass/_global/_forms.scss */
+/* line 121, ../sass/_global/_forms.scss */
 progress::-webkit-progress-bar {
   background-color: rgba(0, 0, 0, 0.2);
 }
-/* line 121, ../sass/_global/_forms.scss */
+/* line 125, ../sass/_global/_forms.scss */
 progress::-webkit-progress-value {
   background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #0099cc, #ff4444);
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
-/* line 135, ../sass/_global/_forms.scss */
+/* line 139, ../sass/_global/_forms.scss */
 .input-group {
   /* flexbox specific properties */
   display: -webkit-flex;
@@ -199,51 +199,51 @@ progress::-webkit-progress-value {
   flex-direction: row;
   margin: 0 0 0.67rem;
 }
-/* line 144, ../sass/_global/_forms.scss */
+/* line 148, ../sass/_global/_forms.scss */
 .input-group > div {
   /* flexbox specific properties */
   -webkit-flex: auto;
   flex: auto;
   margin-right: 7%;
 }
-/* line 150, ../sass/_global/_forms.scss */
+/* line 154, ../sass/_global/_forms.scss */
 .input-group > div.no-label {
   margin-top: 1.4rem;
 }
-/* line 155, ../sass/_global/_forms.scss */
+/* line 159, ../sass/_global/_forms.scss */
 .input-group input, .input-group textarea, .input-group select {
   width: 100%;
 }
-/* line 159, ../sass/_global/_forms.scss */
+/* line 163, ../sass/_global/_forms.scss */
 .input-group .col-12 {
   width: 100%;
 }
-/* line 162, ../sass/_global/_forms.scss */
+/* line 166, ../sass/_global/_forms.scss */
 .input-group .col-9 {
   width: 75%;
 }
-/* line 165, ../sass/_global/_forms.scss */
+/* line 169, ../sass/_global/_forms.scss */
 .input-group .col-8 {
   width: 66.66667%;
 }
-/* line 168, ../sass/_global/_forms.scss */
+/* line 172, ../sass/_global/_forms.scss */
 .input-group .col-6 {
   width: 50%;
 }
-/* line 171, ../sass/_global/_forms.scss */
+/* line 175, ../sass/_global/_forms.scss */
 .input-group .col-4 {
   width: 100%/3;
 }
-/* line 174, ../sass/_global/_forms.scss */
+/* line 178, ../sass/_global/_forms.scss */
 .input-group .col-3 {
   width: 25%;
 }
-/* line 177, ../sass/_global/_forms.scss */
+/* line 181, ../sass/_global/_forms.scss */
 .input-group .col-2 {
   width: 100%/6;
 }
 
-/* line 184, ../sass/_global/_forms.scss */
+/* line 188, ../sass/_global/_forms.scss */
 .radio-group input {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
@@ -253,19 +253,19 @@ progress::-webkit-progress-value {
   text-align: center;
   width: 3rem;
 }
-/* line 193, ../sass/_global/_forms.scss */
+/* line 197, ../sass/_global/_forms.scss */
 .radio-group input:before {
   content: attr(value);
 }
-/* line 197, ../sass/_global/_forms.scss */
+/* line 201, ../sass/_global/_forms.scss */
 .radio-group input:checked {
   border-bottom: 3px solid rgba(0, 0, 0, 0.5);
 }
-/* line 200, ../sass/_global/_forms.scss */
+/* line 204, ../sass/_global/_forms.scss */
 .radio-group input:checked + label {
   display: block;
 }
-/* line 206, ../sass/_global/_forms.scss */
+/* line 210, ../sass/_global/_forms.scss */
 .radio-group label {
   display: none;
   position: absolute;
@@ -751,6 +751,45 @@ body,
 /* line 28, ../sass/_components/_routes.scss */
 .route .price {
   font-size: 2rem;
+}
+
+/* line 1, ../sass/_components/_timeline.scss */
+.timeline {
+  background: linear-gradient(0deg, transparent, transparent 48%, rgba(0, 0, 0, 0.1) 48%, rgba(0, 0, 0, 0.1) 52%, transparent 52%, transparent);
+  font-size: 0.85rem;
+  margin: 1rem 0;
+  overflow: scroll;
+  padding: 0 10px;
+  width: 1600px;
+}
+/* line 16, ../sass/_components/_timeline.scss */
+.timeline li {
+  background: rgba(221, 221, 221, 0.7);
+  border-radius: 50%;
+  float: left;
+  list-style: none;
+  margin: 0 10px 0 0;
+  padding: 10px 0;
+  width: 100px;
+  height: 80px;
+  text-align: center;
+}
+/* line 27, ../sass/_components/_timeline.scss */
+.timeline li a {
+  text-decoration: none;
+}
+/* line 30, ../sass/_components/_timeline.scss */
+.timeline li a .date, .timeline li a .times, .timeline li a .duration {
+  display: block;
+}
+/* line 34, ../sass/_components/_timeline.scss */
+.timeline li a .date {
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+}
+/* line 38, ../sass/_components/_timeline.scss */
+.timeline li a .times, .timeline li a .duration {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* line 1, ../sass/_components/_maps.scss */
