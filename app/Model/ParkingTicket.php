@@ -10,7 +10,9 @@ class ParkingTicket extends AppModel {
   );
 
   var $hasMany = array(
-   'ParkingTicketUse',
+   'ParkingTicketUse' => array(
+   	'order' => array('ParkingTicketUse.starts DESC')
+   ),
   );
 
   var $virtualFields = array(
