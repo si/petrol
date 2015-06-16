@@ -20,7 +20,7 @@ class ParkingTicketUsesController extends AppController {
 		    $form_data = $this->data;
 
 	    	// Set the parking ticket based on passed param
-			if(isset($this->params['named']['parking_ticket_id'])) 
+			if(isset($this->params['named']['parking_ticket_id']))
 				$form_data['ParkingTicketUse']['parking_ticket_id'] = $this->params['named']['parking_ticket_id'];
 
 			// Set START date/time based on passed parameter
@@ -41,12 +41,12 @@ class ParkingTicketUsesController extends AppController {
 			// Set END date/time based on passed parameter
 			if(isset($this->params['named']['ends'])) {
 			    // Find the last ticket use that was started to end it
-			    $form_data = $this->ParkingTicketUse->find('first', 
+			    $form_data = $this->ParkingTicketUse->find('first',
 			    	array(
 			    		'conditions'=>array(
-			    			'ParkingTicketUse.ends'=>NULL, 
+			    			'ParkingTicketUse.ends'=>NULL,
 			    			'ParkingTicket.user_id'=>$this->Session->read('Auth.User.id')
-			    		), 
+			    		),
 			    		'order'=> array(
 			    			'ParkingTicketUse.created DESC'
 			    		)
@@ -68,7 +68,7 @@ class ParkingTicketUsesController extends AppController {
 
 			if($this->ParkingTicketUse->save($form_data)) {
 				$this->Session->setFlash($response);
-				$this->redirect(array('controller'=>'parking_tickets','action'=>'view', $form_data['ParkingTicketUse']['parking_ticket_id']));
+				$this->redirect('/parking_tickets/view/' . $form_data['ParkingTicketUse']['parking_ticket_id'] . "#usage");
 			}
 
 		// Nothing posted
@@ -86,7 +86,7 @@ class ParkingTicketUsesController extends AppController {
 
 				// Set START date/time based on parking ticket start date
 				$defaults['ParkingTicketUse']['starts'] = $parkingTicket['ParkingTicket']['created'];
-				
+
 				// Set END date/time based on parking ticket end date
 				$defaults['ParkingTicketUse']['ends'] = $parkingTicket['ParkingTicket']['expires'];
 
@@ -109,7 +109,7 @@ class ParkingTicketUsesController extends AppController {
 			$parkingTicketUse = $this->ParkingTicketUse->findById($id);
 			$this->ParkingTicketUse->delete($id);
 			$this->Session->setFlash('Ticket use removed');
-			$this->redirect(array('controller'=>'parking_tickets', 'action'=>'view', $parkingTicketUse['ParkingTicketUse']['parking_ticket_id']));
+			$this->redirect('/parking_tickets/view/' . $parkingTicketUse['ParkingTicketUse']['parking_ticket_id'] . '#usage');
 		}
 	}
 

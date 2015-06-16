@@ -14,10 +14,11 @@
 		</span>
 	</div>
 
-	<section class="usage">
-		<?php 
+	<section id="usage">
+		<?php
 		if(count($parkingTicket['ParkingTicketUse'])>0) : ?>
-		<ol class="timeline">
+		<div class="timeline">
+		<ol>
 			<?php foreach($parkingTicket['ParkingTicketUse'] as $use): ?>
 			<li>
 				<a href="/parking_ticket_uses/edit/<?php echo $use['id']; ?>">
@@ -28,36 +29,37 @@
 					<?php endif; ?>
 				</a>
 
-				<?php 
-				echo $this->Html->link('X', 
+				<?php
+				echo $this->Html->link('X',
 					array('controller'=>'parking_ticket_uses', 'action'=>'delete', $use['id']),
 					array('class'=>'btn-sm')
 					//'Are you sure?'
 				) ;
 				?>
 			</li>
-			<?php 
-				$timer = ($use['ends']=='') ? true : false;
-			endforeach; 
+			<?php
+				if($use['ends']=='') $timer = true;
+			endforeach;
 			?>
 		</ol>
+		</div>
 		<?php endif; ?>
 
 		<div class="input-group">
-			<?php 
+			<?php
 			if(!isset($timer) || !$timer) {
-				echo $this->Html->link('Quick Start', 
+				echo $this->Html->link('Quick Start',
 					array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'], 'starts'=>'now'),
 					array('class'=>'btn i-timer')
 				);
 			} else {
-				echo $this->Html->link('Quick End', 
+				echo $this->Html->link('Quick End',
 					array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id'], 'ends'=>'now'),
 					array('class'=>'btn i-timer')
-				); 
+				);
 			}
 
-			echo $this->Html->link('Add Use', 
+			echo $this->Html->link('Add Use',
 				array('controller'=>'parking_ticket_uses', 'action'=>'add', 'parking_ticket_id'=>$parkingTicket['ParkingTicket']['id']),
 				array('class'=>'btn i-add')
 			); ?>

@@ -1,17 +1,24 @@
 .timeline {
-	background: linear-gradient(0deg, 
-		transparent, 
-		transparent 48%, 
-		rgba(#000,0.1) 48%, 
-		rgba(#000,0.1) 52%, 
-		transparent 52%, 
+	background: linear-gradient(0deg,
+		transparent,
+		transparent 48%,
+		rgba(#000,0.1) 48%,
+		rgba(#000,0.1) 52%,
+		transparent 52%,
 		transparent
 	);
 	font-size: 0.85rem;
 	margin: 1rem 0;
-	overflow: scroll;
+	overflow-x: scroll;
 	padding: 0 10px;
-	width: 1600px;
+	width: 100%;
+	height: 100px;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		width: 3000px;
+	}
 
 	li {
 		background: rgba(#DDD,0.7);

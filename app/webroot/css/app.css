@@ -736,13 +736,13 @@ body,
   justify-content: space-between;
   text-align: center;
   vertical-align: middle;
+  padding-right: 30px;
 }
-/* line 16, ../sass/_components/_routes.scss */
+/* line 17, ../sass/_components/_routes.scss */
 .route > *:first-child {
   background: url("/img/svg/chevron-right.svg") no-repeat 100% 50%;
   background-size: 20px;
   min-height: 20px;
-  padding-right: 30px;
 }
 /* line 24, ../sass/_components/_routes.scss */
 .route abbr {
@@ -758,11 +758,18 @@ body,
   background: linear-gradient(0deg, transparent, transparent 48%, rgba(0, 0, 0, 0.1) 48%, rgba(0, 0, 0, 0.1) 52%, transparent 52%, transparent);
   font-size: 0.85rem;
   margin: 1rem 0;
-  overflow: scroll;
+  overflow-x: scroll;
   padding: 0 10px;
-  width: 1600px;
+  width: 100%;
+  height: 100px;
 }
-/* line 16, ../sass/_components/_timeline.scss */
+/* line 17, ../sass/_components/_timeline.scss */
+.timeline ol {
+  margin: 0;
+  padding: 0;
+  width: 3000px;
+}
+/* line 23, ../sass/_components/_timeline.scss */
 .timeline li {
   background: rgba(221, 221, 221, 0.7);
   border-radius: 50%;
@@ -774,20 +781,20 @@ body,
   height: 80px;
   text-align: center;
 }
-/* line 27, ../sass/_components/_timeline.scss */
+/* line 34, ../sass/_components/_timeline.scss */
 .timeline li a {
   text-decoration: none;
 }
-/* line 30, ../sass/_components/_timeline.scss */
+/* line 37, ../sass/_components/_timeline.scss */
 .timeline li a .date, .timeline li a .times, .timeline li a .duration {
   display: block;
 }
-/* line 34, ../sass/_components/_timeline.scss */
+/* line 41, ../sass/_components/_timeline.scss */
 .timeline li a .date {
   font-size: 1.2rem;
   margin-top: 0.3rem;
 }
-/* line 38, ../sass/_components/_timeline.scss */
+/* line 45, ../sass/_components/_timeline.scss */
 .timeline li a .times, .timeline li a .duration {
   color: rgba(0, 0, 0, 0.5);
 }
