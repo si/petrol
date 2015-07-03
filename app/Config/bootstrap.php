@@ -63,3 +63,9 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+
+function _debug($code) {
+	echo '<textarea class="code">';
+	var_dump($code);
+	echo '</textarea>';
+}

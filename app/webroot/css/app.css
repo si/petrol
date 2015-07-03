@@ -271,6 +271,23 @@ progress::-webkit-progress-value {
   position: absolute;
 }
 
+/* line 218, ../sass/_global/_forms.scss */
+textarea.code {
+  background: rgba(0, 0, 0, 0.8);
+  color: #F0C;
+  font-family: 'Consolas', CourierNew, fixed;
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  transition: all 0.5s ease;
+}
+/* line 229, ../sass/_global/_forms.scss */
+textarea.code:focus, textarea.code:hover {
+  width: 100%;
+  height: 200px;
+}
+
 /* line 3, ../sass/_global/_tables.scss */
 table {
   border-collapse: collapse;
@@ -736,13 +753,13 @@ body,
   justify-content: space-between;
   text-align: center;
   vertical-align: middle;
-  padding-right: 30px;
 }
-/* line 17, ../sass/_components/_routes.scss */
+/* line 16, ../sass/_components/_routes.scss */
 .route > *:first-child {
   background: url("/img/svg/chevron-right.svg") no-repeat 100% 50%;
   background-size: 20px;
   min-height: 20px;
+  padding-right: 30px;
 }
 /* line 24, ../sass/_components/_routes.scss */
 .route abbr {

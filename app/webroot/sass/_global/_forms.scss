@@ -108,6 +108,10 @@ button,
 	}
 }
 
+.btn-sm {
+
+}
+
 progress {
 	width: 100%;
 	/* Reset the default appearance */
@@ -207,4 +211,23 @@ progress {
 		display: none;
 		position: absolute;
 	}
+}
+
+// Debug textarea
+
+textarea.code {
+  background: rgba(#000, 0.8);
+  color: #F0C;
+  font-family: 'Consolas', CourierNew, fixed;
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  transition: all 0.5s ease;
+
+  &:focus,
+  &:hover {
+    width: 100%;
+    height: 200px;
+  }
 }
