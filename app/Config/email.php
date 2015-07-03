@@ -51,7 +51,7 @@ class EmailConfig {
 
 	public $smtp = array(
 		'transport' => 'Smtp',
-		'from' => array('receipts@petrolapp.me' => 'Petrol app'),
+		'from' => array('updates@commutingcosts.com' => 'Commute app'),
 		'host' => 'smtp.mandrillapp.com',
 		'port' => 587,
 		'timeout' => 30,
