@@ -67,6 +67,18 @@ class ParkingTicketUsesController extends AppController {
 			}
 
 			if($this->ParkingTicketUse->save($form_data)) {
+
+	            /* Send email */
+				$Email = new CakeEmail('smtp');
+				$Email->template('parking_use');
+				$Email->from(array('parking@commutingcosts.com' => 'Commute App'));
+				$Email->to($this->Session->read('Auth.User.email'));
+				$Email->subject('[Commute] Parking Used #' . $this->ParkingTicketUse->id);
+				$Email->emailFormat('html');
+				$Email->helpers(array('Html', 'Number', 'Time'));
+				$Email->viewVars(array('data'=>$form_data));
+				$Email->send();
+
 				$this->Session->setFlash($response);
 				$this->redirect('/parking_tickets/view/' . $form_data['ParkingTicketUse']['parking_ticket_id'] . "#usage");
 			}
