@@ -13,6 +13,29 @@ class ParkingTicketsController extends AppController {
 	}
 
 	function index() {
+
+		$conditions = array(
+			'ParkingTicket.user_id' => $this->Session->read('Auth.User.id')
+		);
+
+		// Check for any filter data
+		if(count($this->data)>0) {
+
+			// Check if FROM date is set
+			if($this->data['ParkingTicket']['from'] != '') {
+				$conditions[] = array("ParkingTicket.created >= '" . $this->data['ParkingTicket']['from'] . "'");
+			}
+
+			// Check if TO date is set
+			if($this->data['ParkingTicket']['to'] != '') {
+				$conditions[] = array("ParkingTicket.created < '" . $this->data['ParkingTicket']['to'] . "'");
+			}
+
+		}
+
+		//_debug($conditions);
+
+
 		// Get pagination results for ParkingTicket model
 		$this->set('parkingTickets', $this->paginate('ParkingTicket'));
 
@@ -25,7 +48,7 @@ class ParkingTicketsController extends AppController {
 				'MAX(ParkingTicket.created) last',
 				'DATEDIFF(MAX(ParkingTicket.created), MIN(ParkingTicket.created)) duration'
 			),
-			'conditions' => array('ParkingTicket.user_id' => $this->Session->read('Auth.User.id'))
+			'conditions' => $conditions
 		);
 		$this->set('stats', $this->ParkingTicket->find('all', $options));
 	}
