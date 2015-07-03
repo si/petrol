@@ -71,7 +71,10 @@ class ParkingTicketsController extends AppController {
 		    // Set location ID for Parking Ticket
 		    $form_data['ParkingTicket']['location_id'] = (isset($location['Location'])) ? $location['Location']['id'] : $location[0]['Location']['id'];
 
-			if($this->ParkingTicket->save($form_data)) {
+		    // Set Parking Ticket Use start time to now for brand new tickets
+		    if($id=='') $form_data['ParkingTicketUse'][0]['starts'] = $created;
+
+			if($this->ParkingTicket->saveAll($form_data)) {
 				$this->Session->setFlash("Parking ticket saved!");
 				$this->redirect(array('action'=>'view', $this->ParkingTicket->id));
 			}
