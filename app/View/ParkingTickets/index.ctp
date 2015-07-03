@@ -1,5 +1,12 @@
 <h1>Your Parking Tickets</h1>
 
+<?php echo $this->Form->create(null, array('class'=>'filters')); ?>
+  <?php echo $this->Form->input('from', array('class'=>'date', 'placeholder'=>'yyyy-mm-dd')); ?>
+  <?php echo $this->Form->input('to', array('class'=>'date', 'placeholder'=>'yyyy-mm-dd')); ?>
+  <?php echo $this->Form->button('Apply'); ?>
+  <?php echo $this->Html->link('Clear', array('action'=>'index'), array('class'=>'btn')); ?>
+<?php echo $this->Form->end(); ?>
+
 <table class="stats">
   <tbody>
   <tr>
