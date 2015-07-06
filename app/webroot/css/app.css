@@ -232,7 +232,7 @@ progress::-webkit-progress-value {
 }
 /* line 175, ../sass/_global/_forms.scss */
 .input-group .col-4 {
-  width: 100%/3;
+  width: 33.33333%;
 }
 /* line 178, ../sass/_global/_forms.scss */
 .input-group .col-3 {
@@ -240,7 +240,7 @@ progress::-webkit-progress-value {
 }
 /* line 181, ../sass/_global/_forms.scss */
 .input-group .col-2 {
-  width: 100%/6;
+  width: 16.66667%;
 }
 
 /* line 188, ../sass/_global/_forms.scss */
@@ -303,24 +303,25 @@ form.filters > div input {
   background: transparent;
   border: none;
   border-bottom: 2px solid #000;
+  border-radius: 0;
 }
-/* line 252, ../sass/_global/_forms.scss */
-form.filters > div input::-moz-placeholder {
+/* line 253, ../sass/_global/_forms.scss */
+form.filters > div input::-webkit-input-placeholder {
   color: #111;
 }
-/* line 259, ../sass/_global/_forms.scss */
+/* line 260, ../sass/_global/_forms.scss */
 form.filters > div.text input {
   width: 60px;
 }
-/* line 262, ../sass/_global/_forms.scss */
+/* line 263, ../sass/_global/_forms.scss */
 form.filters > div.text input:focus + label {
   top: -10px;
 }
-/* line 267, ../sass/_global/_forms.scss */
+/* line 268, ../sass/_global/_forms.scss */
 form.filters > div.btns {
   margin-left: 10px;
 }
-/* line 275, ../sass/_global/_forms.scss */
+/* line 276, ../sass/_global/_forms.scss */
 form.filters button,
 form.filters .btn {
   display: inline-block;
@@ -331,11 +332,11 @@ form.filters .btn {
   vertical-align: middle;
   width: 30px;
 }
-/* line 285, ../sass/_global/_forms.scss */
+/* line 286, ../sass/_global/_forms.scss */
 form.filters button {
   background: url(/img/svg/tick.svg) no-repeat 50% 50%;
 }
-/* line 289, ../sass/_global/_forms.scss */
+/* line 290, ../sass/_global/_forms.scss */
 form.filters .btn {
   background: url(/img/svg/cross.svg) no-repeat 50% 50%;
   opacity: 0.3;
@@ -682,7 +683,7 @@ body,
 /* line 29, ../sass/_components/_grid.scss */
 .input-group .col-4,
 .item-group .col-4 {
-  width: 100%/3;
+  width: 33.33333%;
 }
 /* line 32, ../sass/_components/_grid.scss */
 .input-group .col-3,
@@ -692,7 +693,7 @@ body,
 /* line 35, ../sass/_components/_grid.scss */
 .input-group .col-2,
 .item-group .col-2 {
-  width: 100%/6;
+  width: 16.66667%;
 }
 
 /* line 2, ../sass/_components/_icons.scss */
