@@ -137,5 +137,30 @@ class ParkingTicketsController extends AppController {
 		)));
 	}
 
+	function stats() {
+
+		$conditions = array(
+			'ParkingTicket.user_id' => $this->Session->read('Auth.User.id')
+		);
+
+		// Get some ParkingTicket stats (total spent and tickets)
+		$options = array(
+			'fields' => array(
+				'EXTRACT(YEAR_MONTH FROM ParkingTicket.created) AS month_year',
+				'SUM(cost) as total_spent',
+				'COUNT(*) as total_tickets',
+				'SUM(duration_hours) AS total_hours'
+				//'MIN(ParkingTicket.created) first',
+				//'MAX(ParkingTicket.created) last',
+				//'DATEDIFF(MAX(ParkingTicket.created), MIN(ParkingTicket.created)) duration'
+			),
+			'conditions' => $conditions,
+			'group' => array(
+				'EXTRACT(YEAR_MONTH FROM ParkingTicket.created)'
+			)
+		);
+		$this->set('stats', $this->ParkingTicket->find('all', $options));
+
+	}
 
 }
