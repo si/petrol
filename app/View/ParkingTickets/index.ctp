@@ -4,6 +4,8 @@ $this->viewVars['title_for_layout'] = 'Parking Tickets';
 
 <h1>Your Parking Tickets</h1>
 
+<?php echo $this->Html->link('Add Parking', array('action'=>'edit'), array('class'=>'btn btn-primary btn-large')); ?>
+
 <?php echo $this->Form->create(null, array('class'=>'filters')); ?>
   <?php echo $this->Form->input('from', array('class'=>'date','label'=>'','placeholder'=>'From')); ?>
   <?php echo $this->Form->input('to', array('class'=>'date','label'=>'','placeholder'=>'To')); ?>
@@ -15,22 +17,28 @@ $this->viewVars['title_for_layout'] = 'Parking Tickets';
 
 <table class="stats">
   <tbody>
-  <tr>
-    <td><?php echo $this->Number->currency($stats[0][0]['total_spent'],'GBP'); ?></td>
-    <td><?php echo $this->Number->format($stats[0][0]['total_tickets']); ?></td>
-    <td title="<?php echo $this->Time->format('d M Y', $stats[0][0]['first']) . '–' . $this->Time->format('d M Y', $stats[0][0]['last']); ?>">
-      <?php echo $this->Number->format(($stats[0][0]['duration'])); ?>
-    </td>
-  </tr>
-  <tr>
-    <th>total spent</th>
-    <th>tickets</th>
-    <th>days</th>
-  </tr>
+    <tr>
+      <td><?php echo $this->Number->currency($stats[0][0]['total_spent'],'GBP'); ?></td>
+      <td><?php echo $this->Number->format($stats[0][0]['total_tickets']); ?></td>
+      <td title="<?php echo $this->Time->format('d M Y', $stats[0][0]['first']) . '–' . $this->Time->format('d M Y', $stats[0][0]['last']); ?>">
+        <?php echo $this->Number->format(($stats[0][0]['duration'])); ?>
+      </td>
+    </tr>
+    <tr>
+      <th>total spent</th>
+      <th>tickets</th>
+      <th>days</th>
+    </tr>
   </tbody>
+  <tfoot class="small">
+    <tr>
+      <td colspan="3">
+        <?php echo $this->Html->link('More stats', array('action'=>'stats')); ?>
+      </td>
+    </tr>
+  </tfoot>
 </table>
 
-<?php echo $this->Html->link('Add Parking', array('action'=>'edit'), array('class'=>'btn btn-primary btn-large')); ?>
 <?php
 echo $this->element('parking_tickets_table', array('data' => $parkingTickets));
 ?>
