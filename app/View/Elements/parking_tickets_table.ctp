@@ -16,7 +16,7 @@
 		<tr>
 			<td class="date"><?php echo $this->Html->link($this->Time->format('d/m', $item['ParkingTicket']['created']), array('controller'=>'parking_tickets', 'action'=>'view', $item['ParkingTicket']['id'])); ?> </td>
 		    <td><?php echo $item['Location']['name']; ?> </td>
-		    <td><?php echo ($item['ParkingTicket']['duration_hours'] >= 24) ? ($item['ParkingTicket']['duration_hours'] / 24) . ' day' . (($item['ParkingTicket']['duration_hours'] / 24)>1 ? 's' : '') : $item['ParkingTicket']['duration_hours'] . ' hours'; ?> </td>
+		    <td><?php echo ($item['ParkingTicket']['duration_hours'] >= 24) ? ($item['ParkingTicket']['duration_hours'] / 24) . 'd' : $item['ParkingTicket']['duration_hours'] . 'h'; ?> </td>
 			<td class="price"><?php echo $this->Number->currency($item['ParkingTicket']['cost'],'GBP',array('places'=>2)); ?> </td>
 		</tr>
 		<?php endforeach; ?>
