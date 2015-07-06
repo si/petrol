@@ -231,3 +231,64 @@ textarea.code {
     height: 200px;
   }
 }
+
+
+// Filter forms
+
+form.filters {
+
+	background: url(/img/svg/filter.svg) no-repeat 0 90%;
+	padding-left: 50px;
+
+	> div {
+		display: inline-block;
+		position: relative;
+
+		input {
+			background: transparent;
+			border: none;
+			border-bottom: 2px solid #000;
+
+			&::-moz-placeholder {
+				color: #111;
+			}
+		}
+
+		&.text {
+
+			input {
+				width: 70px;
+
+				&:focus + label {
+					top: -10px;
+				}
+			}
+		}
+		&.btns {
+			margin-left: 20px;
+		}
+	}
+
+
+
+	button, 
+	.btn {
+		display: inline-block;
+		height: 30px;
+		margin: 0;
+		padding: 0;
+		text-indent: -9999px;
+		vertical-align: middle;
+		width: 30px;
+	}
+
+	button {
+		background: url(/img/svg/tick.svg) no-repeat 50% 50%;
+	}
+
+	.btn {
+		background: url(/img/svg/cross.svg) no-repeat 50% 50%;
+		opacity: 0.3;
+	}
+
+}

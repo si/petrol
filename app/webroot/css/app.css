@@ -288,6 +288,59 @@ textarea.code:focus, textarea.code:hover {
   height: 200px;
 }
 
+/* line 238, ../sass/_global/_forms.scss */
+form.filters {
+  background: url(/img/svg/filter.svg) no-repeat 0 90%;
+  padding-left: 50px;
+}
+/* line 243, ../sass/_global/_forms.scss */
+form.filters > div {
+  display: inline-block;
+  position: relative;
+}
+/* line 247, ../sass/_global/_forms.scss */
+form.filters > div input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+}
+/* line 252, ../sass/_global/_forms.scss */
+form.filters > div input::-moz-placeholder {
+  color: #111;
+}
+/* line 259, ../sass/_global/_forms.scss */
+form.filters > div.text input {
+  width: 70px;
+}
+/* line 262, ../sass/_global/_forms.scss */
+form.filters > div.text input:focus + label {
+  top: -10px;
+}
+/* line 267, ../sass/_global/_forms.scss */
+form.filters > div.btns {
+  margin-left: 20px;
+}
+/* line 275, ../sass/_global/_forms.scss */
+form.filters button,
+form.filters .btn {
+  display: inline-block;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 30px;
+}
+/* line 285, ../sass/_global/_forms.scss */
+form.filters button {
+  background: url(/img/svg/tick.svg) no-repeat 50% 50%;
+}
+/* line 289, ../sass/_global/_forms.scss */
+form.filters .btn {
+  background: url(/img/svg/cross.svg) no-repeat 50% 50%;
+  opacity: 0.3;
+}
+
 /* line 3, ../sass/_global/_tables.scss */
 table {
   border-collapse: collapse;
