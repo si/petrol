@@ -13,7 +13,7 @@ echo $this->Form->create('ParkingTicket', array('class'=>'navbar-form'));
         'value' => (isset($this->data['Location']['name'])) ? $this->data['Location']['name'] : '',
         'placeholder' => (isset($locations) && count($locations)>0) ? 'eg. ' . $locations[1] : 'Start typing…',
         'list'=>'location_history',
-        'div' => 'col-8',
+        'div' => 'col-12',
       ));
 
       if(isset($locations) && count($locations)>0) :
@@ -26,31 +26,31 @@ echo $this->Form->create('ParkingTicket', array('class'=>'navbar-form'));
       <?php
       endif;
 		?>
-    <?php
-      echo $this->Form->input('cost', array(
-        'div' => 'col-4',
-        'placeholder' => '£',
-      ));
-    ?>
   </div>
 
   <div class="input-group">
     <?php
       echo $this->Form->input('duration_hours', array(
         'label' => 'Duration',
-        'div' => 'col-6',
+        'div' => 'col-4',
         'type' => 'number',
       ));
     ?>
     <?php
       echo $this->Form->input('duration_units', array(
         'label' => 'Units',
-        'div' => 'col-6',
+        'div' => 'col-4',
         'options' => array(
           'h' => 'hours',
           'd' => 'days',
           'w' => 'weeks',
         )
+      ));
+    ?>
+    <?php
+      echo $this->Form->input('cost', array(
+        'div' => 'col-4',
+        'placeholder' => '£',
       ));
     ?>
   </div>
