@@ -291,7 +291,7 @@ textarea.code:focus, textarea.code:hover {
 /* line 238, ../sass/_global/_forms.scss */
 form.filters {
   background: url(/img/svg/filter.svg) no-repeat 0 90%;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 /* line 243, ../sass/_global/_forms.scss */
 form.filters > div {
@@ -310,7 +310,7 @@ form.filters > div input::-moz-placeholder {
 }
 /* line 259, ../sass/_global/_forms.scss */
 form.filters > div.text input {
-  width: 70px;
+  width: 60px;
 }
 /* line 262, ../sass/_global/_forms.scss */
 form.filters > div.text input:focus + label {
@@ -318,7 +318,7 @@ form.filters > div.text input:focus + label {
 }
 /* line 267, ../sass/_global/_forms.scss */
 form.filters > div.btns {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 /* line 275, ../sass/_global/_forms.scss */
 form.filters button,

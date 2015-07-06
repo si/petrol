@@ -238,7 +238,7 @@ textarea.code {
 form.filters {
 
 	background: url(/img/svg/filter.svg) no-repeat 0 90%;
-	padding-left: 50px;
+	padding-left: 40px;
 
 	> div {
 		display: inline-block;
@@ -257,7 +257,7 @@ form.filters {
 		&.text {
 
 			input {
-				width: 70px;
+				width: 60px;
 
 				&:focus + label {
 					top: -10px;
@@ -265,7 +265,7 @@ form.filters {
 			}
 		}
 		&.btns {
-			margin-left: 20px;
+			margin-left: 10px;
 		}
 	}
 
