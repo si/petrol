@@ -1,11 +1,15 @@
 <h1>Your Receipts</h1>
 
+<?php echo $this->Html->link('Add Receipt', array('controller'=>'receipts','action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
+
+<?php echo $this->element('filter_form'); ?>  
+
 <table class="stats">
   <tbody>
   <tr>
     <td><?php echo $this->Number->currency(floor($totals[0][0]['spent']),'GBP',array('places'=>0)); ?></td>
-    <td><?php echo $this->Number->format( $gallons = $totals[0][0]['miles'] / ($totals[0][0]['litres'] * 0.219), 2 ); ?></td>
-    <td><?php echo $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP'); ?></td>
+    <td><?php echo ($totals[0][0]['miles']>0 && $totals[0][0]['litres']>0) ? $this->Number->format( $gallons = $totals[0][0]['miles'] / ($totals[0][0]['litres'] * 0.219), 2 ) : 0; ?></td>
+    <td><?php echo ($totals[0][0]['miles']>0 && $totals[0][0]['litres']>0) ? $this->Number->currency($totals[0][0]['spent']/$totals[0][0]['miles'],'GBP') : 0; ?></td>
   </tr>
   <tr>
     <th>total spent</th>
@@ -15,7 +19,6 @@
   </tbody>
 </table>
     
-<?php echo $this->Html->link('Add Receipt', array('controller'=>'receipts','action'=>'add'), array('class'=>'btn btn-primary btn-large')); ?>
 <?php // var_dump($data); 
 
 if(count($vehicles)>1) : 
