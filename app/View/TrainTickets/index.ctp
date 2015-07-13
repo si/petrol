@@ -1,5 +1,9 @@
 <h1>Your Train Tickets</h1>
 
+<?php echo $this->Html->link('Add Ticket', array('controller'=>'train_tickets','action'=>'form'), array('class'=>'btn')); ?>
+
+<?php echo $this->element('filter_form'); ?>  
+
 <table class="stats">
   <tbody>
   <tr>
@@ -17,7 +21,6 @@
   </tbody>
 </table>
 
-<?php echo $this->Html->link('Add Ticket', array('controller'=>'train_tickets','action'=>'form'), array('class'=>'btn')); ?>
 <canvas class="chart" width="350" height="200" data-chart-source='<?php echo json_encode($totals); ?>' data-chart-x="month" data-chart-y="total_spent"></canvas>
 
 <?php

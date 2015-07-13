@@ -13,6 +13,26 @@ class TrainTicketsController extends AppController {
 	}
 
 	function index() {
+
+		$conditions = array(
+			'TrainTicket.user_id' => $this->Session->read('Auth.User.id')
+		);
+
+		// Check for any filter data
+		if(count($this->data)>0) {
+
+			// Check if FROM date is set
+			if($this->data['TrainTicket']['from'] != '') {
+				$conditions[] = array("TrainTicket.created >= '" . $this->data['TrainTicket']['from'] . "'");
+			}
+
+			// Check if TO date is set
+			if($this->data['TrainTicket']['to'] != '') {
+				$conditions[] = array("TrainTicket.created < '" . $this->data['TrainTicket']['to'] . "'");
+			}
+
+		}
+
 		$this->set('trainTickets', $this->paginate('TrainTicket'));
 
 		// Get some trainTickets stats (total spent and tickets)
@@ -24,7 +44,7 @@ class TrainTicketsController extends AppController {
 				'MAX(TrainTicket.created) last',
 				'DATEDIFF(MAX(TrainTicket.created), MIN(TrainTicket.created)) duration'
 			),
-			'conditions' => array('TrainTicket.user_id' => $this->Session->read('Auth.User.id'))
+			'conditions' => $conditions
 		);
 		$this->set('stats', $this->TrainTicket->find('all', $options));
 
