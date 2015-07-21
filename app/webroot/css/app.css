@@ -911,3 +911,31 @@ body,
   text-align: center;
   width: 20px;
 }
+
+/* line 3, ../sass/_components/_location-lookup.scss */
+.location {
+  position: relative;
+}
+
+/* line 7, ../sass/_components/_location-lookup.scss */
+.location-lookup {
+  background: transparent url(/img/svg/target.svg) no-repeat 50% 50%;
+  background-size: 16px;
+  display: inline-block;
+  height: 16px;
+  position: absolute;
+  text-indent: -9999em;
+  top: 1.2rem;
+  right: -20px;
+  width: 16px;
+  opacity: 0.5;
+}
+/* line 20, ../sass/_components/_location-lookup.scss */
+.location-lookup:focus, .location-lookup:hover {
+  background-color: transparent;
+  opacity: 1;
+}
+/* line 25, ../sass/_components/_location-lookup.scss */
+.location-lookup.loading {
+  background-image: url(/img/radar.gif);
+}

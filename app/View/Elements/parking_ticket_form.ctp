@@ -13,7 +13,7 @@ echo $this->Form->create('ParkingTicket', array('class'=>'navbar-form'));
         'value' => (isset($this->data['Location']['name'])) ? $this->data['Location']['name'] : '',
         'placeholder' => (isset($locations) && count($locations)>0) ? 'eg. ' . $locations[1] : 'Start typing…',
         'list'=>'location_history',
-        'div' => 'col-12',
+        'div' => 'col-12 location',
       ));
 
       if(isset($locations) && count($locations)>0) :

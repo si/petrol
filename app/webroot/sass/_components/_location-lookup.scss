@@ -1,0 +1,28 @@
+$button-size: 16px;
+
+.location {
+	position: relative;
+}
+
+.location-lookup {
+	background: transparent url(/img/svg/target.svg) no-repeat 50% 50%;
+	background-size: $button-size;
+	display: inline-block;
+	height: $button-size;
+	position: absolute;
+	text-indent: -9999em;
+	top: 1.2rem;
+	right: -20px;
+	width: $button-size;
+	opacity: 0.5;
+
+	&:focus,
+	&:hover {
+		background-color: transparent;
+		opacity: 1;
+	}
+
+	&.loading {
+		background-image: url(/img/radar.gif);
+	}
+}
