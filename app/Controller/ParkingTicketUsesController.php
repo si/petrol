@@ -69,6 +69,7 @@ class ParkingTicketUsesController extends AppController {
 			if($this->ParkingTicketUse->save($form_data)) {
 
 	            /* Send email */
+	            /* Doesn't work on UWH
 				$Email = new CakeEmail('smtp');
 				$Email->template('parking_use');
 				$Email->from(array('parking@commutingcosts.com' => 'Commute App'));
@@ -78,6 +79,7 @@ class ParkingTicketUsesController extends AppController {
 				$Email->helpers(array('Html', 'Number', 'Time'));
 				$Email->viewVars(array('data'=>$form_data));
 				$Email->send();
+				*/
 
 				$this->Session->setFlash($response);
 				$this->redirect('/parking_tickets/view/' . $form_data['ParkingTicketUse']['parking_ticket_id'] . "#usage");

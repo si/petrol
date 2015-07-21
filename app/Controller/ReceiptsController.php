@@ -27,6 +27,21 @@ class ReceiptsController extends AppController {
   	 "Receipt.user_id" => $this->Session->read('Auth.User.id')
     );
 
+	// Check for any filter data
+	if(count($this->data)>0) {
+
+		// Check if FROM date is set
+		if($this->data['Receipt']['from'] != '') {
+			$conditions[] = "Receipt.created >= '" . $this->data['Receipt']['from'] . "'";
+		}
+
+		// Check if TO date is set
+		if($this->data['Receipt']['to'] != '') {
+			$conditions[] = "Receipt.created < '" . $this->data['Receipt']['to'] . "'";
+		}
+
+	}
+
     // Conditional Vehicle filter
   	if(isset($this->params['named']['vehicle'])) {
   	  $conditions['vehicle_id'] =  $this->params['named']['vehicle'];
