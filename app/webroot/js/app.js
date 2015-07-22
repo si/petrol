@@ -29,6 +29,52 @@ $(document).ready(function() {
         $('#ReceiptOdometer').attr('min',selectedOdometer);
 	};
 
-     $('#ReceiptVehicleId').on('change', setReceiptOdometer);
+    $('#ReceiptVehicleId').on('change', setReceiptOdometer);
+
+    // Location lookup 
+    var locationLookup = function() {
+
+    	var geoAvailable = ("geolocation" in navigator);
+
+    	console.log('Location lookup');
+    	console.log('Geo available?', geoAvailable);
+
+    	if(geoAvailable) {
+
+		    $('.location').each(function() {
+		    	console.log(this);
+		    	// Place button next to INPUT
+		    	$(this).append('<button class="location-lookup">Find local locations</button>');
+		    });
+
+		    $('button.location-lookup').on('click', function(e) {
+
+		    	e.preventDefault();
+
+		    	var button = this,
+		    		input = $(this).siblings('input'),
+		    		location = {
+		    			latitude: null,
+		    			longitude: null
+		    		};
+
+		    	$(button).addClass('loading');
+
+				navigator.geolocation.getCurrentPosition( function(position) {
+					console.log('position:', position.coords);
+			    	$(button).removeClass('loading');
+					location.latitude = position.coords.latitude;
+					location.longitude = position.coords.longitude;
+				});
+				
+				input.attr('data-longitude', location.longitude);
+				input.attr('data-latitude', location.latitude);
+
+		    });
+
+    	}
+
+
+    }();
 
 });
