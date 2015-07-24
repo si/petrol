@@ -71,9 +71,49 @@ $(document).ready(function() {
 				input.attr('data-latitude', location.latitude);
 
 		    });
+    	}
+    }();
+
+    var recentLocations = function() {
+
+    	console.log('Recent locations');
+
+    	var input = $('#ParkingTicketLocation'),
+    		locations = [],
+    		links = [];
+
+    	// Get datalist locations
+    	if(input.length > 0) {
+    		var locationList = $('#' + input.attr('list') + ' option');
+
+	    	// Loop through datalist locations
+	    	$.each(locationList, function(i, item) {
+	    		if($(item).val()!='') {
+	    			locations.push($(item).val());
+	    		}
+	    	});
+
+	    	// Create text links for top 3 locations
+	    	$.each(locations, function(i, name) {
+	    		if(i<=2) {
+		    		var link = '<a href="#" class="input-value">' + name + '</a> ';
+		    		links.push(link);
+		    	}
+	    	});
+
+	    	// Function to set input value to link text
+	    	var setInputValue = function() {
+	    		var value = $(this).text();
+	    		$(input).val(value);
+	    	};
+
+	    	// Place links under INPUT
+	    	$(input).after('<span class="input-values">Recently: ' + links + '</span>');
+
+	    	// Bind function to text links
+	    	$('a.input-value').on('click', setInputValue);
 
     	}
-
 
     }();
 
