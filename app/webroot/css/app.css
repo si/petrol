@@ -273,14 +273,17 @@ progress::-webkit-progress-value {
 
 /* line 216, ../sass/_global/_forms.scss */
 .input-values {
+  display: block;
   font-size: 0.7rem;
+  line-height: 1.1;
+  margin: 5px 0;
 }
-/* line 219, ../sass/_global/_forms.scss */
+/* line 222, ../sass/_global/_forms.scss */
 .input-values a {
   color: #FFF;
 }
 
-/* line 226, ../sass/_global/_forms.scss */
+/* line 229, ../sass/_global/_forms.scss */
 textarea.code {
   background: rgba(0, 0, 0, 0.8);
   color: #F0C;
@@ -291,46 +294,46 @@ textarea.code {
   height: 50px;
   transition: all 0.5s ease;
 }
-/* line 236, ../sass/_global/_forms.scss */
+/* line 239, ../sass/_global/_forms.scss */
 textarea.code:focus, textarea.code:hover {
   width: 100%;
   height: 200px;
 }
 
-/* line 246, ../sass/_global/_forms.scss */
+/* line 249, ../sass/_global/_forms.scss */
 form.filters {
   background: url(/img/svg/filter.svg) no-repeat 0 90%;
   padding-left: 40px;
 }
-/* line 251, ../sass/_global/_forms.scss */
+/* line 254, ../sass/_global/_forms.scss */
 form.filters > div {
   display: inline-block;
   position: relative;
 }
-/* line 255, ../sass/_global/_forms.scss */
+/* line 258, ../sass/_global/_forms.scss */
 form.filters > div input {
   background: transparent;
   border: none;
   border-bottom: 2px solid #000;
   border-radius: 0;
 }
-/* line 261, ../sass/_global/_forms.scss */
+/* line 264, ../sass/_global/_forms.scss */
 form.filters > div input::-webkit-input-placeholder {
   color: #111;
 }
-/* line 268, ../sass/_global/_forms.scss */
+/* line 271, ../sass/_global/_forms.scss */
 form.filters > div.text input {
   width: 60px;
 }
-/* line 271, ../sass/_global/_forms.scss */
+/* line 274, ../sass/_global/_forms.scss */
 form.filters > div.text input:focus + label {
   top: -10px;
 }
-/* line 276, ../sass/_global/_forms.scss */
+/* line 279, ../sass/_global/_forms.scss */
 form.filters > div.btns {
   margin-left: 10px;
 }
-/* line 283, ../sass/_global/_forms.scss */
+/* line 286, ../sass/_global/_forms.scss */
 form.filters button,
 form.filters .btn {
   display: inline-block;
@@ -341,11 +344,11 @@ form.filters .btn {
   vertical-align: middle;
   width: 30px;
 }
-/* line 294, ../sass/_global/_forms.scss */
+/* line 297, ../sass/_global/_forms.scss */
 form.filters button {
   background: url(/img/svg/tick.svg) no-repeat 50% 50%;
 }
-/* line 298, ../sass/_global/_forms.scss */
+/* line 301, ../sass/_global/_forms.scss */
 form.filters .btn {
   background: url(/img/svg/cross.svg) no-repeat 50% 50%;
   opacity: 0.3;
@@ -925,20 +928,8 @@ body,
 .location {
   position: relative;
 }
-/* line 6, ../sass/_components/_location-lookup.scss */
-.location .located:before {
-  position: absolute;
-  top: -0.5rem;
-  left: 20%;
-  display: inline-block;
-  width: 100px;
-  height: 1.5rem;
-  background: rgba(0, 0, 0, 0.7);
-  color: #FFF;
-  content: attr(data-latitude), attr(data-longitude);
-}
 
-/* line 23, ../sass/_components/_location-lookup.scss */
+/* line 7, ../sass/_components/_location-lookup.scss */
 .location-lookup {
   background: transparent url(/img/svg/target.svg) no-repeat 50% 50%;
   background-size: 16px;
@@ -951,12 +942,12 @@ body,
   width: 16px;
   opacity: 0.5;
 }
-/* line 35, ../sass/_components/_location-lookup.scss */
+/* line 19, ../sass/_components/_location-lookup.scss */
 .location-lookup:focus, .location-lookup:hover {
   background-color: transparent;
   opacity: 1;
 }
-/* line 41, ../sass/_components/_location-lookup.scss */
+/* line 25, ../sass/_components/_location-lookup.scss */
 .location-lookup.loading {
   background-image: url(/img/radar.gif);
 }
