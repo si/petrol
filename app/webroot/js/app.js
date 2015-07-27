@@ -34,7 +34,8 @@ $(document).ready(function() {
     // Location lookup 
     var locationLookup = function() {
 
-    	var geoAvailable = ("geolocation" in navigator);
+    	var geoAvailable = ("geolocation" in navigator),
+    		searching = false;
 
     	console.log('Location lookup');
     	console.log('Geo available?', geoAvailable);
@@ -58,17 +59,28 @@ $(document).ready(function() {
 		    			longitude: null
 		    		};
 
-		    	$(button).addClass('loading');
+		    	if(!searching) {
 
-				navigator.geolocation.getCurrentPosition( function(position) {
-					console.log('position:', position.coords);
-			    	$(button).removeClass('loading');
-					location.latitude = position.coords.latitude;
-					location.longitude = position.coords.longitude;
-				});
-				
-				input.attr('data-longitude', location.longitude);
-				input.attr('data-latitude', location.latitude);
+			    	$(button).addClass('loading');
+			    	searching = true;
+
+					navigator.geolocation.getCurrentPosition( function(position) {
+						console.log('position:', position.coords);
+				    	$(button).removeClass('loading');
+
+						location.latitude = position.coords.latitude;
+						location.longitude = position.coords.longitude;
+
+				    	searching = false;
+					});
+					
+					input.attr('data-longitude', location.longitude);
+					input.attr('data-latitude', location.latitude);
+
+		    	} else {
+		    		$(button).removeClass('loading');
+			    	searching = false;
+		    	}
 
 		    });
     	}
