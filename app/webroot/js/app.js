@@ -84,7 +84,7 @@ $(document).ready(function() {
 
 		    });
     	}
-    }();
+    };
 
     var recentLocations = function() {
 
@@ -127,6 +127,9 @@ $(document).ready(function() {
 
     	}
 
-    }();
+    };
+
+	locationLookup();
+	recentLocations();
 
 });
