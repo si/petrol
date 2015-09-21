@@ -30,5 +30,7 @@
     <?php echo $this->Html->link('Parking', array('controller'=>'parking_tickets'), array('class'=>'btn i parking m')); ?>
     <?php echo $this->Html->link('Trains', array('controller'=>'train_tickets'), array('class'=>'btn i trains m')); ?>
 
+    <?php echo $this->element('active_parking_tickets'); ?>
+
 <?php endif; ?>
 
