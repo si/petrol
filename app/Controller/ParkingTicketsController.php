@@ -149,10 +149,17 @@ class ParkingTicketsController extends AppController {
 				'EXTRACT(YEAR_MONTH FROM ParkingTicket.created) AS month_year',
 				'SUM(cost) as total_spent',
 				'COUNT(*) as total_tickets',
-				'SUM(duration_hours) AS total_hours'
-				//'MIN(ParkingTicket.created) first',
-				//'MAX(ParkingTicket.created) last',
-				//'DATEDIFF(MAX(ParkingTicket.created), MIN(ParkingTicket.created)) duration'
+				'SUM(duration_hours) AS total_hours',
+				'( 	SELECT COUNT(*) 
+					FROM `parking_ticket_uses` AS `ParkingTicketUse`
+					WHERE ParkingTicketUse.parking_ticket_id = ParkingTicket.id 
+				) AS total_used', 
+				'( 	SELECT SUM(
+						TIMESTAMPDIFF(HOUR, ParkingTicketUse.starts, ParkingTicketUse.ends)
+					) 
+					FROM `parking_ticket_uses` AS `ParkingTicketUse`
+					WHERE ParkingTicketUse.parking_ticket_id = ParkingTicket.id 
+				) AS total_used_length',
 			),
 			'conditions' => $conditions,
 			'group' => array(
@@ -161,6 +168,16 @@ class ParkingTicketsController extends AppController {
 		);
 		$this->set('stats', $this->ParkingTicket->find('all', $options));
 
+	}
+
+	function active() {
+		$settings = array(
+			//'conditions' => array('(DATE_ADD(`ParkingTicket`.`created`, INTERVAL duration_hours HOUR)) > NOW()'),
+			'order' => array('ParkingTicket.created DESC')
+		);
+		$parkingTicket = $this->ParkingTicket->find('first', $settings);
+		$parkingTicket = array('1', '2', '3');
+		$this->set('parkingTicket', $parkingTicket);
 	}
 
 }
