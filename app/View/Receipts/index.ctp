@@ -45,6 +45,7 @@ if(count($vehicles)>1) :
 <?php
 endif;
 
+if(count($data)>0) :
 echo $this->element('receipts_table', array('data'=>$data));
 
 ?>
@@ -59,3 +60,4 @@ echo $this->element('receipts_table', array('data'=>$data));
 	<?php
   	if($this->Paginator->hasNext()) echo $this->Paginator->next('Next', null, null, array('class' => 'disabled')); ?> 
 </div>
+<?php endif; ?>
