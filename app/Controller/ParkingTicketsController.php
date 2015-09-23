@@ -37,7 +37,7 @@ class ParkingTicketsController extends AppController {
 
 
 		// Get pagination results for ParkingTicket model
-		$this->set('parkingTickets', $this->paginate('ParkingTicket'));
+		$this->set('parkingTickets', $this->paginate('ParkingTicket', $conditions));
 
 		// Get some ParkingTicket stats (total spent and tickets)
 		$options = array(
