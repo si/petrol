@@ -33,7 +33,9 @@ $this->viewVars['title_for_layout'] = 'Parking Tickets';
 </table>
 
 <?php
-echo $this->element('parking_tickets_table', array('data' => $parkingTickets));
+if(count($parkingTickets)>0) :
+
+  echo $this->element('parking_tickets_table', array('data' => $parkingTickets));
 ?>
 
 <p><?php echo 'Page ' . $this->Paginator->counter(); ?></p>
@@ -48,3 +50,7 @@ echo $this->element('parking_tickets_table', array('data' => $parkingTickets));
   	if($this->Paginator->hasNext()) echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled')); ?>
   </li>
 </ul>
+
+<?php
+endif;
+?>
