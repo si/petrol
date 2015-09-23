@@ -39,17 +39,18 @@ footer a {
 /* line 38, ../sass/_global/_page.scss */
 h1 {
   line-height: 1.1;
-  margin: 0 0 1rem;
+  margin: 1.3rem 0 2rem;
+  padding-right: 2rem;
 }
 
-/* line 43, ../sass/_global/_page.scss */
+/* line 44, ../sass/_global/_page.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 49, ../sass/_global/_page.scss */
+/* line 50, ../sass/_global/_page.scss */
 textarea.code {
   font-family: Courier;
   width: 100%;
