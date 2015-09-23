@@ -172,11 +172,10 @@ class ParkingTicketsController extends AppController {
 
 	function active() {
 		$settings = array(
-			//'conditions' => array('(DATE_ADD(`ParkingTicket`.`created`, INTERVAL duration_hours HOUR)) > NOW()'),
+			'conditions' => array('(DATE_ADD(`ParkingTicket`.`created`, INTERVAL duration_hours HOUR)) > NOW()'),
 			'order' => array('ParkingTicket.created DESC')
 		);
 		$parkingTicket = $this->ParkingTicket->find('first', $settings);
-		$parkingTicket = array('1', '2', '3');
 		$this->set('parkingTicket', $parkingTicket);
 	}
 
