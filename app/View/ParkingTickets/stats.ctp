@@ -19,3 +19,5 @@
   <?php endforeach; ?>
   </tbody>
 </table>
+
+<?php echo $this->Html->link('Back', array('action'=>'index'), array('class'=>'btn')); ?>
