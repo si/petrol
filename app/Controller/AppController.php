@@ -19,9 +19,9 @@ class AppController extends Controller {
       'host' => 'smtp.sendgrid.net',
       'username'=>'simon.jobling@gmail.com',
       'password'=>'B34tr1c3',
-      'client' => 'dev.petrolapp.me'
+      'client' => 'dev.commutingcosts.com'
     );
-    $this->Email->from    = 'Petrol <bot@petrolapp.me>';
+    $this->Email->from    = 'Commute <receipts@commutingcosts.com>';
 
   }
 
