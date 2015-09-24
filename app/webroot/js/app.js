@@ -1,7 +1,9 @@
+// @codekit-append "/plugins/bootstrap-alert.js"
+
 // @codekit-append "/modules/bubble-menu.js"
 // @codekit-append "/modules/chart.js"
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 	function roundNumber(num, dec) {
 		var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
