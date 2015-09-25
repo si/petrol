@@ -33,7 +33,7 @@ class TrainTicketsController extends AppController {
 
 		}
 
-		$this->set('trainTickets', $this->paginate('TrainTicket'));
+		$this->set('trainTickets', $this->paginate('TrainTicket', $conditions));
 
 		// Get some trainTickets stats (total spent and tickets)
 		$options = array(
@@ -60,6 +60,7 @@ class TrainTicketsController extends AppController {
 		);
 		$totals = $this->TrainTicket->find('all', $options);
 		// Clean up totals array without the extra associative array around each object
+		$totals_clean = array();
 		foreach($totals as $total) {
 			$totals_clean[] = $total[0];
 		}
