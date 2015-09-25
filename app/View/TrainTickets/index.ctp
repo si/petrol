@@ -21,6 +21,7 @@
   </tbody>
 </table>
 
+<?php if(count($trainTickets) != 0) : ?>
 <canvas class="chart" width="350" height="200" data-chart-source='<?php echo json_encode($totals); ?>' data-chart-x="month" data-chart-y="total_spent"></canvas>
 
 <?php
@@ -39,3 +40,4 @@ echo $this->element('train_tickets_table', array('data' => $trainTickets));
   	if($this->Paginator->hasNext()) echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled')); ?>
   </li>
 </ul>
+<?php endif; ?>
