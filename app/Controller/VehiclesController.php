@@ -33,7 +33,8 @@ class VehiclesController extends AppController {
   }
 
 	function add() {
-    if(!empty($this->data)) {
+    if(!empty($this->data) && $this->Vehicle->validates()) {
+
       if($this->Vehicle->save($this->data)) {
           $this->Session->setFlash("Vehicle saved!");
           $this->redirect('/vehicles');
@@ -43,7 +44,7 @@ class VehiclesController extends AppController {
 
 	function edit($id='') {
 	  // Save data
-    if(!empty($this->data)) {
+    if(!empty($this->data) && $this->Vehicle->validates()) {
       if($this->Vehicle->save($this->data)) {
           $this->Session->setFlash("Vehicle saved!");
           $this->redirect('/vehicles');
