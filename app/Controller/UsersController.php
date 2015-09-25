@@ -54,8 +54,8 @@ class UsersController extends AppController {
           $this->User->create();
             if ($this->User->save($this->request->data)) {
               if ($this->Auth->login()) {
-                $this->Session->setFlash(__('You are now registered.'));
-                $this->redirect(array('controller'=>'vehicles','action' => 'index'));
+                $this->Session->setFlash(__('You are now registered. Let\'s add your set of wheels!'));
+                $this->redirect(array('controller'=>'vehicles','action' => 'add'));
               }
             } else {
                 $this->Session->setFlash(__('There were problems registering. Please check your details and try again.'));
