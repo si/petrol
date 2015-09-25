@@ -171,8 +171,13 @@ class ParkingTicketsController extends AppController {
 	}
 
 	function active() {
+		$conditions = array(
+			'ParkingTicket.user_id' => $this->Session->read('Auth.User.id')
+		);
+		array_push($conditions, '(DATE_ADD(`ParkingTicket`.`created`, INTERVAL duration_hours HOUR)) > NOW()');
+
 		$settings = array(
-			'conditions' => array('(DATE_ADD(`ParkingTicket`.`created`, INTERVAL duration_hours HOUR)) > NOW()'),
+			'conditions' => $conditions,
 			'order' => array('ParkingTicket.created DESC')
 		);
 		$parkingTicket = $this->ParkingTicket->find('first', $settings);
