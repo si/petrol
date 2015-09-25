@@ -913,18 +913,20 @@ body,
 
 /* line 7, ../sass/_components/_vehicles.scss */
 .reg {
-  background: #FFF;
+  background: #FC0;
   color: #333;
-  padding: 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0.8rem;
   text-align: center;
   text-transform: uppercase;
 }
-/* line 14, ../sass/_components/_vehicles.scss */
+/* line 16, ../sass/_components/_vehicles.scss */
 .reg a {
   text-decoration: none;
 }
 
-/* line 20, ../sass/_components/_vehicles.scss */
+/* line 22, ../sass/_components/_vehicles.scss */
 *[class^="fuel-type-"],
 *[class*=" fuel-type-"] {
   background: url(/img/svg/droplet.svg) no-repeat 20% 0;
