@@ -9,7 +9,7 @@ echo $this->Form->create('Vehicle');
   <legend>Vehicle Details</legend>
 	<div class="input-group">  
 		<?php
-			echo $this->Form->input('registration');
+			echo $this->Form->input('registration', array('class'=>'reg'));
 		?>
 	</div>
 	<div class="input-group">  
@@ -18,14 +18,6 @@ echo $this->Form->create('Vehicle');
 		?>
 		<?php
 			echo $this->Form->input('model');
-		?>
-	</div>
-	<div class="input-group">  
-		<?php
-			echo $this->Form->input('nickname');
-		?>
-		<?php
-			echo $this->Form->input('avatar', array('type'=>'file'));
 		?>
 	</div>
 	<div class="input-group">  
@@ -46,6 +38,17 @@ echo $this->Form->create('Vehicle');
 			 'div' => 'col-6'
 			));
 			if(isset($max_litres['Receipts']['litres'])) echo '<em>Your top fillup was ' . $max_litres['Fillup']['litres'] . '</em>';
+		?>
+	</div>
+</fieldset>
+<fieldset>
+	<legend>Let's add a personal touch</legend>
+	<div class="input-group">  
+		<?php
+			echo $this->Form->input('nickname');
+		?>
+		<?php
+			echo $this->Form->input('avatar', array('type'=>'file'));
 		?>
 	</div>
 	<div class="input-group">
