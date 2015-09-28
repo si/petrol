@@ -598,18 +598,19 @@ body,
   font-weight: 700;
   line-height: 14px;
 }
-/* line 173, ../sass/_global/_nav.scss */
+/* line 174, ../sass/_global/_nav.scss */
 .icon-list .brand,
 .icon-list .petrol,
 .icon-list .trains,
 .icon-list .parking,
 .icon-list .user,
-.icon-list .car {
+.icon-list .car,
+.icon-list .log-out {
   background-size: 24px;
 }
 
 /* Morph Shape */
-/* line 180, ../sass/_global/_nav.scss */
+/* line 181, ../sass/_global/_nav.scss */
 .morph-shape {
   position: absolute;
   width: 100%;
@@ -620,14 +621,14 @@ body,
 }
 
 /* Shown menu */
-/* line 191, ../sass/_global/_nav.scss */
+/* line 192, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .content::before {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
-/* line 200, ../sass/_global/_nav.scss */
+/* line 201, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .menu,
 .show-menu .close-button,
@@ -637,7 +638,7 @@ body,
   transform: translate3d(0, 0, 0);
 }
 
-/* line 206, ../sass/_global/_nav.scss */
+/* line 207, ../sass/_global/_nav.scss */
 .show-menu .menu,
 .show-menu .close-button {
   opacity: 1;
@@ -647,7 +648,7 @@ body,
   transition-delay: 0.4s;
 }
 
-/* line 214, ../sass/_global/_nav.scss */
+/* line 215, ../sass/_global/_nav.scss */
 .show-menu .content::before {
   opacity: 1;
   -webkit-transition: opacity 0.4s;
@@ -778,6 +779,11 @@ body,
 /* line 46, ../sass/_components/_icons.scss */
 .car {
   background-image: url(/img/svg/car.svg);
+}
+
+/* line 50, ../sass/_components/_icons.scss */
+.log-out {
+  background-image: url(/img/svg/log-out.svg);
 }
 
 /* line 1, ../sass/_components/_tabs.scss */

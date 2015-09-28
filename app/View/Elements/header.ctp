@@ -21,7 +21,7 @@
 		    <li><?php echo $this->Html->link('Trains', array('controller'=>'train_tickets','action'=>'index'), array('class'=>'i trains')); ?></li>
 		    <li><?php echo $this->Html->link('Parking', array('controller'=>'parking_tickets','action'=>'index'), array('class'=>'i parking')); ?></li>
 		    <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index'), array('class'=>'i car')); ?></li>
-			<li><?php echo $this->Html->link('Sign Out', array('controller'=>'users','action'=>'logout')); ?></li>
+			<li><?php echo $this->Html->link('Sign Out', array('controller'=>'users','action'=>'logout'), array('class'=>'i log-out')); ?></li>
 
 			<?php endif; ?>
 
