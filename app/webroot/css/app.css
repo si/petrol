@@ -812,14 +812,15 @@ body,
 .card {
   background: rgba(255, 255, 255, 0.95);
   color: #444;
+  margin: 2rem 0;
   padding: 1rem;
 }
-/* line 6, ../sass/_components/_cards.scss */
+/* line 7, ../sass/_components/_cards.scss */
 .card .price {
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* line 11, ../sass/_components/_cards.scss */
+/* line 12, ../sass/_components/_cards.scss */
 .card time {
   color: #888;
   display: block;
