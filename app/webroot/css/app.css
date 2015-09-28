@@ -933,6 +933,11 @@ body,
   padding: 2rem 1rem;
   text-align: center;
 }
+/* line 8, ../sass/_components/_maps.scss */
+.map .geo {
+  display: block;
+  opacity: 0.3;
+}
 
 /* line 3, ../sass/_components/_vehicles.scss */
 .inactive {

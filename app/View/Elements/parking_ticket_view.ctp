@@ -9,9 +9,8 @@
 		<time class="col-6" datetime="<?php echo $this->Time->format('c', $parkingTicket['ParkingTicket']['expires']); ?>"><?php echo $this->Time->format('d M y h:ia', $parkingTicket['ParkingTicket']['expires']); ?></time>
 	</div>
 	<div class="map">
-		<span class="location">
-			<?php echo $parkingTicket['Location']['name']; ?>
-		</span>
+		<?php echo $parkingTicket['Location']['name']; ?>
+		<span class="geo">(<?php echo $parkingTicket['Location']['long'] . ',' . $parkingTicket['Location']['lat']; ?>)</span>
 	</div>
 
 	<section id="usage">
