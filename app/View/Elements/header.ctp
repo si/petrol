@@ -20,7 +20,7 @@
 		    <li><?php echo $this->Html->link('Petrol', array('controller'=>'receipts','action'=>'index'), array('class'=>'i petrol')); ?></li>
 		    <li><?php echo $this->Html->link('Trains', array('controller'=>'train_tickets','action'=>'index'), array('class'=>'i trains')); ?></li>
 		    <li><?php echo $this->Html->link('Parking', array('controller'=>'parking_tickets','action'=>'index'), array('class'=>'i parking')); ?></li>
-		    <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index'), array('class'=>'i vehicles')); ?></li>
+		    <li><?php echo $this->Html->link('Vehicles', array('controller'=>'vehicles','action'=>'index'), array('class'=>'i car')); ?></li>
 			<li><?php echo $this->Html->link('Sign Out', array('controller'=>'users','action'=>'logout')); ?></li>
 
 			<?php endif; ?>
