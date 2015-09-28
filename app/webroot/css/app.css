@@ -4,7 +4,7 @@ body {
   background: -webkit-linear-gradient(#660ed8 0%, #aa84f5 100%);
   background: -moz-linear-gradient(#660ed8 0%, #aa84f5 100%);
   color: #FFF;
-  font-family: AvenirNext-Regular, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI","Avenir","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -598,17 +598,18 @@ body,
   font-weight: 700;
   line-height: 14px;
 }
-/* line 172, ../sass/_global/_nav.scss */
+/* line 173, ../sass/_global/_nav.scss */
 .icon-list .brand,
 .icon-list .petrol,
 .icon-list .trains,
 .icon-list .parking,
-.icon-list .user {
+.icon-list .user,
+.icon-list .car {
   background-size: 24px;
 }
 
 /* Morph Shape */
-/* line 179, ../sass/_global/_nav.scss */
+/* line 180, ../sass/_global/_nav.scss */
 .morph-shape {
   position: absolute;
   width: 100%;
@@ -619,14 +620,14 @@ body,
 }
 
 /* Shown menu */
-/* line 190, ../sass/_global/_nav.scss */
+/* line 191, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .content::before {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
-/* line 199, ../sass/_global/_nav.scss */
+/* line 200, ../sass/_global/_nav.scss */
 .show-menu .menu-wrap,
 .show-menu .menu,
 .show-menu .close-button,
@@ -636,7 +637,7 @@ body,
   transform: translate3d(0, 0, 0);
 }
 
-/* line 205, ../sass/_global/_nav.scss */
+/* line 206, ../sass/_global/_nav.scss */
 .show-menu .menu,
 .show-menu .close-button {
   opacity: 1;
@@ -646,7 +647,7 @@ body,
   transition-delay: 0.4s;
 }
 
-/* line 213, ../sass/_global/_nav.scss */
+/* line 214, ../sass/_global/_nav.scss */
 .show-menu .content::before {
   opacity: 1;
   -webkit-transition: opacity 0.4s;
@@ -772,6 +773,11 @@ body,
 /* line 42, ../sass/_components/_icons.scss */
 .user {
   background-image: url(/img/svg/head.svg);
+}
+
+/* line 46, ../sass/_components/_icons.scss */
+.car {
+  background-image: url(/img/svg/car.svg);
 }
 
 /* line 1, ../sass/_components/_tabs.scss */
