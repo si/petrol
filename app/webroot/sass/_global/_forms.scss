@@ -9,7 +9,7 @@ fieldset {
 legend {
 	background: rgba(#000,0.05);
 	border: none;
-	color: rgba(#000,0.2);
+	color: rgba(#000,0.3);
 	display: block;
 	font-size: 0.67rem;
 	margin-bottom: 0.67rem;
@@ -20,21 +20,33 @@ legend {
 }
 
 label {
+	color: rgba(#FFF, 0.6);
 	display: block;
 }
 
 input,
 select,
 textarea {
-	background: #FFF;
-	border: none;
-	color: #000;
+	background: transparent;
+	border: 2px solid #FFF;
+	color: #FFF;
 	display: block;
+	font-size: 1.3rem;
 	padding: 0.5rem;
+
+	&::-moz-placeholder,
+	&::-webkit-placeholder {
+		color: rgba(#FFF, 0.5);
+	}
 }
 
 select {
-	height: 1.8rem;
+    background-image: url(/img/svg/down-arrow.svg);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+	height: 2.95rem;
+	-webkit-appearance: none;
 }
 
 input[type=range] {
