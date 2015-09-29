@@ -96,13 +96,12 @@ class TrainTicketUsesController extends AppController {
 				$defaults['TrainTicketUse']['train_ticket_id'] = $this->params['named']['train_ticket_id'];
 
 				// Get the Train ticket data
-				$TrainTicket = $this->TrainTicketUse->TrainTicket->findById($this->params['named']['train_ticket_id']);
+				$trainTicket = $this->TrainTicketUse->TrainTicket->findById($this->params['named']['train_ticket_id']);
 
 				// Set START date/time based on Train ticket start date
 				$defaults['TrainTicketUse']['departs'] = $trainTicket['TrainTicket']['created'];
 
 				// Set END date/time based on Train ticket end date
-				$defaults['TrainTicketUse']['arrives'] = $TrainTicket['TrainTicket']['arrives'];
 
 			}
 
