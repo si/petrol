@@ -1,0 +1,1 @@
+<?php echo $this->element('train_ticket_use_form'); ?>
