@@ -35,6 +35,58 @@
 		</tbody>
 	</table>
 
+	<section id="usage">
+		<?php
+		if(count($trainTicket['TrainTicketUse'])>0) : ?>
+		<div class="timeline">
+		<ol>
+			<?php foreach($trainTicket['TrainTicketUse'] as $use): ?>
+			<li>
+				<a href="/train_ticket_uses/edit/<?php echo $use['id']; ?>">
+					<span class="date"><?php echo $this->Time->format('d/m', $use['departs']); ?></span>
+					<span class="times"><?php echo $this->Time->format('H:i', $use['departs']) . '–' . (($use['arrives']!='') ? $this->Time->format('H:i', $use['arrives']) : 'TBC'); ?></span>
+					<?php if($use['arrives']!='') : ?>
+					<span class="duration">(<?php echo $this->Time->format('H\hi',$use['duration']); ?>)</span>
+					<?php endif; ?>
+				</a>
+
+				<?php
+				echo $this->Html->link('X',
+					array('controller'=>'train_ticket_uses', 'action'=>'delete', $use['id']),
+					array('class'=>'btn-sm')
+					//'Are you sure?'
+				) ;
+				?>
+			</li>
+			<?php
+				if($use['arrives']=='') $timer = true;
+			endforeach;
+			?>
+		</ol>
+		</div>
+		<?php endif; ?>
+
+		<div class="input-group">
+			<?php
+			if(!isset($timer) || !$timer) {
+				echo $this->Html->link('Quick Start',
+					array('controller'=>'train_ticket_uses', 'action'=>'add', 'train_ticket_id'=>$trainTicket['TrainTicket']['id'], 'departs'=>'now'),
+					array('class'=>'btn i-timer')
+				);
+			} else {
+				echo $this->Html->link('Quick End',
+					array('controller'=>'train_ticket_uses', 'action'=>'add', 'train_ticket_id'=>$trainTicket['TrainTicket']['id'], 'arrives'=>'now'),
+					array('class'=>'btn i-timer')
+				);
+			}
+
+			echo $this->Html->link('Add Use',
+				array('controller'=>'train_ticket_uses', 'action'=>'add', 'train_ticket_id'=>$trainTicket['TrainTicket']['id']),
+				array('class'=>'btn i-add')
+			); ?>
+		</div>
+	</section>
+
 </article>
 
 <div class="input-group">
