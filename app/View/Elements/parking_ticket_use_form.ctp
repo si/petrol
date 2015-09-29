@@ -6,7 +6,7 @@
 <div class="input-group">
     <?php
 		echo $this->Form->input('parking_ticket_id', array(
-			'label' => 'Train Ticket',
+			'label' => 'Parking Ticket',
 			'div' => 'col-12'
 		));
     ?>
