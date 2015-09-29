@@ -22,6 +22,13 @@ class TrainTicket extends AppModel {
 		),
 	);
 
+  var $hasMany = array(
+   'TrainTicketUse' => array(
+   	'foreignKey' => 'train_ticket_id',
+   	'order' => array('TrainTicketUse.departs DESC')
+   ),
+  );
+
   var $validation = array(
     'price' => array(
       'required' => array(
