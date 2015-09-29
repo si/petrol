@@ -5,7 +5,7 @@ class TrainTicketUse extends AppModel {
 
 	var $belongsTo = array(
 		'TrainTicket' => array(
-			'className'    => 'TrainStation',
+			'className'    => 'TrainTicket',
 			'foreignKey'   => 'train_ticket_id',
 		),
 	);
