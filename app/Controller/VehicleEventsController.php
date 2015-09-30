@@ -10,9 +10,16 @@ class VehicleEventsController extends AppController {
 
 	function beforeFilter() {
 		parent::beforeFilter();
+    	$this->Auth->allow('export');
 	}
 
-	function export($id='',$format='ics') { 
+	function export($format='ics', $key='') { 
+
+		if($key == '') {
+			throw exception ('Unauthorised access');
+		}
+		$user_email = base64_decode($key);
+		$user_id = $this->VehicleEvent->Vehicle->User->findByEmail($user_email);
 
 		$this->layout = $format.'/default';
 
@@ -21,7 +28,7 @@ class VehicleEventsController extends AppController {
 			'all', 
 			array( 
 				'conditions' => array(
-					'Vehicle.user_id' => $this->Session->read('Auth.User.id')
+					'Vehicle.user_id' => $user_id
 				)
 			)
 		); 

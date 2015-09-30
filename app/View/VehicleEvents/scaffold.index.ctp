@@ -23,4 +23,4 @@
 	</thead>	
 </table>
 
-<?php echo $this->Html->link('Add to Calendar', array('action'=>'export', 'ics'), array('class'=>'btn')); ?>
+<?php echo $this->Html->link('Add to Calendar', array('action'=>'export', 'ics', base64_encode($this->Session->read('Auth.User.email'))), array('class'=>'btn')); ?>
