@@ -23,3 +23,4 @@
 	</thead>	
 </table>
 
+<?php echo $this->Html->link('Add to Calendar', array('action'=>'export', 'ics'), array('class'=>'btn')); ?>
