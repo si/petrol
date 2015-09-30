@@ -13,7 +13,7 @@
 </div>
 
 <fieldset>
-	<legend>Optional</legend>
+	<legend>Times</legend>
 	<div class="input-group">
 		<?php
 			echo $this->Form->input('departs', array(
@@ -34,8 +34,26 @@
 		    ));
 		?>
 	</div>
-
 </fieldset>
+
+<fieldset>
+	<legend>Extra</legend>
+	<div class="input-group">
+		<?php
+			echo $this->Form->input('platform', array(
+		        'label' => 'Platform',
+		        'div' => 'col-6',
+		    ));
+		?>
+		<?php
+			echo $this->Form->input('delay', array(
+		        'label' => 'Delay',
+		        'div' => 'col-6',
+		    ));
+		?>
+	</div>
+</fieldset>
+
 <div class="input-group">
 	<?php echo $this->Form->button('Save'); ?>
 	<?php echo $this->Html->link('Cancel', (isset($this->data['TrainTicketUse']['train_ticket_id'])) ? array('controller'=>'train_tickets', 'action'=>'view', $this->data['TrainTicketUse']['train_ticket_id']) : array('action'=>'index'), array('class'=>'btn')); ?>
