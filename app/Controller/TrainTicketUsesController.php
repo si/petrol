@@ -28,15 +28,7 @@ class TrainTicketUsesController extends AppController {
 			// Set START date/time based on passed parameter
 			if(isset($this->params['named']['departs'])) {
 				$starts = strtotime($this->params['named']['departs']);
-				$form_data['TrainTicketUse']['departs'] = array(
-				    'day' => date('d', $starts),
-				    'month' => date('m', $starts),
-				    'year' => date('Y', $starts),
-				    'hour' => date('h', $starts),
-				    'min' => date('i', $starts),
-				    'second' => date('s', $starts),
-				    'meridian' => date('a', $starts),
-			    );
+				$form_data['TrainTicketUse']['departs'] = $this->_dateToArray($starts);
 			    $response = 'Ticket use started!';
 			}
 
@@ -56,37 +48,34 @@ class TrainTicketUsesController extends AppController {
 			    );
 
 				$ends = strtotime($this->params['named']['arrives']);
-				$form_data['TrainTicketUse']['arrives'] = array(
-				    'day' => date('d', $ends),
-				    'month' => date('m', $ends),
-				    'year' => date('Y', $ends),
-				    'hour' => date('h', $ends),
-				    'min' => date('i', $ends),
-				    'second' => date('s', $ends),
-				    'meridian' => date('a', $ends),
-			    );
+				$form_data['TrainTicketUse']['arrives'] = $this->_dateToArray($ends);
 				$response = 'Ticket use ended!';
 			}
 
 			// Time to curate the data from quick form
-		    echo '<textarea>'; var_dump($form_data); echo '</textarea>';
+		    //echo '<textarea>'; var_dump($form_data); echo '</textarea>';
 		    if(isset($form_data['TrainTicketUse']['context']) && $form_data['TrainTicketUse']['context']=='quick') {
 		    	$ttu = $form_data['TrainTicketUse'];
 
 		    	// Sort out departure time
-		    	$departs = $ttu['departs']['time'];
+		    	$departs = $ttu['departs'];
 		    	if($departs == '') {
 		    		$response = 'No departure set';
 		    	} else {
+		    		$response = 'Got departure';
 		    		// No colon in time
-		    		if(strpos($departs,':') == -1) {
+		    		if(strpos($departs,':') == false) {
 		    			$mins = substr($departs, -2);
 		    			$hours = substr($departs, -(strlen($departs)), (strlen($departs))-2);
-		    			echo '<br>' . $hours . ' hr, ' . $mins . ' mins';
-		    		}
-
+		    			$departs = $hours . ':' . $mins;
+		    		} 
+		    		$departs = strtotime($departs);
+		    		
+		    		$form_data['TrainTicketUse']['departs'] = $this->_dateToArray($departs);
 		    	}
 		    }
+
+		    //echo '<textarea>'; var_dump($form_data); echo '</textarea>';
 
 			if($this->TrainTicketUse->save($form_data)) {
 
@@ -124,6 +113,18 @@ class TrainTicketUsesController extends AppController {
 			)
 		)));
 
+	}
+
+	function _dateToArray($timestamp) {
+		return array(
+		    'day' => date('d', $timestamp),
+		    'month' => date('m', $timestamp),
+		    'year' => date('Y', $timestamp),
+		    'hour' => date('h', $timestamp),
+		    'min' => date('i', $timestamp),
+		    'second' => date('s', $timestamp),
+		    'meridian' => date('a', $timestamp),
+	    );
 	}
 
 	function delete($id) {

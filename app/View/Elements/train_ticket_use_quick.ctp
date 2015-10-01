@@ -15,7 +15,7 @@
 <fieldset>
 <div class="input-group">
 	<?php
-		echo $this->Form->input('departs.time', array(
+		echo $this->Form->input('departs', array(
 			'type' => 'text',
 	        'label' => '',
 	        'placeholder' => 'HH:MI',
