@@ -3,6 +3,10 @@
 // @codekit-append "/modules/bubble-menu.js"
 // @codekit-append "/modules/chart.js"
 
+// codekit-append "/modules/quick-form.js"
+
+var commute = commute || {};
+
 $(document).ready(function () {
 
 	function roundNumber(num, dec) {
