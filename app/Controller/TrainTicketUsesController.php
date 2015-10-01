@@ -16,6 +16,8 @@ class TrainTicketUsesController extends AppController {
 		  // Save data if posted or quick start/stop params are passed
 		if(!empty($this->data) || isset($this->params['named']['departs']) || isset($this->params['named']['arrives'])) {
 
+			$response = '';
+
 			// Load form data to writable array
 		    $form_data = $this->data;
 
@@ -66,20 +68,27 @@ class TrainTicketUsesController extends AppController {
 				$response = 'Ticket use ended!';
 			}
 
-			if($this->TrainTicketUse->save($form_data)) {
+			// Time to curate the data from quick form
+		    echo '<textarea>'; var_dump($form_data); echo '</textarea>';
+		    if(isset($form_data['TrainTicketUse']['context']) && $form_data['TrainTicketUse']['context']=='quick') {
+		    	$ttu = $form_data['TrainTicketUse'];
 
-	            /* Send email */
-	            /* Doesn't work on UWH
-				$Email = new CakeEmail('smtp');
-				$Email->template('Train_use');
-				$Email->from(array('Train@commutingcosts.com' => 'Commute App'));
-				$Email->to($this->Session->read('Auth.User.email'));
-				$Email->subject('[Commute] Train Used #' . $this->TrainTicketUse->id);
-				$Email->emailFormat('html');
-				$Email->helpers(array('Html', 'Number', 'Time'));
-				$Email->viewVars(array('data'=>$form_data));
-				$Email->send();
-				*/
+		    	// Sort out departure time
+		    	$departs = $ttu['departs']['time'];
+		    	if($departs == '') {
+		    		$response = 'No departure set';
+		    	} else {
+		    		// No colon in time
+		    		if(strpos($departs,':') == -1) {
+		    			$mins = substr($departs, -2);
+		    			$hours = substr($departs, -(strlen($departs)), (strlen($departs))-2);
+		    			echo '<br>' . $hours . ' hr, ' . $mins . ' mins';
+		    		}
+
+		    	}
+		    }
+
+			if($this->TrainTicketUse->save($form_data)) {
 
 				$this->Session->setFlash($response);
 				$this->redirect('/train_tickets/view/' . $form_data['TrainTicketUse']['train_ticket_id'] . "#usage");
