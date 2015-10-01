@@ -1,4 +1,9 @@
-<?php echo $this->Form->create('TrainTicketUse', array('action'=>'add')); 
+<?php echo $this->Form->create('TrainTicketUse', array('action'=>'add', 'class'=>'quick'));
+
+	echo $this->Form->input('context', array(
+		'type' => 'hidden',
+		'value' => 'quick'
+	));
 
 	if(isset($this->data['TrainTicketUse']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 
