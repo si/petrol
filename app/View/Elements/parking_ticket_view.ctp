@@ -8,7 +8,7 @@
 		<time class="col-6" datetime="<?php echo $this->Time->format('c', $parkingTicket['ParkingTicket']['created']); ?>"><?php echo $this->Time->format('d M y h:ia', $parkingTicket['ParkingTicket']['created']); ?></time>
 		<time class="col-6" datetime="<?php echo $this->Time->format('c', $parkingTicket['ParkingTicket']['expires']); ?>"><?php echo $this->Time->format('d M y h:ia', $parkingTicket['ParkingTicket']['expires']); ?></time>
 	</div>
-	<div class="map">
+	<div class="map" style="background-size: cover;background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=<?php echo urlencode($parkingTicket['Location']['name']); ?>&size=640x400&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=AIzaSyBMISecHzJR_Mie1nlsQWpQkv-E6B7ZFno');">
 		<?php echo $parkingTicket['Location']['name']; ?>
 		<span class="geo">(<?php echo $parkingTicket['Location']['long'] . ',' . $parkingTicket['Location']['lat']; ?>)</span>
 	</div>
