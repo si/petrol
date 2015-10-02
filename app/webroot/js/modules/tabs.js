@@ -9,19 +9,23 @@ var Tabs = (function Tabs() {
 		$content = $('.tab'),
 		debug = true;
 
-	// Hide all but first content tabs on load
-	$content.filter(':not(:first)').hide();
+	if($content.length > 0) {
 
-	// Bind click events to tabs
-	$('a', $tabs).on('click', function(e){
-		//e.preventDefault();
-		// Reset stuff
-		$content.hide();
-		$('li', $tabs).removeClass('selected');
+		// Hide all but first content tabs on load
+		$('li:first', $tabs).addClass('selected');
+		$content.filter(':not(:first)').hide();
 
-		var target = $(this).attr('href');
-		$(target).show();
-		$(this).closest('li').addClass('selected');
-	});
+		// Bind click events to tabs
+		$('a', $tabs).on('click', function(e){
+			e.preventDefault();
+			// Reset stuff
+			$content.hide();
+			$('li', $tabs).removeClass('selected');
 
+			var target = $(this).attr('href');
+			$(target).show();
+			$(this).closest('li').addClass('selected');
+		});
+
+	}
 })();
