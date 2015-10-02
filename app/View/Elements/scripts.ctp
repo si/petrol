@@ -1,7 +1,7 @@
 <script src="/js/libs/jquery-1.10.2.min.js"></script>
 <script src="/js/libs/Chart.js"></script>
 <script src="/js/plugins/classie.js"></script>
-<script src="/js/min/app.min.js"></script>
+<script src="/js/min/commute-v1.0.min.js"></script>
 
 <?php
 /*
