@@ -22,15 +22,30 @@
 <?php else: ?>
 
   
-    <h1>Hi <?php echo $this->Session->read('Auth.User.username'); ?></h1>
-    <?php echo $this->Html->link('Not you?', array('controller'=>'users', 'action'=>'logout'), array('class'=>'')); ?>
-    <p>You must be here to check these&hellip;</p>
-    
-    <?php echo $this->Html->link('Petrol', array('controller'=>'receipts'), array('class'=>'btn i petrol m')); ?>
-    <?php echo $this->Html->link('Parking', array('controller'=>'parking_tickets'), array('class'=>'btn i parking m')); ?>
-    <?php echo $this->Html->link('Trains', array('controller'=>'train_tickets'), array('class'=>'btn i trains m')); ?>
+    <h1>
+        Hi <?php echo $this->Session->read('Auth.User.username'); ?>
+    </h1>
 
-    <?php echo $this->element('active_parking_tickets'); ?>
+    <ul class="tabs">
+        <li><a href="#parking" class="i parking m">Parking</a></li>
+        <li><a href="#trains" class="i trains m">Trains</a></li>
+        <li><a href="#fuel" class="i petrol m">Fuel</a></li>
+    </ul>
+
+    <section class="tab" id="parking">
+        <h2>Parking Tickets</h2>
+        <?php echo $this->element('active_parking_tickets'); ?>
+        <?php echo $this->Html->link('More…', array('controller'=>'parking_tickets'), array('class'=>'btn')); ?>
+    </section>
+
+    <section class="tab" id="trains">
+        <?php echo $this->Html->link('More…', array('controller'=>'train_tickets'), array('class'=>'btn')); ?>
+    </section>
+
+    <section class="tab" id="fuel">
+        <h2>Fuel</h2>
+        <?php echo $this->Html->link('More…', array('controller'=>'receipts'), array('class'=>'btn')); ?>
+    </section>
 
 <?php endif; ?>
 
