@@ -124,4 +124,19 @@ class TrainTicketsController extends AppController {
 	    $this->set('train_ticket_restrictions', $this->TrainTicket->TrainTicketRestriction->find('list'));
 
 	}
+
+	function active() {
+		$conditions = array(
+			'TrainTicket.user_id' => $this->Session->read('Auth.User.id')
+		);
+		array_push($conditions, '(DATE_ADD(`TrainTicket`.`created`, INTERVAL `TrainTicketType`.duration DAY)) > NOW()');
+
+		$settings = array(
+			'conditions' => $conditions,
+			'order' => array('TrainTicket.created DESC')
+		);
+		$trainTicket = $this->TrainTicket->find('first', $settings);
+		$this->set('trainTicket', $trainTicket);
+	}
+
 }
