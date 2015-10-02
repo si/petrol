@@ -3,6 +3,7 @@
 
   if(isset($this->data['TrainTicketUse']['id'])) echo $this->Form->input('id', array('type' => 'hidden'));
 ?>
+<fieldset>
 <div class="input-group">
     <?php
 		echo $this->Form->input('train_ticket_id', array(
@@ -11,26 +12,33 @@
 		));
     ?>
 </div>
+</fieldset>
 
 <fieldset>
 	<legend>Times</legend>
 	<div class="input-group">
 		<?php
-			echo $this->Form->input('departs', array(
-		        'label' => 'Departs',
-		        'separator' => '',
-		        'empty' => '-',
+			echo $this->Form->input('departs_date', array(
+		        'label' => 'Date',
+		        'type' => 'text',
 		        'div' => 'col-6',
-		        'maxYear' => date('Y'),
+		        'value' => date('d/m/Y', strtotime($this->data['TrainTicketUse']['departs']))
+		    ));
+			echo $this->Form->input('departs_time', array(
+		        'label' => 'Departs',
+		        'type' => 'text',
+		        'div' => 'col-3',
+		        'placeholder' => 'HH:MI',
+		        'value' => date('H:i', strtotime($this->data['TrainTicketUse']['departs']))
 		    ));
 		?>
 		<?php
 			echo $this->Form->input('arrives', array(
 		        'label' => 'Arrives',
-		        'separator' => '',
-		        'empty' => '-',
-		        'div' => 'col-6',
-		        'maxYear' => date('Y'),
+		        'type' => 'text',
+		        'div' => 'col-3',
+		        'placeholder' => 'HH:MI',
+		        'value' => $this->data['TrainTicketUse']['arrives'] != '' ? date('H:i', strtotime($this->data['TrainTicketUse']['arrives'])) : ''
 		    ));
 		?>
 	</div>
