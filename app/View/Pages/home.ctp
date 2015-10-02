@@ -39,11 +39,14 @@
     </section>
 
     <section class="tab" id="trains">
+        <h2>Trains</h2>
+        <p>(Active train tickets will show here)</p>
         <?php echo $this->Html->link('More…', array('controller'=>'train_tickets'), array('class'=>'btn')); ?>
     </section>
 
     <section class="tab" id="fuel">
         <h2>Fuel</h2>
+        <p>(Recent stats will show here)</p>
         <?php echo $this->Html->link('More…', array('controller'=>'receipts'), array('class'=>'btn')); ?>
     </section>
 
