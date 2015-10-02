@@ -7,11 +7,10 @@ module.exports = function (grunt) {
 	};
 
 	var filesJSConfig = { };
-	filesJSConfig[ 'build/v' + config.version + '/js/' + config.name + '-v' + config.fullVersion + '.min.js' ] =  'build/v' + config.version + '/js/' + config.name + '-v' + config.fullVersion + '.js';
+	filesJSConfig[ 'js/min/' + config.name + '-v' + config.fullVersion + '.min.js' ] =  'js/min/' + config.name + '-v' + config.fullVersion + '.js';
 
 	var filesCSSConfig = { };
-	filesCSSConfig[ 'build/v' + config.version + '/css/' + config.name + '-v' + config.fullVersion + '.css' ] = 'src/main/sass/main-test.scss';
-
+	filesCSSConfig[ 'css/' + config.name + '-v' + config.fullVersion + '.css' ] = 'sass/app.scss';
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -19,9 +18,9 @@ module.exports = function (grunt) {
 			// 2. Configuration for concatinating files goes here.
 			first_version: {
 				src: [
-					'src/common/js/common.js', 'src/main/js/main-test.js', 'src/common/js/launcher.js'
+					'js/app.js', 'js/libs/**.js', 'js/plugins/**.js', 'js/modules/**.js'
 				],
-				dest: 'build/v' + config.version + '/js/' + config.name + '-v' + config.fullVersion + '.js',
+				dest: 'js/min/' + config.name + '-v' + config.fullVersion + '.js',
 			}
 		},
 		uglify: {
@@ -41,34 +40,35 @@ module.exports = function (grunt) {
 			dynamic: {
 				files: [{
 					expand: true,
-					cwd: 'src/images/',
+					cwd: 'img/',
 					src: ['**/*.{png,jpg,gif,svg}'],
-					dest: './build/images/'
+					dest: './images/'
 				}]
 			}
 		},
 		watch: {
 			scripts: {
-				files: ['src/**/*.js'],
+				files: ['js/**/*.js'],
 				tasks: ['concat', 'uglify'],
 				options: {
 					spawn: false,
 				},
 			},
 			css: {
-				files: ['src/main/sass/**/*.scss'],
+				files: ['sass/**/*.scss'],
 				tasks: ['sass'],
 				options: {
 					spawn: false,
 				}
-			},
+			}
+			/*,
 			image: {
-				files: ['src/images/*.{png,jpg,gif,svg}'],
+				files: ['img/*.{png,jpg,gif,svg}'],
 				tasks: ['imagemin'],
 				options: {
 					spawn: false,
 				}
-			}
+			}*/
 		}
 	});
 
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-image-embed");
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass']);
-	grunt.registerTask('dev', ['concat', 'uglify', 'imagemin', 'sass', 'watch']);
+	grunt.registerTask('default', ['concat', 'uglify', 'sass']);
+	grunt.registerTask('dev', ['concat', 'uglify', 'sass', 'watch']);
 
 };

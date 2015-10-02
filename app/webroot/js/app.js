@@ -1,10 +1,3 @@
-// @codekit-append "/plugins/bootstrap-alert.js"
-
-// @codekit-append "/modules/bubble-menu.js"
-// @codekit-append "/modules/chart.js"
-
-// codekit-append "/modules/quick-form.js"
-
 var commute = commute || {};
 
 $(document).ready(function () {
