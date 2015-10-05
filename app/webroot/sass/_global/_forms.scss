@@ -33,11 +33,13 @@ textarea {
 	display: block;
 	font-size: 1.3rem;
 	padding: 0.5rem;
+}
 
-	&::-moz-placeholder,
-	&::-webkit-placeholder {
-		color: rgba(#FFF, 0.5);
-	}
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {  
+	color: rgba(#FFF, 0.5);
 }
 
 select {
