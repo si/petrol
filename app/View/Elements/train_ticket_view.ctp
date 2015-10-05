@@ -37,7 +37,9 @@
 
 	<section id="usage">
 		<?php
-		if(count($trainTicket['TrainTicketUse'])>0) : ?>
+		if(count($trainTicket['TrainTicketUse'])>0) : 
+			$ticket_open = false;
+		?>
 		<div class="timeline">
 		<ol>
 			<?php foreach($trainTicket['TrainTicketUse'] as $use): ?>
@@ -59,14 +61,14 @@
 				?>
 			</li>
 			<?php
-				if($use['arrives']=='') $timer = true;
+				if($use['arrives']=='') $ticket_open = true;
 			endforeach;
 			?>
 		</ol>
 		</div>
 		<?php endif; ?>
 
-		<?php echo $this->element('train_ticket_use_quick'); ?>
+		<?php echo $this->element('train_ticket_use_quick', array('ticket_open'=> $ticket_open)); ?>
 
 	</section>
 
