@@ -25,12 +25,17 @@
 		    ));
 		?>
 		<?php
+			$arrives = '';
+			if( isset($this->data['TrainTicketUse']['departs']) && $this->data['TrainTicketUse']['arrives'] == '' ) {
+				$arrives = $this->data['TrainTicketUse']['departs'];
+			}
 			echo $this->Form->input('arrives', array(
 		        'label' => 'Arrives',
 		        'separator' => '',
 		        'empty' => '-',
 		        'div' => 'col-6',
 		        'maxYear' => date('Y'),
+		        'selected' => $arrives
 		    ));
 		?>
 	</div>
