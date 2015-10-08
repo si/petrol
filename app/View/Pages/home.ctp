@@ -43,7 +43,7 @@
     </section>
 
     <section class="tab" id="fuel">
-        <p>(Recent stats will show here)</p>
+        <?php echo $this->element('latest_receipt'); ?>
         <?php echo $this->Html->link('More fuel receipts…', array('controller'=>'receipts'), array('class'=>'btn')); ?>
     </section>
 

@@ -1,0 +1,1 @@
+<?php echo $this->element('receipt_view'); ?>

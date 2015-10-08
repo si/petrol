@@ -336,6 +336,9 @@ class ReceiptsController extends AppController {
   	$this->set('data',$this->Receipt->query($sql));
   	
 	}
-    
+
+	function latest() {
+		$this->set('receipt', $this->Receipt->find('first', array('order'=>array('Receipt.created DESC'))));
+	}    
 
 }
