@@ -743,7 +743,7 @@ body,
 /* line 2, ../sass/_components/_icons.scss */
 .i {
   background-repeat: no-repeat;
-  background-position: 0 50%;
+  background-position: 50% 50%;
 }
 
 /* line 8, ../sass/_components/_icons.scss */
@@ -824,9 +824,22 @@ body,
 .tabs li.selected {
   background: rgba(255, 255, 255, 0.4);
 }
-/* line 25, ../sass/_components/_tabs.scss */
+/* line 24, ../sass/_components/_tabs.scss */
+.tabs li.selected a.i {
+  color: #000;
+}
+/* line 29, ../sass/_components/_tabs.scss */
 .tabs li a {
   text-decoration: none;
+}
+/* line 32, ../sass/_components/_tabs.scss */
+.tabs li a.i {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0);
+  font-weight: bold;
+  line-height: 36px;
+  min-height: 36px;
+  text-transform: uppercase;
 }
 
 /* line 1, ../sass/_components/_cards.scss */
