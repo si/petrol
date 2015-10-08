@@ -819,20 +819,22 @@ body,
   background: rgba(255, 255, 255, 0.1);
   padding: 0.6rem 0.3rem;
   text-align: center;
+  transition: all 0.5s ease;
 }
-/* line 21, ../sass/_components/_tabs.scss */
+/* line 22, ../sass/_components/_tabs.scss */
 .tabs li.selected {
   background: rgba(255, 255, 255, 0.4);
 }
-/* line 24, ../sass/_components/_tabs.scss */
+/* line 25, ../sass/_components/_tabs.scss */
 .tabs li.selected a.i {
   color: #000;
 }
-/* line 29, ../sass/_components/_tabs.scss */
+/* line 30, ../sass/_components/_tabs.scss */
 .tabs li a {
   text-decoration: none;
+  transition: all 0.5s ease;
 }
-/* line 32, ../sass/_components/_tabs.scss */
+/* line 34, ../sass/_components/_tabs.scss */
 .tabs li a.i {
   display: inline-block;
   color: rgba(0, 0, 0, 0);
