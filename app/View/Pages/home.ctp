@@ -33,19 +33,16 @@
     </ul>
 
     <section class="tab" id="parking">
-        <h2>Parking Tickets</h2>
         <?php echo $this->element('active_parking_tickets'); ?>
         <?php echo $this->Html->link('More parking tickets…', array('controller'=>'parking_tickets'), array('class'=>'btn')); ?>
     </section>
 
     <section class="tab" id="trains">
-        <h2>Trains</h2>
         <?php echo $this->element('active_train_ticket'); ?>
         <?php echo $this->Html->link('More train tickets…', array('controller'=>'train_tickets'), array('class'=>'btn')); ?>
     </section>
 
     <section class="tab" id="fuel">
-        <h2>Fuel</h2>
         <p>(Recent stats will show here)</p>
         <?php echo $this->Html->link('More fuel receipts…', array('controller'=>'receipts'), array('class'=>'btn')); ?>
     </section>
