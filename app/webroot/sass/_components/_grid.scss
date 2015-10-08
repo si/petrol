@@ -12,6 +12,10 @@
 	    /* flexbox specific properties */
 		-webkit-flex: auto;
 		flex: auto;
+		justify-content: space-between;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
 	}
 
 	.col-12 {

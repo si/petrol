@@ -703,38 +703,42 @@ body,
   /* flexbox specific properties */
   -webkit-flex: auto;
   flex: auto;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
 }
-/* line 17, ../sass/_components/_grid.scss */
+/* line 21, ../sass/_components/_grid.scss */
 .input-group .col-12,
 .item-group .col-12 {
   width: 100%;
 }
-/* line 20, ../sass/_components/_grid.scss */
+/* line 24, ../sass/_components/_grid.scss */
 .input-group .col-9,
 .item-group .col-9 {
   width: 75%;
 }
-/* line 23, ../sass/_components/_grid.scss */
+/* line 27, ../sass/_components/_grid.scss */
 .input-group .col-8,
 .item-group .col-8 {
   width: 66.66667%;
 }
-/* line 26, ../sass/_components/_grid.scss */
+/* line 30, ../sass/_components/_grid.scss */
 .input-group .col-6,
 .item-group .col-6 {
   width: 50%;
 }
-/* line 29, ../sass/_components/_grid.scss */
+/* line 33, ../sass/_components/_grid.scss */
 .input-group .col-4,
 .item-group .col-4 {
   width: 33.33333%;
 }
-/* line 32, ../sass/_components/_grid.scss */
+/* line 36, ../sass/_components/_grid.scss */
 .input-group .col-3,
 .item-group .col-3 {
   width: 25%;
 }
-/* line 35, ../sass/_components/_grid.scss */
+/* line 39, ../sass/_components/_grid.scss */
 .input-group .col-2,
 .item-group .col-2 {
   width: 16.66667%;
@@ -855,14 +859,15 @@ body,
 .card .price {
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: right;
 }
-/* line 12, ../sass/_components/_cards.scss */
+/* line 13, ../sass/_components/_cards.scss */
 .card time {
   color: #888;
   display: block;
   text-align: center;
 }
-/* line 18, ../sass/_components/_cards.scss */
+/* line 19, ../sass/_components/_cards.scss */
 .card form {
   background: rgba(0, 0, 0, 0.2);
   margin: 0 -1rem -1rem -1rem;
