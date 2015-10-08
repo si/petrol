@@ -855,19 +855,23 @@ body,
   margin: 2rem 0;
   padding: 1rem;
 }
-/* line 7, ../sass/_components/_cards.scss */
+/* line 8, ../sass/_components/_cards.scss */
+.card h1,
 .card .price {
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: right;
 }
 /* line 13, ../sass/_components/_cards.scss */
+.card .price {
+  text-align: right;
+}
+/* line 17, ../sass/_components/_cards.scss */
 .card time {
   color: #888;
   display: block;
   text-align: center;
 }
-/* line 19, ../sass/_components/_cards.scss */
+/* line 23, ../sass/_components/_cards.scss */
 .card form {
   background: rgba(0, 0, 0, 0.2);
   margin: 0 -1rem -1rem -1rem;
