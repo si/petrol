@@ -1,7 +1,7 @@
 <article class="card">
 
 	<div class="item-group">
-		<h1 class="col-6">№<?php echo $trainTicket['TrainTicket']['id']; ?></h1>
+		<h1 class="col-6">#<?php echo $trainTicket['TrainTicket']['id']; ?></h1>
 		<span class="col-6 price"><?php echo $this->Number->currency($trainTicket['TrainTicket']['price'],'GBP'); ?></span>
 	</div>
 
