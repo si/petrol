@@ -747,7 +747,7 @@ body,
 /* line 2, ../sass/_components/_icons.scss */
 .i {
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 0 50%;
 }
 
 /* line 8, ../sass/_components/_icons.scss */
@@ -841,6 +841,7 @@ body,
 /* line 34, ../sass/_components/_tabs.scss */
 .tabs li a.i {
   display: inline-block;
+  background-position: 50% 50%;
   color: rgba(0, 0, 0, 0);
   font-weight: bold;
   line-height: 36px;
